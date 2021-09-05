@@ -4,9 +4,11 @@ pragma abicoder v2;
 import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
 import "./Traits.sol";
 
+//todo default approvals (so no approval is needed for trades)
 contract ERC721Gen is ERC721Upgradeable, Traits {
 
-    mapping(uint => uint16) tokenTraits; //todo сделать, чтобы нельзя было читать во время минтинга
+    mapping(uint => uint) mintingBlocks;
+    mapping(uint => uint16[]) tokenTraits;
 
     function __ERC721Gen_init(string memory _name, string memory _symbol, Trait[] memory _traits) public initializer {
         __Context_init_unchained();
@@ -15,7 +17,17 @@ contract ERC721Gen is ERC721Upgradeable, Traits {
         __Traits_init_unchained(_traits);
     }
 
-    function mint(address to) public {//todo operatorOnly
+    function mint(address to) public returns (uint) { //todo operatorOnly
+        uint16[] memory generated = generateRandomTraits();
+        uint tokenId = random(0);
+        _safeMint(to, tokenId);
+        tokenTraits[tokenId] = generated;
+        mintingBlocks[tokenId] = block.number;
+        return tokenId;
     }
 
+    function getTokenTraits(uint tokenId) view public returns (uint16[] memory) {
+        require(block.number > mintingBlocks[tokenId], "can't read traits in the same block");
+        return tokenTraits[tokenId];
+    }
 }

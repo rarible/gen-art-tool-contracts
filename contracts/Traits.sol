@@ -32,7 +32,7 @@ contract Traits is Initializable {
         uint16[] memory result = new uint16[](traits.length);
         for (uint16 i = 0; i < traits.length; i++) {
             Trait memory trait = traits[i];
-            result[i] = getTraitValue(trait, random(i, 10000));
+            result[i] = getTraitValue(trait, random(i) % 10000);
         }
 
         return result;
@@ -49,8 +49,8 @@ contract Traits is Initializable {
         revert("never");
     }
 
-    function random(uint seed, uint modulus) internal view returns (uint) {
+    function random(uint seed) internal view returns (uint) {
         //todo think about vulnerabilities
-        return uint(keccak256(abi.encodePacked(seed, block.timestamp, block.number, msg.sender))) % modulus;
+        return uint(keccak256(abi.encodePacked(seed, block.timestamp, block.number, msg.sender)));
     }
 }

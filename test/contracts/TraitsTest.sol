@@ -17,6 +17,6 @@ contract TraitsTest is Traits {
     }
 
     function _testRandom(uint seed, uint modulus) public view returns (uint) {
-        return random(seed, modulus);
+        return random(seed) % modulus;
     }
 }
