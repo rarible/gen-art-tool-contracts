@@ -9,7 +9,7 @@ import "./Traits.sol";
 contract ERC721Gen is ERC721Upgradeable, Traits {
 
     mapping(uint => uint) mintingBlocks;
-    mapping(uint => uint16[]) tokenTraits;
+    mapping(uint => uint[]) tokenTraits;
 
     function __ERC721Gen_init(string memory _name, string memory _symbol, Trait[] memory _traits) public initializer {
         __Context_init_unchained();
@@ -19,7 +19,7 @@ contract ERC721Gen is ERC721Upgradeable, Traits {
     }
 
     function mint(address to) public returns (uint) { //todo operatorOnly
-        uint16[] memory generated = generateRandomTraits();
+        uint[] memory generated = generateRandomTraits();
         uint tokenId = random(0);
         _safeMint(to, tokenId);
         tokenTraits[tokenId] = generated;
@@ -27,7 +27,7 @@ contract ERC721Gen is ERC721Upgradeable, Traits {
         return tokenId;
     }
 
-    function getTokenTraits(uint tokenId) view public returns (uint16[] memory) {
+    function getTokenTraits(uint tokenId) view public returns (uint[] memory) {
         require(block.number > mintingBlocks[tokenId], "can't read traits in the same block");
         return tokenTraits[tokenId];
     }

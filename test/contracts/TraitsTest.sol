@@ -8,7 +8,7 @@ contract TraitsTest is Traits {
         __Traits_init_unchained(_traits);
     }
 
-    function _testGenerateRandomTraits() public view returns (uint16[] memory) {
+    function _testGenerateRandomTraits() public view returns (uint[] memory) {
         return generateRandomTraits();
     }
 
