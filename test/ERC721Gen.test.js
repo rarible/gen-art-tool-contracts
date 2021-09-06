@@ -1,4 +1,6 @@
 const truffleAssert = require('truffle-assertions');
+const events = require("./events");
+const fakeBlock = require("./fake-block");
 
 const ERC721Gen = artifacts.require("ERC721Gen.sol");
 const ERC721GenTest = artifacts.require("ERC721GenTest.sol")
@@ -20,14 +22,11 @@ contract("Traits", accounts => {
 
 	it("reverts if traits are queried in the same block", async () => {
 		const tx = await genTest.mintAndGetTraits(testing.address, accounts[0], false);
-		let tokenIdEvent;
-		await truffleAssert.eventEmitted(tx, "TokenId", ev => {
-			tokenIdEvent = ev;
-			return true;
-		})
+		await fakeBlock(accounts);
 
-		await web3.eth.sendTransaction({ from: accounts[0], to: accounts[0], gasPrice: 0 });
-		const traits = await testing.getTokenTraits(tokenIdEvent.value);
+		const [tokenIdEvent] = events(tx, "TokenId");
+
+		const traits = await testing.getTokenTraits(tokenIdEvent.args.value);
 		assert.equal(traits.length, 3);
 
 		await truffleAssert.fails(

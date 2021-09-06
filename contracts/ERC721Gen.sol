@@ -5,6 +5,7 @@ import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
 import "./Traits.sol";
 
 //todo default approvals (so no approval is needed for trades)
+//todo gaps?
 contract ERC721Gen is ERC721Upgradeable, Traits {
 
     mapping(uint => uint) mintingBlocks;

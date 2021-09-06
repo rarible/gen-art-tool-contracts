@@ -1,4 +1,5 @@
 const TraitsTest = artifacts.require("TraitsTest.sol");
+const fakeBlock = require("./fake-block");
 
 contract("Traits", accounts => {
 	let testing;
@@ -24,7 +25,7 @@ contract("Traits", accounts => {
 		await testing.__TraitsTest_init([trait1, trait2, trait3]);
 
 		for (let i = 0; i < 50; i++) {
-			await web3.eth.sendTransaction({ from: accounts[0], to: accounts[0], gasPrice: 0 });
+			await fakeBlock(accounts);
 			const result = await testing._testGenerateRandomTraits();
 			assert.equal(result.length, 3);
 			console.log("generated", result.map(x => x.toString()));
@@ -39,7 +40,7 @@ contract("Traits", accounts => {
 		assert.equal(v1_1.toString(), v2_1.toString());
 		assert.notEqual(v1_1.toString(), v3_1.toString());
 
-		await web3.eth.sendTransaction({ from: accounts[0], to: accounts[0], gasPrice: 0 });
+		await fakeBlock(accounts);
 
 		const v1_2 = await testing._testRandom(0, 10000);
 		const v2_2 = await testing._testRandom(0, 10000);
