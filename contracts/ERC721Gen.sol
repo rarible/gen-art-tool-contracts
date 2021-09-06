@@ -6,6 +6,7 @@ import "./Traits.sol";
 
 //todo default approvals (so no approval is needed for trades)
 //todo gaps?
+//todo ownable сделать, чтобы потом owner мог загрузить мету в ipfs и поставить sealed
 contract ERC721Gen is ERC721Upgradeable, Traits {
 
     mapping(uint => uint) mintingBlocks;
