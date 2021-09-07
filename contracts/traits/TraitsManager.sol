@@ -1,19 +1,18 @@
+// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.7.0;
 pragma abicoder v2;
 
 import "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol";
+import "./Traits.sol";
 
-contract Traits is Initializable {
+contract TraitsManager is Traits, Initializable {
 
-    struct Trait {
-        string name;
-        string[] keys;
-        uint[] rarities;
-    }
+    event TraitsSet(Trait[] traits);
 
     Trait[] traits;
 
-    function __Traits_init_unchained(Trait[] memory _traits) internal initializer {
+    function __TraitsManager_init_unchained(Trait[] memory _traits) internal initializer {
         for (uint i = 0; i < _traits.length; i++) {
             Trait memory _trait = _traits[i];
             traits.push(_trait);
@@ -25,16 +24,7 @@ contract Traits is Initializable {
             }
             require(total == 10000, "sum or rarities not equal 10000");
         }
-    }
-
-    function generateRandomTraits() internal view  returns (uint[] memory) {
-        uint[] memory result = new uint[](traits.length);
-        for (uint i = 0; i < traits.length; i++) {
-            Trait memory trait = traits[i];
-            result[i] = getTraitValue(trait, random(i) % 10000);
-        }
-
-        return result;
+        emit TraitsSet(_traits);
     }
 
     function getTraitValue(Trait memory trait, uint rnd) internal pure returns (uint) {
@@ -48,8 +38,13 @@ contract Traits is Initializable {
         revert("never");
     }
 
-    function random(uint seed) internal view returns (uint) {
-        //todo think about vulnerabilities
-        return uint(keccak256(abi.encodePacked(seed, block.timestamp, block.number, msg.sender)));
+    function random(uint seed, uint supply, address to) internal view returns (uint) {
+        return uint(keccak256(abi.encodePacked(seed, block.timestamp, block.number, block.difficulty, supply, to)));
     }
+
+    function getPossibleTraits() external view returns (Trait[] memory) {
+        return traits;
+    }
+
+    uint256[50] private __gap;
 }

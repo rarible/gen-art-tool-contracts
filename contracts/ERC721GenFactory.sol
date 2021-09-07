@@ -1,0 +1,70 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.7.0;
+pragma abicoder v2;
+
+import "./ERC721Gen.sol";
+import "@openzeppelin/contracts/proxy/IBeacon.sol";
+import "@openzeppelin/contracts/proxy/BeaconProxy.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+/**
+ * @dev This contract is for creating proxy to access ERC721Gen token.
+ *
+ * The beacon should be initialized before call ERC721GenFactory constructor.
+ */
+contract ERC721GenFactory is Ownable, Traits {
+    //beacon of ERC721 address
+    IBeacon public beacon;
+
+    //transferProxy to call transferFrom
+    address public transferProxy;
+
+    //operatorProxy to mint tokens
+    address public operatorProxy;
+
+    //baseURI for collections
+    string public baseURI;
+
+    event CollectionCreated(address owner, address collection);
+
+    constructor(
+        IBeacon _beacon,
+        address _transferProxy,
+        address _operatorProxy,
+        string memory _baseURI
+    ) {
+        beacon = _beacon;
+        transferProxy = _transferProxy;
+        operatorProxy = _operatorProxy;
+        baseURI = _baseURI;
+    }
+
+    function createCollection(
+        string memory _name,
+        string memory _symbol,
+        LibPart.Part[] memory _royalties,
+        Trait[] memory _traits,
+        uint256 _total,
+        uint256 _maxValue
+    ) external {
+        bytes memory data = abi.encodeWithSelector(
+            ERC721Gen(0).__ERC721Gen_init.selector,
+            _name,
+            _symbol,
+            baseURI,
+            transferProxy,
+            operatorProxy,
+            _royalties,
+            _traits,
+            _total,
+            _maxValue
+        );
+        BeaconProxy beaconProxy = new BeaconProxy(address(beacon), data);
+        ERC721Gen token = ERC721Gen(address(beaconProxy));
+
+        token.transferOwnership(_msgSender());
+
+        emit CollectionCreated(_msgSender(), address(token));
+    }
+}
