@@ -1,0 +1,4034 @@
+{
+  "contractName": "RoyaltiesV2GenImpl",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address payable",
+              "name": "account",
+              "type": "address"
+            },
+            {
+              "internalType": "uint96",
+              "name": "value",
+              "type": "uint96"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct LibPart.Part[]",
+          "name": "royalties",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "RoyaltiesSet",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceId",
+          "type": "bytes4"
+        }
+      ],
+      "name": "supportsInterface",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "getRoyalties",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address payable",
+              "name": "account",
+              "type": "address"
+            },
+            {
+              "internalType": "uint96",
+              "name": "value",
+              "type": "uint96"
+            }
+          ],
+          "internalType": "struct LibPart.Part[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address payable\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint96\",\"name\":\"value\",\"type\":\"uint96\"}],\"indexed\":false,\"internalType\":\"struct LibPart.Part[]\",\"name\":\"royalties\",\"type\":\"tuple[]\"}],\"name\":\"RoyaltiesSet\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"getRoyalties\",\"outputs\":[{\"components\":[{\"internalType\":\"address payable\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint96\",\"name\":\"value\",\"type\":\"uint96\"}],\"internalType\":\"struct LibPart.Part[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}. Time complexity O(1), guaranteed to always use less than 30 000 gas.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/royalties/RoyaltiesV2GenImpl.sol\":\"RoyaltiesV2GenImpl\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol\":{\"keccak256\":\"0xc6dbbc2f50a7c104377798a37b2acd1a41c1242544b0bb7a9a7c863f0520eb50\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ff3a66f685a49d3750c9b3588770d1ee43ce3cb718e1dc911ac65d8a6d1c1f0d\",\"dweb:/ipfs/QmVK2mdcbZTZ81YQ1rxWWNbYgy3Gpb3yz3L2qtDPTdx9hu\"]},\"@openzeppelin/contracts-upgradeable/introspection/IERC165Upgradeable.sol\":{\"keccak256\":\"0x4784c3f8a520a739dd25d76f514833a653990902d0e21601aed45bda44c87524\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://359411cc44a4499f37d46562ef3f348db443f9a699138c1797264d20b14697b7\",\"dweb:/ipfs/QmUmeQNUwve4MFCc1ace6zMnstqa8S9SZe1nXG9THcpQ5v\"]},\"@openzeppelin/contracts-upgradeable/proxy/Initializable.sol\":{\"keccak256\":\"0xd8e4eb08dcc1d1860fb347ba5ffd595242b9a1b66d49a47f2b4cb51c3f35017e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7dbc89479d30592e82442edc38053b380f611037a5e6ceafc7bf57a7aa1f0305\",\"dweb:/ipfs/QmcdYtt56WmjeYvsFjK69FnahnAriw88VzY3XRZwXkQKKN\"]},\"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"keccak256\":\"0xfc5ea91fa9ceb1961023b2a6c978b902888c52b90847ac7813fe3b79524165f6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6b81dcc816857a9d981386f6d8de49198420ee41cdc0ecade366ab412174d03\",\"dweb:/ipfs/QmV2vznMT6m9qo3pFMAWi3Nz3UDhwesgwFxeXe6Tod3v8A\"]},\"@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol\":{\"keccak256\":\"0x4f3d5737488618b3501156e39e3f8367da43e810dc8c942f3a3caf4f35f831f6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5096c7f9ffa052d046ca5de7403db55750d3a97e858e804ebf073d9e396ef35a\",\"dweb:/ipfs/QmTphTLVSfHZ6yuLRpvrdSQYKwNKQkEBUkUdXet78gfneT\"]},\"@rarible/royalties/contracts/LibPart.sol\":{\"keccak256\":\"0xd0123f7411573a6a7e1527e0d3901913d7642e504ff240d5b7c5b76a28587def\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://447b449f7f986ecfdea10cbc96ae276877102866353b4f8410fec0bdb357d5ae\",\"dweb:/ipfs/QmatbYwMc1UXCGGH1D9fvgLbLPNdgzBVafYW84B1nJJiRr\"]},\"@rarible/royalties/contracts/LibRoyaltiesV2.sol\":{\"keccak256\":\"0x17a995a9bf12117cf5073630bed52eb0a46c7f541bf5bd0803ebc48b8dd1c243\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://de5b93d5b8b1eb521273d439c8bad57c35894b92c7b5b05cfc00a084f4b55d81\",\"dweb:/ipfs/QmWoSe6ZztCSuqcy55EPjBzbsiBFSD2xwPPBDmcVmCNJXB\"]},\"@rarible/royalties/contracts/RoyaltiesV2.sol\":{\"keccak256\":\"0x09e8d688a5254b8732e217b1fc9107770202e53fa61cb9cc1839bbe40c8e439d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://43e73942e6e8dd81f7c0007b6b8dcab531d4f35acfad737bc42343eed46de615\",\"dweb:/ipfs/QmXTQrHjM5pwfHYTETYZTxuvL6mgdC88UD1MNaSVriGHVb\"]},\"project:/contracts/royalties/RoyaltiesV2GenImpl.sol\":{\"keccak256\":\"0x75e6be01b0c1191323a3bf32ac1a02de6ab54e25bb89005b3ce305a2f1069f7c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8728717fbd0b9d9d98c69cc1aad46f5e31facf0cff48a99665f2ddb537f33ab1\",\"dweb:/ipfs/QmZp66KoGjxc7wupgNnFMd9QxPYRJC7S5P6MahQF6116Ek\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610214806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806301ffc9a71461003b578063bb3bafd614610064575b600080fd5b61004e610049366004610126565b610084565b60405161005b91906101d3565b60405180910390f35b610077610072366004610155565b6100a3565b60405161005b919061016d565b6001600160e01b03191660009081526001602052604090205460ff1690565b60606033805480602002602001604051908101604052809291908181526020016000905b8282101561011b57600084815260209081902060408051808201909152908401546001600160a01b0381168252600160a01b90046bffffffffffffffffffffffff16818301528252600190920191016100c7565b505050509050919050565b600060208284031215610137578081fd5b81356001600160e01b03198116811461014e578182fd5b9392505050565b600060208284031215610166578081fd5b5035919050565b602080825282518282018190526000919060409081850190868401855b828110156101c657815180516001600160a01b031685528601516bffffffffffffffffffffffff1686850152928401929085019060010161018a565b5091979650505050505050565b90151581526020019056fea264697066735822122086a0a1fab872c6c927403cd0cd5258ad166fee052fe4d91b41901e17409ff70964736f6c63430007060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c806301ffc9a71461003b578063bb3bafd614610064575b600080fd5b61004e610049366004610126565b610084565b60405161005b91906101d3565b60405180910390f35b610077610072366004610155565b6100a3565b60405161005b919061016d565b6001600160e01b03191660009081526001602052604090205460ff1690565b60606033805480602002602001604051908101604052809291908181526020016000905b8282101561011b57600084815260209081902060408051808201909152908401546001600160a01b0381168252600160a01b90046bffffffffffffffffffffffff16818301528252600190920191016100c7565b505050509050919050565b600060208284031215610137578081fd5b81356001600160e01b03198116811461014e578182fd5b9392505050565b600060208284031215610166578081fd5b5035919050565b602080825282518282018190526000919060409081850190868401855b828110156101c657815180516001600160a01b031685528601516bffffffffffffffffffffffff1686850152928401929085019060010161018a565b5091979650505050505050565b90151581526020019056fea264697066735822122086a0a1fab872c6c927403cd0cd5258ad166fee052fe4d91b41901e17409ff70964736f6c63430007060033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [
+    {
+      "ast": {
+        "nodeType": "YulBlock",
+        "src": "0:1558:40",
+        "statements": [
+          {
+            "nodeType": "YulBlock",
+            "src": "6:3:40",
+            "statements": []
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "83:237:40",
+              "statements": [
+                {
+                  "body": {
+                    "nodeType": "YulBlock",
+                    "src": "129:26:40",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "name": "value0",
+                              "nodeType": "YulIdentifier",
+                              "src": "138:6:40"
+                            },
+                            {
+                              "name": "value0",
+                              "nodeType": "YulIdentifier",
+                              "src": "146:6:40"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "revert",
+                            "nodeType": "YulIdentifier",
+                            "src": "131:6:40"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "131:22:40"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "131:22:40"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "dataEnd",
+                            "nodeType": "YulIdentifier",
+                            "src": "104:7:40"
+                          },
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "113:9:40"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "sub",
+                          "nodeType": "YulIdentifier",
+                          "src": "100:3:40"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "100:23:40"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "125:2:40",
+                        "type": "",
+                        "value": "32"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "slt",
+                      "nodeType": "YulIdentifier",
+                      "src": "96:3:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "96:32:40"
+                  },
+                  "nodeType": "YulIf",
+                  "src": "93:2:40"
+                },
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "164:36:40",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "190:9:40"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "calldataload",
+                      "nodeType": "YulIdentifier",
+                      "src": "177:12:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "177:23:40"
+                  },
+                  "variables": [
+                    {
+                      "name": "value",
+                      "nodeType": "YulTypedName",
+                      "src": "168:5:40",
+                      "type": ""
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "nodeType": "YulBlock",
+                    "src": "264:26:40",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "name": "value0",
+                              "nodeType": "YulIdentifier",
+                              "src": "273:6:40"
+                            },
+                            {
+                              "name": "value0",
+                              "nodeType": "YulIdentifier",
+                              "src": "281:6:40"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "revert",
+                            "nodeType": "YulIdentifier",
+                            "src": "266:6:40"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "266:22:40"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "266:22:40"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "value",
+                            "nodeType": "YulIdentifier",
+                            "src": "222:5:40"
+                          },
+                          {
+                            "arguments": [
+                              {
+                                "name": "value",
+                                "nodeType": "YulIdentifier",
+                                "src": "233:5:40"
+                              },
+                              {
+                                "arguments": [
+                                  {
+                                    "kind": "number",
+                                    "nodeType": "YulLiteral",
+                                    "src": "244:3:40",
+                                    "type": "",
+                                    "value": "224"
+                                  },
+                                  {
+                                    "kind": "number",
+                                    "nodeType": "YulLiteral",
+                                    "src": "249:10:40",
+                                    "type": "",
+                                    "value": "0xffffffff"
+                                  }
+                                ],
+                                "functionName": {
+                                  "name": "shl",
+                                  "nodeType": "YulIdentifier",
+                                  "src": "240:3:40"
+                                },
+                                "nodeType": "YulFunctionCall",
+                                "src": "240:20:40"
+                              }
+                            ],
+                            "functionName": {
+                              "name": "and",
+                              "nodeType": "YulIdentifier",
+                              "src": "229:3:40"
+                            },
+                            "nodeType": "YulFunctionCall",
+                            "src": "229:32:40"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "eq",
+                          "nodeType": "YulIdentifier",
+                          "src": "219:2:40"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "219:43:40"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "iszero",
+                      "nodeType": "YulIdentifier",
+                      "src": "212:6:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "212:51:40"
+                  },
+                  "nodeType": "YulIf",
+                  "src": "209:2:40"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "299:15:40",
+                  "value": {
+                    "name": "value",
+                    "nodeType": "YulIdentifier",
+                    "src": "309:5:40"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value0",
+                      "nodeType": "YulIdentifier",
+                      "src": "299:6:40"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "abi_decode_tuple_t_bytes4",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "headStart",
+                "nodeType": "YulTypedName",
+                "src": "49:9:40",
+                "type": ""
+              },
+              {
+                "name": "dataEnd",
+                "nodeType": "YulTypedName",
+                "src": "60:7:40",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "value0",
+                "nodeType": "YulTypedName",
+                "src": "72:6:40",
+                "type": ""
+              }
+            ],
+            "src": "14:306:40"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "395:120:40",
+              "statements": [
+                {
+                  "body": {
+                    "nodeType": "YulBlock",
+                    "src": "441:26:40",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "name": "value0",
+                              "nodeType": "YulIdentifier",
+                              "src": "450:6:40"
+                            },
+                            {
+                              "name": "value0",
+                              "nodeType": "YulIdentifier",
+                              "src": "458:6:40"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "revert",
+                            "nodeType": "YulIdentifier",
+                            "src": "443:6:40"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "443:22:40"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "443:22:40"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "dataEnd",
+                            "nodeType": "YulIdentifier",
+                            "src": "416:7:40"
+                          },
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "425:9:40"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "sub",
+                          "nodeType": "YulIdentifier",
+                          "src": "412:3:40"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "412:23:40"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "437:2:40",
+                        "type": "",
+                        "value": "32"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "slt",
+                      "nodeType": "YulIdentifier",
+                      "src": "408:3:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "408:32:40"
+                  },
+                  "nodeType": "YulIf",
+                  "src": "405:2:40"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "476:33:40",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "499:9:40"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "calldataload",
+                      "nodeType": "YulIdentifier",
+                      "src": "486:12:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "486:23:40"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value0",
+                      "nodeType": "YulIdentifier",
+                      "src": "476:6:40"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "abi_decode_tuple_t_uint256",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "headStart",
+                "nodeType": "YulTypedName",
+                "src": "361:9:40",
+                "type": ""
+              },
+              {
+                "name": "dataEnd",
+                "nodeType": "YulTypedName",
+                "src": "372:7:40",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "value0",
+                "nodeType": "YulTypedName",
+                "src": "384:6:40",
+                "type": ""
+              }
+            ],
+            "src": "325:190:40"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "715:649:40",
+              "statements": [
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "725:12:40",
+                  "value": {
+                    "kind": "number",
+                    "nodeType": "YulLiteral",
+                    "src": "735:2:40",
+                    "type": "",
+                    "value": "32"
+                  },
+                  "variables": [
+                    {
+                      "name": "_1",
+                      "nodeType": "YulTypedName",
+                      "src": "729:2:40",
+                      "type": ""
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "746:32:40",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "764:9:40"
+                      },
+                      {
+                        "name": "_1",
+                        "nodeType": "YulIdentifier",
+                        "src": "775:2:40"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "add",
+                      "nodeType": "YulIdentifier",
+                      "src": "760:3:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "760:18:40"
+                  },
+                  "variables": [
+                    {
+                      "name": "tail_1",
+                      "nodeType": "YulTypedName",
+                      "src": "750:6:40",
+                      "type": ""
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "794:9:40"
+                      },
+                      {
+                        "name": "_1",
+                        "nodeType": "YulIdentifier",
+                        "src": "805:2:40"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mstore",
+                      "nodeType": "YulIdentifier",
+                      "src": "787:6:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "787:21:40"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "787:21:40"
+                },
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "817:17:40",
+                  "value": {
+                    "name": "tail_1",
+                    "nodeType": "YulIdentifier",
+                    "src": "828:6:40"
+                  },
+                  "variables": [
+                    {
+                      "name": "pos",
+                      "nodeType": "YulTypedName",
+                      "src": "821:3:40",
+                      "type": ""
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "843:27:40",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "value0",
+                        "nodeType": "YulIdentifier",
+                        "src": "863:6:40"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mload",
+                      "nodeType": "YulIdentifier",
+                      "src": "857:5:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "857:13:40"
+                  },
+                  "variables": [
+                    {
+                      "name": "length",
+                      "nodeType": "YulTypedName",
+                      "src": "847:6:40",
+                      "type": ""
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "tail_1",
+                        "nodeType": "YulIdentifier",
+                        "src": "886:6:40"
+                      },
+                      {
+                        "name": "length",
+                        "nodeType": "YulIdentifier",
+                        "src": "894:6:40"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mstore",
+                      "nodeType": "YulIdentifier",
+                      "src": "879:6:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "879:22:40"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "879:22:40"
+                },
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "910:12:40",
+                  "value": {
+                    "kind": "number",
+                    "nodeType": "YulLiteral",
+                    "src": "920:2:40",
+                    "type": "",
+                    "value": "64"
+                  },
+                  "variables": [
+                    {
+                      "name": "_2",
+                      "nodeType": "YulTypedName",
+                      "src": "914:2:40",
+                      "type": ""
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "931:25:40",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "942:9:40"
+                      },
+                      {
+                        "name": "_2",
+                        "nodeType": "YulIdentifier",
+                        "src": "953:2:40"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "add",
+                      "nodeType": "YulIdentifier",
+                      "src": "938:3:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "938:18:40"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "pos",
+                      "nodeType": "YulIdentifier",
+                      "src": "931:3:40"
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "965:29:40",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "value0",
+                        "nodeType": "YulIdentifier",
+                        "src": "983:6:40"
+                      },
+                      {
+                        "name": "_1",
+                        "nodeType": "YulIdentifier",
+                        "src": "991:2:40"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "add",
+                      "nodeType": "YulIdentifier",
+                      "src": "979:3:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "979:15:40"
+                  },
+                  "variables": [
+                    {
+                      "name": "srcPtr",
+                      "nodeType": "YulTypedName",
+                      "src": "969:6:40",
+                      "type": ""
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "1003:13:40",
+                  "value": {
+                    "name": "tail",
+                    "nodeType": "YulIdentifier",
+                    "src": "1012:4:40"
+                  },
+                  "variables": [
+                    {
+                      "name": "i",
+                      "nodeType": "YulTypedName",
+                      "src": "1007:1:40",
+                      "type": ""
+                    }
+                  ]
+                },
+                {
+                  "body": {
+                    "nodeType": "YulBlock",
+                    "src": "1074:264:40",
+                    "statements": [
+                      {
+                        "nodeType": "YulVariableDeclaration",
+                        "src": "1088:23:40",
+                        "value": {
+                          "arguments": [
+                            {
+                              "name": "srcPtr",
+                              "nodeType": "YulIdentifier",
+                              "src": "1104:6:40"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "mload",
+                            "nodeType": "YulIdentifier",
+                            "src": "1098:5:40"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "1098:13:40"
+                        },
+                        "variables": [
+                          {
+                            "name": "_3",
+                            "nodeType": "YulTypedName",
+                            "src": "1092:2:40",
+                            "type": ""
+                          }
+                        ]
+                      },
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "name": "pos",
+                              "nodeType": "YulIdentifier",
+                              "src": "1131:3:40"
+                            },
+                            {
+                              "arguments": [
+                                {
+                                  "arguments": [
+                                    {
+                                      "name": "_3",
+                                      "nodeType": "YulIdentifier",
+                                      "src": "1146:2:40"
+                                    }
+                                  ],
+                                  "functionName": {
+                                    "name": "mload",
+                                    "nodeType": "YulIdentifier",
+                                    "src": "1140:5:40"
+                                  },
+                                  "nodeType": "YulFunctionCall",
+                                  "src": "1140:9:40"
+                                },
+                                {
+                                  "arguments": [
+                                    {
+                                      "arguments": [
+                                        {
+                                          "kind": "number",
+                                          "nodeType": "YulLiteral",
+                                          "src": "1159:3:40",
+                                          "type": "",
+                                          "value": "160"
+                                        },
+                                        {
+                                          "kind": "number",
+                                          "nodeType": "YulLiteral",
+                                          "src": "1164:1:40",
+                                          "type": "",
+                                          "value": "1"
+                                        }
+                                      ],
+                                      "functionName": {
+                                        "name": "shl",
+                                        "nodeType": "YulIdentifier",
+                                        "src": "1155:3:40"
+                                      },
+                                      "nodeType": "YulFunctionCall",
+                                      "src": "1155:11:40"
+                                    },
+                                    {
+                                      "kind": "number",
+                                      "nodeType": "YulLiteral",
+                                      "src": "1168:1:40",
+                                      "type": "",
+                                      "value": "1"
+                                    }
+                                  ],
+                                  "functionName": {
+                                    "name": "sub",
+                                    "nodeType": "YulIdentifier",
+                                    "src": "1151:3:40"
+                                  },
+                                  "nodeType": "YulFunctionCall",
+                                  "src": "1151:19:40"
+                                }
+                              ],
+                              "functionName": {
+                                "name": "and",
+                                "nodeType": "YulIdentifier",
+                                "src": "1136:3:40"
+                              },
+                              "nodeType": "YulFunctionCall",
+                              "src": "1136:35:40"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "mstore",
+                            "nodeType": "YulIdentifier",
+                            "src": "1124:6:40"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "1124:48:40"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "1124:48:40"
+                      },
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "arguments": [
+                                {
+                                  "name": "pos",
+                                  "nodeType": "YulIdentifier",
+                                  "src": "1196:3:40"
+                                },
+                                {
+                                  "name": "_1",
+                                  "nodeType": "YulIdentifier",
+                                  "src": "1201:2:40"
+                                }
+                              ],
+                              "functionName": {
+                                "name": "add",
+                                "nodeType": "YulIdentifier",
+                                "src": "1192:3:40"
+                              },
+                              "nodeType": "YulFunctionCall",
+                              "src": "1192:12:40"
+                            },
+                            {
+                              "arguments": [
+                                {
+                                  "arguments": [
+                                    {
+                                      "arguments": [
+                                        {
+                                          "name": "_3",
+                                          "nodeType": "YulIdentifier",
+                                          "src": "1220:2:40"
+                                        },
+                                        {
+                                          "name": "_1",
+                                          "nodeType": "YulIdentifier",
+                                          "src": "1224:2:40"
+                                        }
+                                      ],
+                                      "functionName": {
+                                        "name": "add",
+                                        "nodeType": "YulIdentifier",
+                                        "src": "1216:3:40"
+                                      },
+                                      "nodeType": "YulFunctionCall",
+                                      "src": "1216:11:40"
+                                    }
+                                  ],
+                                  "functionName": {
+                                    "name": "mload",
+                                    "nodeType": "YulIdentifier",
+                                    "src": "1210:5:40"
+                                  },
+                                  "nodeType": "YulFunctionCall",
+                                  "src": "1210:18:40"
+                                },
+                                {
+                                  "kind": "number",
+                                  "nodeType": "YulLiteral",
+                                  "src": "1230:26:40",
+                                  "type": "",
+                                  "value": "0xffffffffffffffffffffffff"
+                                }
+                              ],
+                              "functionName": {
+                                "name": "and",
+                                "nodeType": "YulIdentifier",
+                                "src": "1206:3:40"
+                              },
+                              "nodeType": "YulFunctionCall",
+                              "src": "1206:51:40"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "mstore",
+                            "nodeType": "YulIdentifier",
+                            "src": "1185:6:40"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "1185:73:40"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "1185:73:40"
+                      },
+                      {
+                        "nodeType": "YulAssignment",
+                        "src": "1271:19:40",
+                        "value": {
+                          "arguments": [
+                            {
+                              "name": "pos",
+                              "nodeType": "YulIdentifier",
+                              "src": "1282:3:40"
+                            },
+                            {
+                              "name": "_2",
+                              "nodeType": "YulIdentifier",
+                              "src": "1287:2:40"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "add",
+                            "nodeType": "YulIdentifier",
+                            "src": "1278:3:40"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "1278:12:40"
+                        },
+                        "variableNames": [
+                          {
+                            "name": "pos",
+                            "nodeType": "YulIdentifier",
+                            "src": "1271:3:40"
+                          }
+                        ]
+                      },
+                      {
+                        "nodeType": "YulAssignment",
+                        "src": "1303:25:40",
+                        "value": {
+                          "arguments": [
+                            {
+                              "name": "srcPtr",
+                              "nodeType": "YulIdentifier",
+                              "src": "1317:6:40"
+                            },
+                            {
+                              "name": "_1",
+                              "nodeType": "YulIdentifier",
+                              "src": "1325:2:40"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "add",
+                            "nodeType": "YulIdentifier",
+                            "src": "1313:3:40"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "1313:15:40"
+                        },
+                        "variableNames": [
+                          {
+                            "name": "srcPtr",
+                            "nodeType": "YulIdentifier",
+                            "src": "1303:6:40"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "arguments": [
+                      {
+                        "name": "i",
+                        "nodeType": "YulIdentifier",
+                        "src": "1036:1:40"
+                      },
+                      {
+                        "name": "length",
+                        "nodeType": "YulIdentifier",
+                        "src": "1039:6:40"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "lt",
+                      "nodeType": "YulIdentifier",
+                      "src": "1033:2:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1033:13:40"
+                  },
+                  "nodeType": "YulForLoop",
+                  "post": {
+                    "nodeType": "YulBlock",
+                    "src": "1047:18:40",
+                    "statements": [
+                      {
+                        "nodeType": "YulAssignment",
+                        "src": "1049:14:40",
+                        "value": {
+                          "arguments": [
+                            {
+                              "name": "i",
+                              "nodeType": "YulIdentifier",
+                              "src": "1058:1:40"
+                            },
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "1061:1:40",
+                              "type": "",
+                              "value": "1"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "add",
+                            "nodeType": "YulIdentifier",
+                            "src": "1054:3:40"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "1054:9:40"
+                        },
+                        "variableNames": [
+                          {
+                            "name": "i",
+                            "nodeType": "YulIdentifier",
+                            "src": "1049:1:40"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "pre": {
+                    "nodeType": "YulBlock",
+                    "src": "1029:3:40",
+                    "statements": []
+                  },
+                  "src": "1025:313:40"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1347:11:40",
+                  "value": {
+                    "name": "pos",
+                    "nodeType": "YulIdentifier",
+                    "src": "1355:3:40"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "tail",
+                      "nodeType": "YulIdentifier",
+                      "src": "1347:4:40"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "abi_encode_tuple_t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr__to_t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr__fromStack_reversed",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "headStart",
+                "nodeType": "YulTypedName",
+                "src": "684:9:40",
+                "type": ""
+              },
+              {
+                "name": "value0",
+                "nodeType": "YulTypedName",
+                "src": "695:6:40",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "tail",
+                "nodeType": "YulTypedName",
+                "src": "706:4:40",
+                "type": ""
+              }
+            ],
+            "src": "520:844:40"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "1464:92:40",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1474:26:40",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "1486:9:40"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "1497:2:40",
+                        "type": "",
+                        "value": "32"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "add",
+                      "nodeType": "YulIdentifier",
+                      "src": "1482:3:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1482:18:40"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "tail",
+                      "nodeType": "YulIdentifier",
+                      "src": "1474:4:40"
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "1516:9:40"
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "arguments": [
+                              {
+                                "name": "value0",
+                                "nodeType": "YulIdentifier",
+                                "src": "1541:6:40"
+                              }
+                            ],
+                            "functionName": {
+                              "name": "iszero",
+                              "nodeType": "YulIdentifier",
+                              "src": "1534:6:40"
+                            },
+                            "nodeType": "YulFunctionCall",
+                            "src": "1534:14:40"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "iszero",
+                          "nodeType": "YulIdentifier",
+                          "src": "1527:6:40"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "1527:22:40"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mstore",
+                      "nodeType": "YulIdentifier",
+                      "src": "1509:6:40"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1509:41:40"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "1509:41:40"
+                }
+              ]
+            },
+            "name": "abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "headStart",
+                "nodeType": "YulTypedName",
+                "src": "1433:9:40",
+                "type": ""
+              },
+              {
+                "name": "value0",
+                "nodeType": "YulTypedName",
+                "src": "1444:6:40",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "tail",
+                "nodeType": "YulTypedName",
+                "src": "1455:4:40",
+                "type": ""
+              }
+            ],
+            "src": "1369:187:40"
+          }
+        ]
+      },
+      "contents": "{\n    { }\n    function abi_decode_tuple_t_bytes4(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(value0, value0) }\n        let value := calldataload(headStart)\n        if iszero(eq(value, and(value, shl(224, 0xffffffff)))) { revert(value0, value0) }\n        value0 := value\n    }\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(value0, value0) }\n        value0 := calldataload(headStart)\n    }\n    function abi_encode_tuple_t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr__to_t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr__fromStack_reversed(headStart, value0) -> tail\n    {\n        let _1 := 32\n        let tail_1 := add(headStart, _1)\n        mstore(headStart, _1)\n        let pos := tail_1\n        let length := mload(value0)\n        mstore(tail_1, length)\n        let _2 := 64\n        pos := add(headStart, _2)\n        let srcPtr := add(value0, _1)\n        let i := tail\n        for { } lt(i, length) { i := add(i, 1) }\n        {\n            let _3 := mload(srcPtr)\n            mstore(pos, and(mload(_3), sub(shl(160, 1), 1)))\n            mstore(add(pos, _1), and(mload(add(_3, _1)), 0xffffffffffffffffffffffff))\n            pos := add(pos, _2)\n            srcPtr := add(srcPtr, _1)\n        }\n        tail := pos\n    }\n    function abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, iszero(iszero(value0)))\n    }\n}",
+      "id": 40,
+      "language": "Yul",
+      "name": "#utility.yul"
+    }
+  ],
+  "sourceMap": "225:945:34:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "225:945:34:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1176:148:1;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;475:129:34;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;1176:148:1:-;-1:-1:-1;;;;;;1284:33:1;1261:4;1284:33;;;:20;:33;;;;;;;;;1176:148::o;475:129:34:-;538:21;578:19;571:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;571:26:34;;;;-1:-1:-1;;;571:26:34;;;;;;;;;;;;;;;;;;;;;;;;;475:129;;;:::o;14:306:40:-;;125:2;113:9;104:7;100:23;96:32;93:2;;;146:6;138;131:22;93:2;177:23;;-1:-1:-1;;;;;;229:32:40;;219:43;;209:2;;281:6;273;266:22;209:2;309:5;83:237;-1:-1:-1;;;83:237:40:o;325:190::-;;437:2;425:9;416:7;412:23;408:32;405:2;;;458:6;450;443:22;405:2;-1:-1:-1;486:23:40;;395:120;-1:-1:-1;395:120:40:o;520:844::-;735:2;787:21;;;857:13;;760:18;;;879:22;;;520:844;;735:2;920;;938:18;;;;979:15;;;520:844;1025:313;1039:6;1036:1;1033:13;1025:313;;;1098:13;;1140:9;;-1:-1:-1;;;;;1136:35:40;1124:48;;1216:11;;1210:18;1230:26;1206:51;1192:12;;;1185:73;1278:12;;;;1313:15;;;;1168:1;1054:9;1025:313;;;-1:-1:-1;1355:3:40;;715:649;-1:-1:-1;;;;;;;715:649:40:o;1369:187::-;1534:14;;1527:22;1509:41;;1497:2;1482:18;;1464:92::o",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.7.0;\npragma abicoder v2;\n\nimport \"@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol\";\n\n//royalties for gen-art, one royalty value for the whole collection\ncontract RoyaltiesV2GenImpl is RoyaltiesV2Upgradeable {\n    LibPart.Part[] collectionRoyalties;\n\n    function __RoyaltiesV2GenImpl_init_unchained(LibPart.Part[] memory _royalties) internal initializer {\n        _saveRoyalties(_royalties);\n    }\n\n    function getRoyalties(uint256) override external view returns (LibPart.Part[] memory) {\n        return collectionRoyalties;\n    }\n\n    function _saveRoyalties(LibPart.Part[] memory _royalties) internal {\n        for (uint i = 0; i < _royalties.length; i++) {\n            require(_royalties[i].account != address(0x0), \"Recipient should be present\");\n            require(_royalties[i].value != 0, \"Royalty value should be positive\");\n            collectionRoyalties.push(_royalties[i]);\n        }\n        _onRoyaltiesSet(_royalties);\n    }\n\n    function _onRoyaltiesSet(LibPart.Part[] memory _royalties) internal {\n        emit RoyaltiesSet(0, _royalties);\n    }\n\n    uint256[50] private __gap;\n}",
+  "sourcePath": "/home/quadro/Projects/rarible/generative-art/contracts/royalties/RoyaltiesV2GenImpl.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/royalties/RoyaltiesV2GenImpl.sol",
+    "exportedSymbols": {
+      "AddressUpgradeable": [
+        2047
+      ],
+      "ERC165Upgradeable": [
+        205
+      ],
+      "IERC165Upgradeable": [
+        217
+      ],
+      "Initializable": [
+        638
+      ],
+      "LibPart": [
+        4006
+      ],
+      "LibRoyaltiesV2": [
+        4012
+      ],
+      "RoyaltiesV2": [
+        4032
+      ],
+      "RoyaltiesV2GenImpl": [
+        4758
+      ],
+      "RoyaltiesV2Upgradeable": [
+        3974
+      ]
+    },
+    "id": 4759,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4654,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:34"
+      },
+      {
+        "id": 4655,
+        "literals": [
+          "abicoder",
+          "v2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:19:34"
+      },
+      {
+        "absolutePath": "@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol",
+        "file": "@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol",
+        "id": 4656,
+        "nodeType": "ImportDirective",
+        "scope": 4759,
+        "sourceUnit": 3975,
+        "src": "78:77:34",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 4657,
+              "name": "RoyaltiesV2Upgradeable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3974,
+              "src": "256:22:34",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_RoyaltiesV2Upgradeable_$3974",
+                "typeString": "contract RoyaltiesV2Upgradeable"
+              }
+            },
+            "id": 4658,
+            "nodeType": "InheritanceSpecifier",
+            "src": "256:22:34"
+          }
+        ],
+        "contractDependencies": [
+          205,
+          217,
+          638,
+          3974,
+          4032
+        ],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 4758,
+        "linearizedBaseContracts": [
+          4758,
+          3974,
+          4032,
+          205,
+          217,
+          638
+        ],
+        "name": "RoyaltiesV2GenImpl",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4661,
+            "mutability": "mutable",
+            "name": "collectionRoyalties",
+            "nodeType": "VariableDeclaration",
+            "scope": 4758,
+            "src": "285:34:34",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Part_$3986_storage_$dyn_storage",
+              "typeString": "struct LibPart.Part[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 4659,
+                "name": "LibPart.Part",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 3986,
+                "src": "285:12:34",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Part_$3986_storage_ptr",
+                  "typeString": "struct LibPart.Part"
+                }
+              },
+              "id": 4660,
+              "nodeType": "ArrayTypeName",
+              "src": "285:14:34",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Part_$3986_storage_$dyn_storage_ptr",
+                "typeString": "struct LibPart.Part[]"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 4673,
+              "nodeType": "Block",
+              "src": "426:43:34",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 4670,
+                        "name": "_royalties",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4664,
+                        "src": "451:10:34",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct LibPart.Part memory[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct LibPart.Part memory[] memory"
+                        }
+                      ],
+                      "id": 4669,
+                      "name": "_saveRoyalties",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4741,
+                      "src": "436:14:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr_$returns$__$",
+                        "typeString": "function (struct LibPart.Part memory[] memory)"
+                      }
+                    },
+                    "id": 4671,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "436:26:34",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4672,
+                  "nodeType": "ExpressionStatement",
+                  "src": "436:26:34"
+                }
+              ]
+            },
+            "id": 4674,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 4667,
+                "modifierName": {
+                  "id": 4666,
+                  "name": "initializer",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 621,
+                  "src": "414:11:34",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "414:11:34"
+              }
+            ],
+            "name": "__RoyaltiesV2GenImpl_init_unchained",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4665,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4664,
+                  "mutability": "mutable",
+                  "name": "_royalties",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4674,
+                  "src": "371:32:34",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct LibPart.Part[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4662,
+                      "name": "LibPart.Part",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 3986,
+                      "src": "371:12:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Part_$3986_storage_ptr",
+                        "typeString": "struct LibPart.Part"
+                      }
+                    },
+                    "id": 4663,
+                    "nodeType": "ArrayTypeName",
+                    "src": "371:14:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Part_$3986_storage_$dyn_storage_ptr",
+                      "typeString": "struct LibPart.Part[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "370:34:34"
+            },
+            "returnParameters": {
+              "id": 4668,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "426:0:34"
+            },
+            "scope": 4758,
+            "src": "326:143:34",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "baseFunctions": [
+              4031
+            ],
+            "body": {
+              "id": 4685,
+              "nodeType": "Block",
+              "src": "561:43:34",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 4683,
+                    "name": "collectionRoyalties",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 4661,
+                    "src": "578:19:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Part_$3986_storage_$dyn_storage",
+                      "typeString": "struct LibPart.Part storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 4682,
+                  "id": 4684,
+                  "nodeType": "Return",
+                  "src": "571:26:34"
+                }
+              ]
+            },
+            "functionSelector": "bb3bafd6",
+            "id": 4686,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getRoyalties",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 4678,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "506:8:34"
+            },
+            "parameters": {
+              "id": 4677,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4676,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4686,
+                  "src": "497:7:34",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4675,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "497:7:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "496:9:34"
+            },
+            "returnParameters": {
+              "id": 4682,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4681,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4686,
+                  "src": "538:21:34",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct LibPart.Part[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4679,
+                      "name": "LibPart.Part",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 3986,
+                      "src": "538:12:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Part_$3986_storage_ptr",
+                        "typeString": "struct LibPart.Part"
+                      }
+                    },
+                    "id": 4680,
+                    "nodeType": "ArrayTypeName",
+                    "src": "538:14:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Part_$3986_storage_$dyn_storage_ptr",
+                      "typeString": "struct LibPart.Part[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "537:23:34"
+            },
+            "scope": 4758,
+            "src": "475:129:34",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 4740,
+              "nodeType": "Block",
+              "src": "677:336:34",
+              "statements": [
+                {
+                  "body": {
+                    "id": 4734,
+                    "nodeType": "Block",
+                    "src": "732:238:34",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "commonType": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              },
+                              "id": 4712,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "leftExpression": {
+                                "expression": {
+                                  "baseExpression": {
+                                    "id": 4704,
+                                    "name": "_royalties",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 4689,
+                                    "src": "754:10:34",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                                      "typeString": "struct LibPart.Part memory[] memory"
+                                    }
+                                  },
+                                  "id": 4706,
+                                  "indexExpression": {
+                                    "id": 4705,
+                                    "name": "i",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 4693,
+                                    "src": "765:1:34",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "nodeType": "IndexAccess",
+                                  "src": "754:13:34",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_Part_$3986_memory_ptr",
+                                    "typeString": "struct LibPart.Part memory"
+                                  }
+                                },
+                                "id": 4707,
+                                "isConstant": false,
+                                "isLValue": true,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "account",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 3983,
+                                "src": "754:21:34",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                }
+                              },
+                              "nodeType": "BinaryOperation",
+                              "operator": "!=",
+                              "rightExpression": {
+                                "arguments": [
+                                  {
+                                    "hexValue": "307830",
+                                    "id": 4710,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": true,
+                                    "kind": "number",
+                                    "lValueRequested": false,
+                                    "nodeType": "Literal",
+                                    "src": "787:3:34",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_rational_0_by_1",
+                                      "typeString": "int_const 0"
+                                    },
+                                    "value": "0x0"
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_rational_0_by_1",
+                                      "typeString": "int_const 0"
+                                    }
+                                  ],
+                                  "id": 4709,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "nodeType": "ElementaryTypeNameExpression",
+                                  "src": "779:7:34",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_address_$",
+                                    "typeString": "type(address)"
+                                  },
+                                  "typeName": {
+                                    "id": 4708,
+                                    "name": "address",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "779:7:34",
+                                    "typeDescriptions": {}
+                                  }
+                                },
+                                "id": 4711,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "typeConversion",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "779:12:34",
+                                "tryCall": false,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                }
+                              },
+                              "src": "754:37:34",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
+                            {
+                              "hexValue": "526563697069656e742073686f756c642062652070726573656e74",
+                              "id": 4713,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "string",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "793:29:34",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_stringliteral_ee50f6df2181dd19e502443265ec469bb75e8a65bb811a800aad148381cf8508",
+                                "typeString": "literal_string \"Recipient should be present\""
+                              },
+                              "value": "Recipient should be present"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              {
+                                "typeIdentifier": "t_stringliteral_ee50f6df2181dd19e502443265ec469bb75e8a65bb811a800aad148381cf8508",
+                                "typeString": "literal_string \"Recipient should be present\""
+                              }
+                            ],
+                            "id": 4703,
+                            "name": "require",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [
+                              4294967278,
+                              4294967278
+                            ],
+                            "referencedDeclaration": 4294967278,
+                            "src": "746:7:34",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                              "typeString": "function (bool,string memory) pure"
+                            }
+                          },
+                          "id": 4714,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "746:77:34",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 4715,
+                        "nodeType": "ExpressionStatement",
+                        "src": "746:77:34"
+                      },
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "commonType": {
+                                "typeIdentifier": "t_uint96",
+                                "typeString": "uint96"
+                              },
+                              "id": 4722,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "leftExpression": {
+                                "expression": {
+                                  "baseExpression": {
+                                    "id": 4717,
+                                    "name": "_royalties",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 4689,
+                                    "src": "845:10:34",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                                      "typeString": "struct LibPart.Part memory[] memory"
+                                    }
+                                  },
+                                  "id": 4719,
+                                  "indexExpression": {
+                                    "id": 4718,
+                                    "name": "i",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 4693,
+                                    "src": "856:1:34",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "nodeType": "IndexAccess",
+                                  "src": "845:13:34",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_Part_$3986_memory_ptr",
+                                    "typeString": "struct LibPart.Part memory"
+                                  }
+                                },
+                                "id": 4720,
+                                "isConstant": false,
+                                "isLValue": true,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberName": "value",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 3985,
+                                "src": "845:19:34",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint96",
+                                  "typeString": "uint96"
+                                }
+                              },
+                              "nodeType": "BinaryOperation",
+                              "operator": "!=",
+                              "rightExpression": {
+                                "hexValue": "30",
+                                "id": 4721,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "868:1:34",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_rational_0_by_1",
+                                  "typeString": "int_const 0"
+                                },
+                                "value": "0"
+                              },
+                              "src": "845:24:34",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
+                            {
+                              "hexValue": "526f79616c74792076616c75652073686f756c6420626520706f736974697665",
+                              "id": 4723,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "string",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "871:34:34",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_stringliteral_593311831d740e3a682cd1941decbdb819cd1a530afb770ecfcfb0c7a8b3d52a",
+                                "typeString": "literal_string \"Royalty value should be positive\""
+                              },
+                              "value": "Royalty value should be positive"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              {
+                                "typeIdentifier": "t_stringliteral_593311831d740e3a682cd1941decbdb819cd1a530afb770ecfcfb0c7a8b3d52a",
+                                "typeString": "literal_string \"Royalty value should be positive\""
+                              }
+                            ],
+                            "id": 4716,
+                            "name": "require",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [
+                              4294967278,
+                              4294967278
+                            ],
+                            "referencedDeclaration": 4294967278,
+                            "src": "837:7:34",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                              "typeString": "function (bool,string memory) pure"
+                            }
+                          },
+                          "id": 4724,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "837:69:34",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 4725,
+                        "nodeType": "ExpressionStatement",
+                        "src": "837:69:34"
+                      },
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "baseExpression": {
+                                "id": 4729,
+                                "name": "_royalties",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 4689,
+                                "src": "945:10:34",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                                  "typeString": "struct LibPart.Part memory[] memory"
+                                }
+                              },
+                              "id": 4731,
+                              "indexExpression": {
+                                "id": 4730,
+                                "name": "i",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 4693,
+                                "src": "956:1:34",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "945:13:34",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Part_$3986_memory_ptr",
+                                "typeString": "struct LibPart.Part memory"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_struct$_Part_$3986_memory_ptr",
+                                "typeString": "struct LibPart.Part memory"
+                              }
+                            ],
+                            "expression": {
+                              "id": 4726,
+                              "name": "collectionRoyalties",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4661,
+                              "src": "920:19:34",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_struct$_Part_$3986_storage_$dyn_storage",
+                                "typeString": "struct LibPart.Part storage ref[] storage ref"
+                              }
+                            },
+                            "id": 4728,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "push",
+                            "nodeType": "MemberAccess",
+                            "src": "920:24:34",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Part_$3986_storage_$returns$__$",
+                              "typeString": "function (struct LibPart.Part storage ref)"
+                            }
+                          },
+                          "id": 4732,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "920:39:34",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 4733,
+                        "nodeType": "ExpressionStatement",
+                        "src": "920:39:34"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 4699,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 4696,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4693,
+                      "src": "704:1:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "expression": {
+                        "id": 4697,
+                        "name": "_royalties",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4689,
+                        "src": "708:10:34",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct LibPart.Part memory[] memory"
+                        }
+                      },
+                      "id": 4698,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "src": "708:17:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "704:21:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 4735,
+                  "initializationExpression": {
+                    "assignments": [
+                      4693
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 4693,
+                        "mutability": "mutable",
+                        "name": "i",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 4735,
+                        "src": "692:6:34",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 4692,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "692:4:34",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 4695,
+                    "initialValue": {
+                      "hexValue": "30",
+                      "id": 4694,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "701:1:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "692:10:34"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "id": 4701,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "727:3:34",
+                      "subExpression": {
+                        "id": 4700,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4693,
+                        "src": "727:1:34",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 4702,
+                    "nodeType": "ExpressionStatement",
+                    "src": "727:3:34"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "687:283:34"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 4737,
+                        "name": "_royalties",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4689,
+                        "src": "995:10:34",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct LibPart.Part memory[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct LibPart.Part memory[] memory"
+                        }
+                      ],
+                      "id": 4736,
+                      "name": "_onRoyaltiesSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4753,
+                      "src": "979:15:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr_$returns$__$",
+                        "typeString": "function (struct LibPart.Part memory[] memory)"
+                      }
+                    },
+                    "id": 4738,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "979:27:34",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4739,
+                  "nodeType": "ExpressionStatement",
+                  "src": "979:27:34"
+                }
+              ]
+            },
+            "id": 4741,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_saveRoyalties",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4690,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4689,
+                  "mutability": "mutable",
+                  "name": "_royalties",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4741,
+                  "src": "634:32:34",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct LibPart.Part[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4687,
+                      "name": "LibPart.Part",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 3986,
+                      "src": "634:12:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Part_$3986_storage_ptr",
+                        "typeString": "struct LibPart.Part"
+                      }
+                    },
+                    "id": 4688,
+                    "nodeType": "ArrayTypeName",
+                    "src": "634:14:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Part_$3986_storage_$dyn_storage_ptr",
+                      "typeString": "struct LibPart.Part[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "633:34:34"
+            },
+            "returnParameters": {
+              "id": 4691,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "677:0:34"
+            },
+            "scope": 4758,
+            "src": "610:403:34",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 4752,
+              "nodeType": "Block",
+              "src": "1087:49:34",
+              "statements": [
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "hexValue": "30",
+                        "id": 4748,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1115:1:34",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "id": 4749,
+                        "name": "_royalties",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4744,
+                        "src": "1118:10:34",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct LibPart.Part memory[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct LibPart.Part memory[] memory"
+                        }
+                      ],
+                      "id": 4747,
+                      "name": "RoyaltiesSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4023,
+                      "src": "1102:12:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr_$returns$__$",
+                        "typeString": "function (uint256,struct LibPart.Part memory[] memory)"
+                      }
+                    },
+                    "id": 4750,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1102:27:34",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4751,
+                  "nodeType": "EmitStatement",
+                  "src": "1097:32:34"
+                }
+              ]
+            },
+            "id": 4753,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_onRoyaltiesSet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4745,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4744,
+                  "mutability": "mutable",
+                  "name": "_royalties",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4753,
+                  "src": "1044:32:34",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct LibPart.Part[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4742,
+                      "name": "LibPart.Part",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 3986,
+                      "src": "1044:12:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Part_$3986_storage_ptr",
+                        "typeString": "struct LibPart.Part"
+                      }
+                    },
+                    "id": 4743,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1044:14:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Part_$3986_storage_$dyn_storage_ptr",
+                      "typeString": "struct LibPart.Part[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1043:34:34"
+            },
+            "returnParameters": {
+              "id": 4746,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1087:0:34"
+            },
+            "scope": 4758,
+            "src": "1019:117:34",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 4757,
+            "mutability": "mutable",
+            "name": "__gap",
+            "nodeType": "VariableDeclaration",
+            "scope": 4758,
+            "src": "1142:25:34",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_uint256_$50_storage",
+              "typeString": "uint256[50]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 4754,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "1142:7:34",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "id": 4756,
+              "length": {
+                "hexValue": "3530",
+                "id": 4755,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "1150:2:34",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_50_by_1",
+                  "typeString": "int_const 50"
+                },
+                "value": "50"
+              },
+              "nodeType": "ArrayTypeName",
+              "src": "1142:11:34",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_uint256_$50_storage_ptr",
+                "typeString": "uint256[50]"
+              }
+            },
+            "visibility": "private"
+          }
+        ],
+        "scope": 4759,
+        "src": "225:945:34"
+      }
+    ],
+    "src": "33:1137:34"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/royalties/RoyaltiesV2GenImpl.sol",
+      "exportedSymbols": {
+        "AddressUpgradeable": [
+          2047
+        ],
+        "ERC165Upgradeable": [
+          205
+        ],
+        "IERC165Upgradeable": [
+          217
+        ],
+        "Initializable": [
+          638
+        ],
+        "LibPart": [
+          4006
+        ],
+        "LibRoyaltiesV2": [
+          4012
+        ],
+        "RoyaltiesV2": [
+          4032
+        ],
+        "RoyaltiesV2GenImpl": [
+          4758
+        ],
+        "RoyaltiesV2Upgradeable": [
+          3974
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.7",
+            ".0"
+          ]
+        },
+        "id": 4654,
+        "name": "PragmaDirective",
+        "src": "33:23:34"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "abicoder",
+            "v2"
+          ]
+        },
+        "id": 4655,
+        "name": "PragmaDirective",
+        "src": "57:19:34"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 3975,
+          "absolutePath": "@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol",
+          "file": "@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol",
+          "scope": 4759,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 4656,
+        "name": "ImportDirective",
+        "src": "78:77:34"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            205,
+            217,
+            638,
+            3974,
+            4032
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            4758,
+            3974,
+            4032,
+            205,
+            217,
+            638
+          ],
+          "name": "RoyaltiesV2GenImpl",
+          "scope": 4759
+        },
+        "children": [
+          {
+            "attributes": {},
+            "children": [
+              {
+                "attributes": {
+                  "name": "RoyaltiesV2Upgradeable",
+                  "referencedDeclaration": 3974,
+                  "type": "contract RoyaltiesV2Upgradeable"
+                },
+                "id": 4657,
+                "name": "UserDefinedTypeName",
+                "src": "256:22:34"
+              }
+            ],
+            "id": 4658,
+            "name": "InheritanceSpecifier",
+            "src": "256:22:34"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "collectionRoyalties",
+              "scope": 4758,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct LibPart.Part[]",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "struct LibPart.Part[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "LibPart.Part",
+                      "referencedDeclaration": 3986,
+                      "type": "struct LibPart.Part"
+                    },
+                    "id": 4659,
+                    "name": "UserDefinedTypeName",
+                    "src": "285:12:34"
+                  }
+                ],
+                "id": 4660,
+                "name": "ArrayTypeName",
+                "src": "285:14:34"
+              }
+            ],
+            "id": 4661,
+            "name": "VariableDeclaration",
+            "src": "285:34:34"
+          },
+          {
+            "attributes": {
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "name": "__RoyaltiesV2GenImpl_init_unchained",
+              "scope": 4758,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_royalties",
+                      "scope": 4674,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct LibPart.Part[]",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "struct LibPart.Part[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "LibPart.Part",
+                              "referencedDeclaration": 3986,
+                              "type": "struct LibPart.Part"
+                            },
+                            "id": 4662,
+                            "name": "UserDefinedTypeName",
+                            "src": "371:12:34"
+                          }
+                        ],
+                        "id": 4663,
+                        "name": "ArrayTypeName",
+                        "src": "371:14:34"
+                      }
+                    ],
+                    "id": 4664,
+                    "name": "VariableDeclaration",
+                    "src": "371:32:34"
+                  }
+                ],
+                "id": 4665,
+                "name": "ParameterList",
+                "src": "370:34:34"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4668,
+                "name": "ParameterList",
+                "src": "426:0:34"
+              },
+              {
+                "attributes": {},
+                "children": [
+                  {
+                    "attributes": {
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 621,
+                      "type": "modifier ()",
+                      "value": "initializer"
+                    },
+                    "id": 4666,
+                    "name": "Identifier",
+                    "src": "414:11:34"
+                  }
+                ],
+                "id": 4667,
+                "name": "ModifierInvocation",
+                "src": "414:11:34"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                                  "typeString": "struct LibPart.Part memory[] memory"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4741,
+                              "type": "function (struct LibPart.Part memory[] memory)",
+                              "value": "_saveRoyalties"
+                            },
+                            "id": 4669,
+                            "name": "Identifier",
+                            "src": "436:14:34"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4664,
+                              "type": "struct LibPart.Part memory[] memory",
+                              "value": "_royalties"
+                            },
+                            "id": 4670,
+                            "name": "Identifier",
+                            "src": "451:10:34"
+                          }
+                        ],
+                        "id": 4671,
+                        "name": "FunctionCall",
+                        "src": "436:26:34"
+                      }
+                    ],
+                    "id": 4672,
+                    "name": "ExpressionStatement",
+                    "src": "436:26:34"
+                  }
+                ],
+                "id": 4673,
+                "name": "Block",
+                "src": "426:43:34"
+              }
+            ],
+            "id": 4674,
+            "name": "FunctionDefinition",
+            "src": "326:143:34"
+          },
+          {
+            "attributes": {
+              "baseFunctions": [
+                4031
+              ],
+              "functionSelector": "bb3bafd6",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getRoyalties",
+              "scope": 4758,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "overrides": [
+                    null
+                  ]
+                },
+                "id": 4678,
+                "name": "OverrideSpecifier",
+                "src": "506:8:34"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 4686,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4675,
+                        "name": "ElementaryTypeName",
+                        "src": "497:7:34"
+                      }
+                    ],
+                    "id": 4676,
+                    "name": "VariableDeclaration",
+                    "src": "497:7:34"
+                  }
+                ],
+                "id": 4677,
+                "name": "ParameterList",
+                "src": "496:9:34"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 4686,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct LibPart.Part[]",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "struct LibPart.Part[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "LibPart.Part",
+                              "referencedDeclaration": 3986,
+                              "type": "struct LibPart.Part"
+                            },
+                            "id": 4679,
+                            "name": "UserDefinedTypeName",
+                            "src": "538:12:34"
+                          }
+                        ],
+                        "id": 4680,
+                        "name": "ArrayTypeName",
+                        "src": "538:14:34"
+                      }
+                    ],
+                    "id": 4681,
+                    "name": "VariableDeclaration",
+                    "src": "538:21:34"
+                  }
+                ],
+                "id": 4682,
+                "name": "ParameterList",
+                "src": "537:23:34"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 4682
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 4661,
+                          "type": "struct LibPart.Part storage ref[] storage ref",
+                          "value": "collectionRoyalties"
+                        },
+                        "id": 4683,
+                        "name": "Identifier",
+                        "src": "578:19:34"
+                      }
+                    ],
+                    "id": 4684,
+                    "name": "Return",
+                    "src": "571:26:34"
+                  }
+                ],
+                "id": 4685,
+                "name": "Block",
+                "src": "561:43:34"
+              }
+            ],
+            "id": 4686,
+            "name": "FunctionDefinition",
+            "src": "475:129:34"
+          },
+          {
+            "attributes": {
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "_saveRoyalties",
+              "scope": 4758,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_royalties",
+                      "scope": 4741,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct LibPart.Part[]",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "struct LibPart.Part[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "LibPart.Part",
+                              "referencedDeclaration": 3986,
+                              "type": "struct LibPart.Part"
+                            },
+                            "id": 4687,
+                            "name": "UserDefinedTypeName",
+                            "src": "634:12:34"
+                          }
+                        ],
+                        "id": 4688,
+                        "name": "ArrayTypeName",
+                        "src": "634:14:34"
+                      }
+                    ],
+                    "id": 4689,
+                    "name": "VariableDeclaration",
+                    "src": "634:32:34"
+                  }
+                ],
+                "id": 4690,
+                "name": "ParameterList",
+                "src": "633:34:34"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4691,
+                "name": "ParameterList",
+                "src": "677:0:34"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "assignments": [
+                            4693
+                          ]
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "constant": false,
+                              "mutability": "mutable",
+                              "name": "i",
+                              "scope": 4735,
+                              "stateVariable": false,
+                              "storageLocation": "default",
+                              "type": "uint256",
+                              "visibility": "internal"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "name": "uint",
+                                  "type": "uint256"
+                                },
+                                "id": 4692,
+                                "name": "ElementaryTypeName",
+                                "src": "692:4:34"
+                              }
+                            ],
+                            "id": 4693,
+                            "name": "VariableDeclaration",
+                            "src": "692:6:34"
+                          },
+                          {
+                            "attributes": {
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 4694,
+                            "name": "Literal",
+                            "src": "701:1:34"
+                          }
+                        ],
+                        "id": 4695,
+                        "name": "VariableDeclarationStatement",
+                        "src": "692:10:34"
+                      },
+                      {
+                        "attributes": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "<",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4693,
+                              "type": "uint256",
+                              "value": "i"
+                            },
+                            "id": 4696,
+                            "name": "Identifier",
+                            "src": "704:1:34"
+                          },
+                          {
+                            "attributes": {
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "length",
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4689,
+                                  "type": "struct LibPart.Part memory[] memory",
+                                  "value": "_royalties"
+                                },
+                                "id": 4697,
+                                "name": "Identifier",
+                                "src": "708:10:34"
+                              }
+                            ],
+                            "id": 4698,
+                            "name": "MemberAccess",
+                            "src": "708:17:34"
+                          }
+                        ],
+                        "id": 4699,
+                        "name": "BinaryOperation",
+                        "src": "704:21:34"
+                      },
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "++",
+                              "prefix": false,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4693,
+                                  "type": "uint256",
+                                  "value": "i"
+                                },
+                                "id": 4700,
+                                "name": "Identifier",
+                                "src": "727:1:34"
+                              }
+                            ],
+                            "id": 4701,
+                            "name": "UnaryOperation",
+                            "src": "727:3:34"
+                          }
+                        ],
+                        "id": 4702,
+                        "name": "ExpressionStatement",
+                        "src": "727:3:34"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "tryCall": false,
+                                  "type": "tuple()",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_bool",
+                                          "typeString": "bool"
+                                        },
+                                        {
+                                          "typeIdentifier": "t_stringliteral_ee50f6df2181dd19e502443265ec469bb75e8a65bb811a800aad148381cf8508",
+                                          "typeString": "literal_string \"Recipient should be present\""
+                                        }
+                                      ],
+                                      "overloadedDeclarations": [
+                                        4294967278,
+                                        4294967278
+                                      ],
+                                      "referencedDeclaration": 4294967278,
+                                      "type": "function (bool,string memory) pure",
+                                      "value": "require"
+                                    },
+                                    "id": 4703,
+                                    "name": "Identifier",
+                                    "src": "746:7:34"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "commonType": {
+                                        "typeIdentifier": "t_address_payable",
+                                        "typeString": "address payable"
+                                      },
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "operator": "!=",
+                                      "type": "bool"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "isConstant": false,
+                                          "isLValue": true,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "member_name": "account",
+                                          "referencedDeclaration": 3983,
+                                          "type": "address payable"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "isConstant": false,
+                                              "isLValue": true,
+                                              "isPure": false,
+                                              "lValueRequested": false,
+                                              "type": "struct LibPart.Part memory"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "overloadedDeclarations": [
+                                                    null
+                                                  ],
+                                                  "referencedDeclaration": 4689,
+                                                  "type": "struct LibPart.Part memory[] memory",
+                                                  "value": "_royalties"
+                                                },
+                                                "id": 4704,
+                                                "name": "Identifier",
+                                                "src": "754:10:34"
+                                              },
+                                              {
+                                                "attributes": {
+                                                  "overloadedDeclarations": [
+                                                    null
+                                                  ],
+                                                  "referencedDeclaration": 4693,
+                                                  "type": "uint256",
+                                                  "value": "i"
+                                                },
+                                                "id": 4705,
+                                                "name": "Identifier",
+                                                "src": "765:1:34"
+                                              }
+                                            ],
+                                            "id": 4706,
+                                            "name": "IndexAccess",
+                                            "src": "754:13:34"
+                                          }
+                                        ],
+                                        "id": 4707,
+                                        "name": "MemberAccess",
+                                        "src": "754:21:34"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": true,
+                                          "isStructConstructorCall": false,
+                                          "lValueRequested": false,
+                                          "names": [
+                                            null
+                                          ],
+                                          "tryCall": false,
+                                          "type": "address payable",
+                                          "type_conversion": true
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": [
+                                                {
+                                                  "typeIdentifier": "t_rational_0_by_1",
+                                                  "typeString": "int_const 0"
+                                                }
+                                              ],
+                                              "isConstant": false,
+                                              "isLValue": false,
+                                              "isPure": true,
+                                              "lValueRequested": false,
+                                              "type": "type(address)"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "name": "address"
+                                                },
+                                                "id": 4708,
+                                                "name": "ElementaryTypeName",
+                                                "src": "779:7:34"
+                                              }
+                                            ],
+                                            "id": 4709,
+                                            "name": "ElementaryTypeNameExpression",
+                                            "src": "779:7:34"
+                                          },
+                                          {
+                                            "attributes": {
+                                              "hexvalue": "307830",
+                                              "isConstant": false,
+                                              "isLValue": false,
+                                              "isPure": true,
+                                              "lValueRequested": false,
+                                              "token": "number",
+                                              "type": "int_const 0",
+                                              "value": "0x0"
+                                            },
+                                            "id": 4710,
+                                            "name": "Literal",
+                                            "src": "787:3:34"
+                                          }
+                                        ],
+                                        "id": 4711,
+                                        "name": "FunctionCall",
+                                        "src": "779:12:34"
+                                      }
+                                    ],
+                                    "id": 4712,
+                                    "name": "BinaryOperation",
+                                    "src": "754:37:34"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "hexvalue": "526563697069656e742073686f756c642062652070726573656e74",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "token": "string",
+                                      "type": "literal_string \"Recipient should be present\"",
+                                      "value": "Recipient should be present"
+                                    },
+                                    "id": 4713,
+                                    "name": "Literal",
+                                    "src": "793:29:34"
+                                  }
+                                ],
+                                "id": 4714,
+                                "name": "FunctionCall",
+                                "src": "746:77:34"
+                              }
+                            ],
+                            "id": 4715,
+                            "name": "ExpressionStatement",
+                            "src": "746:77:34"
+                          },
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "tryCall": false,
+                                  "type": "tuple()",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_bool",
+                                          "typeString": "bool"
+                                        },
+                                        {
+                                          "typeIdentifier": "t_stringliteral_593311831d740e3a682cd1941decbdb819cd1a530afb770ecfcfb0c7a8b3d52a",
+                                          "typeString": "literal_string \"Royalty value should be positive\""
+                                        }
+                                      ],
+                                      "overloadedDeclarations": [
+                                        4294967278,
+                                        4294967278
+                                      ],
+                                      "referencedDeclaration": 4294967278,
+                                      "type": "function (bool,string memory) pure",
+                                      "value": "require"
+                                    },
+                                    "id": 4716,
+                                    "name": "Identifier",
+                                    "src": "837:7:34"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "commonType": {
+                                        "typeIdentifier": "t_uint96",
+                                        "typeString": "uint96"
+                                      },
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "operator": "!=",
+                                      "type": "bool"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "isConstant": false,
+                                          "isLValue": true,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "member_name": "value",
+                                          "referencedDeclaration": 3985,
+                                          "type": "uint96"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "isConstant": false,
+                                              "isLValue": true,
+                                              "isPure": false,
+                                              "lValueRequested": false,
+                                              "type": "struct LibPart.Part memory"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "overloadedDeclarations": [
+                                                    null
+                                                  ],
+                                                  "referencedDeclaration": 4689,
+                                                  "type": "struct LibPart.Part memory[] memory",
+                                                  "value": "_royalties"
+                                                },
+                                                "id": 4717,
+                                                "name": "Identifier",
+                                                "src": "845:10:34"
+                                              },
+                                              {
+                                                "attributes": {
+                                                  "overloadedDeclarations": [
+                                                    null
+                                                  ],
+                                                  "referencedDeclaration": 4693,
+                                                  "type": "uint256",
+                                                  "value": "i"
+                                                },
+                                                "id": 4718,
+                                                "name": "Identifier",
+                                                "src": "856:1:34"
+                                              }
+                                            ],
+                                            "id": 4719,
+                                            "name": "IndexAccess",
+                                            "src": "845:13:34"
+                                          }
+                                        ],
+                                        "id": 4720,
+                                        "name": "MemberAccess",
+                                        "src": "845:19:34"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "hexvalue": "30",
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": true,
+                                          "lValueRequested": false,
+                                          "token": "number",
+                                          "type": "int_const 0",
+                                          "value": "0"
+                                        },
+                                        "id": 4721,
+                                        "name": "Literal",
+                                        "src": "868:1:34"
+                                      }
+                                    ],
+                                    "id": 4722,
+                                    "name": "BinaryOperation",
+                                    "src": "845:24:34"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "hexvalue": "526f79616c74792076616c75652073686f756c6420626520706f736974697665",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "token": "string",
+                                      "type": "literal_string \"Royalty value should be positive\"",
+                                      "value": "Royalty value should be positive"
+                                    },
+                                    "id": 4723,
+                                    "name": "Literal",
+                                    "src": "871:34:34"
+                                  }
+                                ],
+                                "id": 4724,
+                                "name": "FunctionCall",
+                                "src": "837:69:34"
+                              }
+                            ],
+                            "id": 4725,
+                            "name": "ExpressionStatement",
+                            "src": "837:69:34"
+                          },
+                          {
+                            "children": [
+                              {
+                                "attributes": {
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "tryCall": false,
+                                  "type": "tuple()",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_struct$_Part_$3986_memory_ptr",
+                                          "typeString": "struct LibPart.Part memory"
+                                        }
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "push",
+                                      "type": "function (struct LibPart.Part storage ref)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 4661,
+                                          "type": "struct LibPart.Part storage ref[] storage ref",
+                                          "value": "collectionRoyalties"
+                                        },
+                                        "id": 4726,
+                                        "name": "Identifier",
+                                        "src": "920:19:34"
+                                      }
+                                    ],
+                                    "id": 4728,
+                                    "name": "MemberAccess",
+                                    "src": "920:24:34"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "type": "struct LibPart.Part memory"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 4689,
+                                          "type": "struct LibPart.Part memory[] memory",
+                                          "value": "_royalties"
+                                        },
+                                        "id": 4729,
+                                        "name": "Identifier",
+                                        "src": "945:10:34"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 4693,
+                                          "type": "uint256",
+                                          "value": "i"
+                                        },
+                                        "id": 4730,
+                                        "name": "Identifier",
+                                        "src": "956:1:34"
+                                      }
+                                    ],
+                                    "id": 4731,
+                                    "name": "IndexAccess",
+                                    "src": "945:13:34"
+                                  }
+                                ],
+                                "id": 4732,
+                                "name": "FunctionCall",
+                                "src": "920:39:34"
+                              }
+                            ],
+                            "id": 4733,
+                            "name": "ExpressionStatement",
+                            "src": "920:39:34"
+                          }
+                        ],
+                        "id": 4734,
+                        "name": "Block",
+                        "src": "732:238:34"
+                      }
+                    ],
+                    "id": 4735,
+                    "name": "ForStatement",
+                    "src": "687:283:34"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                                  "typeString": "struct LibPart.Part memory[] memory"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4753,
+                              "type": "function (struct LibPart.Part memory[] memory)",
+                              "value": "_onRoyaltiesSet"
+                            },
+                            "id": 4736,
+                            "name": "Identifier",
+                            "src": "979:15:34"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4689,
+                              "type": "struct LibPart.Part memory[] memory",
+                              "value": "_royalties"
+                            },
+                            "id": 4737,
+                            "name": "Identifier",
+                            "src": "995:10:34"
+                          }
+                        ],
+                        "id": 4738,
+                        "name": "FunctionCall",
+                        "src": "979:27:34"
+                      }
+                    ],
+                    "id": 4739,
+                    "name": "ExpressionStatement",
+                    "src": "979:27:34"
+                  }
+                ],
+                "id": 4740,
+                "name": "Block",
+                "src": "677:336:34"
+              }
+            ],
+            "id": 4741,
+            "name": "FunctionDefinition",
+            "src": "610:403:34"
+          },
+          {
+            "attributes": {
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "_onRoyaltiesSet",
+              "scope": 4758,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_royalties",
+                      "scope": 4753,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct LibPart.Part[]",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "type": "struct LibPart.Part[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "LibPart.Part",
+                              "referencedDeclaration": 3986,
+                              "type": "struct LibPart.Part"
+                            },
+                            "id": 4742,
+                            "name": "UserDefinedTypeName",
+                            "src": "1044:12:34"
+                          }
+                        ],
+                        "id": 4743,
+                        "name": "ArrayTypeName",
+                        "src": "1044:14:34"
+                      }
+                    ],
+                    "id": 4744,
+                    "name": "VariableDeclaration",
+                    "src": "1044:32:34"
+                  }
+                ],
+                "id": 4745,
+                "name": "ParameterList",
+                "src": "1043:34:34"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4746,
+                "name": "ParameterList",
+                "src": "1087:0:34"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_rational_0_by_1",
+                                  "typeString": "int_const 0"
+                                },
+                                {
+                                  "typeIdentifier": "t_array$_t_struct$_Part_$3986_memory_ptr_$dyn_memory_ptr",
+                                  "typeString": "struct LibPart.Part memory[] memory"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4023,
+                              "type": "function (uint256,struct LibPart.Part memory[] memory)",
+                              "value": "RoyaltiesSet"
+                            },
+                            "id": 4747,
+                            "name": "Identifier",
+                            "src": "1102:12:34"
+                          },
+                          {
+                            "attributes": {
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 4748,
+                            "name": "Literal",
+                            "src": "1115:1:34"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4744,
+                              "type": "struct LibPart.Part memory[] memory",
+                              "value": "_royalties"
+                            },
+                            "id": 4749,
+                            "name": "Identifier",
+                            "src": "1118:10:34"
+                          }
+                        ],
+                        "id": 4750,
+                        "name": "FunctionCall",
+                        "src": "1102:27:34"
+                      }
+                    ],
+                    "id": 4751,
+                    "name": "EmitStatement",
+                    "src": "1097:32:34"
+                  }
+                ],
+                "id": 4752,
+                "name": "Block",
+                "src": "1087:49:34"
+              }
+            ],
+            "id": 4753,
+            "name": "FunctionDefinition",
+            "src": "1019:117:34"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "__gap",
+              "scope": 4758,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256[50]",
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "uint256[50]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 4754,
+                    "name": "ElementaryTypeName",
+                    "src": "1142:7:34"
+                  },
+                  {
+                    "attributes": {
+                      "hexvalue": "3530",
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "token": "number",
+                      "type": "int_const 50",
+                      "value": "50"
+                    },
+                    "id": 4755,
+                    "name": "Literal",
+                    "src": "1150:2:34"
+                  }
+                ],
+                "id": 4756,
+                "name": "ArrayTypeName",
+                "src": "1142:11:34"
+              }
+            ],
+            "id": 4757,
+            "name": "VariableDeclaration",
+            "src": "1142:25:34"
+          }
+        ],
+        "id": 4758,
+        "name": "ContractDefinition",
+        "src": "225:945:34"
+      }
+    ],
+    "id": 4759,
+    "name": "SourceUnit",
+    "src": "33:1137:34"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-09-21T14:11:52.435Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "supportsInterface(bytes4)": {
+        "details": "See {IERC165-supportsInterface}. Time complexity O(1), guaranteed to always use less than 30 000 gas."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

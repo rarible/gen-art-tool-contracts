@@ -1,0 +1,375 @@
+{
+  "contractName": "IERC721GenMint",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "artist",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "mint",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"artist\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/IERC721GenMint.sol\":\"IERC721GenMint\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/IERC721GenMint.sol\":{\"keccak256\":\"0x3c62481bd61c8871057b7de580760f8b87de08082dcd73f882bc7518ef5c4691\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7e05a5118facac616913a44bf200419e08a78dd5e3f66d107dc44ecfdadd5171\",\"dweb:/ipfs/QmNWB5QAzh8v8EANETLpvRYnfQB1sCEn5pryb8j7SAxUnG\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.7.0;\n\ninterface IERC721GenMint {\n    function mint(address artist, address to, uint value) external;\n}\n",
+  "sourcePath": "/home/quadro/Projects/rarible/generative-art/contracts/interfaces/IERC721GenMint.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/IERC721GenMint.sol",
+    "exportedSymbols": {
+      "IERC721GenMint": [
+        4558
+      ]
+    },
+    "id": 4559,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4548,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:31"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 4558,
+        "linearizedBaseContracts": [
+          4558
+        ],
+        "name": "IERC721GenMint",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "c6c3bbe6",
+            "id": 4557,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4555,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4550,
+                  "mutability": "mutable",
+                  "name": "artist",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4557,
+                  "src": "103:14:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4549,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "103:7:31",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4552,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4557,
+                  "src": "119:10:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4551,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "119:7:31",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4554,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4557,
+                  "src": "131:10:31",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4553,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "131:4:31",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "102:40:31"
+            },
+            "returnParameters": {
+              "id": 4556,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "151:0:31"
+            },
+            "scope": 4558,
+            "src": "89:63:31",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4559,
+        "src": "58:96:31"
+      }
+    ],
+    "src": "33:122:31"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/interfaces/IERC721GenMint.sol",
+      "exportedSymbols": {
+        "IERC721GenMint": [
+          4558
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.7",
+            ".0"
+          ]
+        },
+        "id": 4548,
+        "name": "PragmaDirective",
+        "src": "33:23:31"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            4558
+          ],
+          "name": "IERC721GenMint",
+          "scope": 4559
+        },
+        "children": [
+          {
+            "attributes": {
+              "functionSelector": "c6c3bbe6",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "mint",
+              "scope": 4558,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "artist",
+                      "scope": 4557,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4549,
+                        "name": "ElementaryTypeName",
+                        "src": "103:7:31"
+                      }
+                    ],
+                    "id": 4550,
+                    "name": "VariableDeclaration",
+                    "src": "103:14:31"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "to",
+                      "scope": 4557,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4551,
+                        "name": "ElementaryTypeName",
+                        "src": "119:7:31"
+                      }
+                    ],
+                    "id": 4552,
+                    "name": "VariableDeclaration",
+                    "src": "119:10:31"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "value",
+                      "scope": 4557,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 4553,
+                        "name": "ElementaryTypeName",
+                        "src": "131:4:31"
+                      }
+                    ],
+                    "id": 4554,
+                    "name": "VariableDeclaration",
+                    "src": "131:10:31"
+                  }
+                ],
+                "id": 4555,
+                "name": "ParameterList",
+                "src": "102:40:31"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4556,
+                "name": "ParameterList",
+                "src": "151:0:31"
+              }
+            ],
+            "id": 4557,
+            "name": "FunctionDefinition",
+            "src": "89:63:31"
+          }
+        ],
+        "id": 4558,
+        "name": "ContractDefinition",
+        "src": "58:96:31"
+      }
+    ],
+    "id": 4559,
+    "name": "SourceUnit",
+    "src": "33:122:31"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-09-21T14:11:52.432Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

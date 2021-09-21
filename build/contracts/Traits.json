@@ -1,0 +1,363 @@
+{
+  "contractName": "Traits",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/traits/Traits.sol\":\"Traits\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/traits/Traits.sol\":{\"keccak256\":\"0x04ede6db741cef106f4c218cde2eb24481bc106451ee53656a13cf32930bf631\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0930ce8ac96f5fc62e922160244a3aa6579b5075c1360f2208aa3009194f491\",\"dweb:/ipfs/QmaRqUXKoXp5RvaQHqdC8WGuhVpX9KzUvdiTt2ssM5KGQL\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212208aa0a03be00f025ea1106ee4c3b3c1cef1a12832a6886d2e7e28125791b4264d64736f6c63430007060033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212208aa0a03be00f025ea1106ee4c3b3c1cef1a12832a6886d2e7e28125791b4264d64736f6c63430007060033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "78:113:37:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "78:113:37:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.7.0;\npragma abicoder v2;\n\ncontract Traits {\n    struct Trait {\n        string name;\n        string[] keys;\n        uint[] rarities;\n    }\n}\n",
+  "sourcePath": "/home/quadro/Projects/rarible/generative-art/contracts/traits/Traits.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/traits/Traits.sol",
+    "exportedSymbols": {
+      "Traits": [
+        4914
+      ]
+    },
+    "id": 4915,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4903,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:37"
+      },
+      {
+        "id": 4904,
+        "literals": [
+          "abicoder",
+          "v2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:19:37"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 4914,
+        "linearizedBaseContracts": [
+          4914
+        ],
+        "name": "Traits",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Traits.Trait",
+            "id": 4913,
+            "members": [
+              {
+                "constant": false,
+                "id": 4906,
+                "mutability": "mutable",
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 4913,
+                "src": "123:11:37",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 4905,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "123:6:37",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4909,
+                "mutability": "mutable",
+                "name": "keys",
+                "nodeType": "VariableDeclaration",
+                "scope": 4913,
+                "src": "144:13:37",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                  "typeString": "string[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 4907,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "144:6:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "id": 4908,
+                  "nodeType": "ArrayTypeName",
+                  "src": "144:8:37",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                    "typeString": "string[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 4912,
+                "mutability": "mutable",
+                "name": "rarities",
+                "nodeType": "VariableDeclaration",
+                "scope": 4913,
+                "src": "167:15:37",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                  "typeString": "uint256[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 4910,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "167:4:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 4911,
+                  "nodeType": "ArrayTypeName",
+                  "src": "167:6:37",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                    "typeString": "uint256[]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Trait",
+            "nodeType": "StructDefinition",
+            "scope": 4914,
+            "src": "100:89:37",
+            "visibility": "public"
+          }
+        ],
+        "scope": 4915,
+        "src": "78:113:37"
+      }
+    ],
+    "src": "33:159:37"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/traits/Traits.sol",
+      "exportedSymbols": {
+        "Traits": [
+          4914
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.7",
+            ".0"
+          ]
+        },
+        "id": 4903,
+        "name": "PragmaDirective",
+        "src": "33:23:37"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "abicoder",
+            "v2"
+          ]
+        },
+        "id": 4904,
+        "name": "PragmaDirective",
+        "src": "57:19:37"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            4914
+          ],
+          "name": "Traits",
+          "scope": 4915
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "Traits.Trait",
+              "name": "Trait",
+              "scope": 4914,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "scope": 4913,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 4905,
+                    "name": "ElementaryTypeName",
+                    "src": "123:6:37"
+                  }
+                ],
+                "id": 4906,
+                "name": "VariableDeclaration",
+                "src": "123:11:37"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "keys",
+                  "scope": 4913,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string[]",
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "type": "string[]"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 4907,
+                        "name": "ElementaryTypeName",
+                        "src": "144:6:37"
+                      }
+                    ],
+                    "id": 4908,
+                    "name": "ArrayTypeName",
+                    "src": "144:8:37"
+                  }
+                ],
+                "id": 4909,
+                "name": "VariableDeclaration",
+                "src": "144:13:37"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "rarities",
+                  "scope": 4913,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256[]",
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "type": "uint256[]"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 4910,
+                        "name": "ElementaryTypeName",
+                        "src": "167:4:37"
+                      }
+                    ],
+                    "id": 4911,
+                    "name": "ArrayTypeName",
+                    "src": "167:6:37"
+                  }
+                ],
+                "id": 4912,
+                "name": "VariableDeclaration",
+                "src": "167:15:37"
+              }
+            ],
+            "id": 4913,
+            "name": "StructDefinition",
+            "src": "100:89:37"
+          }
+        ],
+        "id": 4914,
+        "name": "ContractDefinition",
+        "src": "78:113:37"
+      }
+    ],
+    "id": 4915,
+    "name": "SourceUnit",
+    "src": "33:159:37"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-09-21T14:11:52.438Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
