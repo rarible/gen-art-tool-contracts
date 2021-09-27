@@ -36,19 +36,6 @@ contract("ERC721Gen", accounts => {
 		assert.equal(tokenURI1, shouldBeURI, "token URI")
 	})
 
-	it("totalSupply should always return 0", async () => {
-		assert.equal(await testing.totalSupply(), 0, "totalSupply always 0")
-		await testing.mint(accounts[0], accounts[1], 1);
-
-		assert.equal(await testing.totalSupply(), 0, "totalSupply always 0")
-		await testing.mint(accounts[0], accounts[1], 1);
-
-		assert.equal(await testing.totalSupply(), 0, "totalSupply always 0")
-		await testing.mint(accounts[0], accounts[1], 1);
-
-		assert.equal(await testing.totalSupply(), 0, "totalSupply always 0")
-	})
-
 	it("fails if artist is incorrect", async () => {
 		await truffleAssert.fails(
 			testing.mint(testing.address, accounts[1], 1),
