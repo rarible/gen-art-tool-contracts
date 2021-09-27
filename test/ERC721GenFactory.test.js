@@ -94,7 +94,7 @@ contract("ERC721GenFactoryTest", accounts => {
         }
 
         //check royalties
-        const royalty = await token.getRoyalties(0);
+        const royalty = await token.getRaribleV2Royalties(0);
         assert.equal(royalty[0].account, collectionRoyalties[0][0], "get royalties account")
         assert.equal(royalty[0].value, collectionRoyalties[0][1], "get royalties value")
 

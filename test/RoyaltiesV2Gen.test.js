@@ -21,7 +21,7 @@ contract("RoyaltiesV2Gen", accounts => {
         assert.equal(RoyaltiesSet.args.royalties[0].value, royalties[0][1], "init royalties value")
 
         for (let i = 0; i < 5; i ++){
-            const royalty = await royaltiesV2GenImplTest.getRoyalties(i)
+            const royalty = await royaltiesV2GenImplTest.getRaribleV2Royalties(i)
             assert.equal(royalty[0].account, royalties[0][0], "get royalties account")
             assert.equal(royalty[0].value, royalties[0][1], "get royalties value")
         }
@@ -48,7 +48,7 @@ contract("RoyaltiesV2Gen", accounts => {
     it("should support _INTERFACE_ID_ROYALTIES", async () => {
         await royaltiesV2GenImplTest.__RoyaltiesV2GenImplTest_init([]);
         
-        const _INTERFACE_ID_ROYALTIES = "0x44c74bcc"
+        const _INTERFACE_ID_ROYALTIES = "0xcad96cca"
         const intSup = await royaltiesV2GenImplTest.supportsInterface(_INTERFACE_ID_ROYALTIES)
         assert.equal(intSup, true, "interface")
 	})
