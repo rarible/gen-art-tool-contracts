@@ -5,8 +5,6 @@ pragma abicoder v2;
 
 contract Traits {
     struct Trait {
-        string name;
-        string[] keys;
         uint[] rarities;
     }
 }

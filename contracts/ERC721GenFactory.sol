@@ -4,8 +4,9 @@ pragma solidity ^0.7.0;
 pragma abicoder v2;
 
 import "./ERC721Gen.sol";
-import "@openzeppelin/contracts/proxy/IBeacon.sol";
-import "@openzeppelin/contracts/proxy/BeaconProxy.sol";
+import "@openzeppelin/contracts/proxy/TransparentUpgradeableProxy.sol";
+import "@openzeppelin/contracts/proxy/ProxyAdmin.sol";
+
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
@@ -14,8 +15,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  * The beacon should be initialized before call ERC721GenFactory constructor.
  */
 contract ERC721GenFactory is Ownable, Traits {
-    //beacon of ERC721 address
-    IBeacon public beacon;
+    //transferProxy to call transferFrom
+    address public implementation;
 
     //transferProxy to call transferFrom
     address public transferProxy;
@@ -26,15 +27,15 @@ contract ERC721GenFactory is Ownable, Traits {
     //baseURI for collections
     string public baseURI;
 
-    event CollectionCreated(address owner, address collection);
+    event CollectionCreated(address owner, address collection, address admin);
 
     constructor(
-        IBeacon _beacon,
+        address _implementation,
         address _transferProxy,
         address _operatorProxy,
         string memory _baseURI
     ) {
-        beacon = _beacon;
+        implementation = _implementation;
         transferProxy = _transferProxy;
         operatorProxy = _operatorProxy;
         baseURI = _baseURI;
@@ -60,11 +61,13 @@ contract ERC721GenFactory is Ownable, Traits {
             _total,
             _maxValue
         );
-        BeaconProxy beaconProxy = new BeaconProxy(address(beacon), data);
-        ERC721Gen token = ERC721Gen(address(beaconProxy));
+        ProxyAdmin admin = new ProxyAdmin();
+        admin.transferOwnership(_msgSender());
 
+        TransparentUpgradeableProxy proxy = new TransparentUpgradeableProxy(implementation, address(admin), data);
+        ERC721Gen token = ERC721Gen(address(proxy));
         token.transferOwnership(_msgSender());
 
-        emit CollectionCreated(_msgSender(), address(token));
+        emit CollectionCreated(_msgSender(), address(token), address(admin));
     }
 }

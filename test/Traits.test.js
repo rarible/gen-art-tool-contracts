@@ -9,7 +9,7 @@ contract("Traits", accounts => {
   });
 
   it("getTraitValue works", async () => {
-    const trait = ["Test", ["v1", "v2", "v3"], [1, 2, 9997]]
+    const trait = [[1, 2, 9997]]
 
     assert.equal(await testing._testGetTraitValue(trait, 0), 0);
     assert.equal(await testing._testGetTraitValue(trait, 1), 1);
@@ -24,7 +24,7 @@ contract("Traits", accounts => {
   })
 
   it("random gives diff numbers for diff seeds", async () => {
-    const trait = ["Test", ["v1", "v2", "v3"], [1, 2, 9997]]
+    const trait = [[1, 2, 9997]]
     const testing = await TraitsTest.new([trait]);
 
     const v1_1 = await testing._testRandom(0, 10000);

@@ -7,9 +7,9 @@ import "../../contracts/ERC721GenFactory.sol";
 
 contract ERC721GenFactoryTest is ERC721GenFactory {
     constructor(
-        IBeacon _beacon,
+        address _implementation,
         address _transferProxy,
         address _operatorProxy,
         string memory _baseURI
-    ) ERC721GenFactory(_beacon, _transferProxy, _operatorProxy, _baseURI) {}
+    ) ERC721GenFactory(_implementation, _transferProxy, _operatorProxy, _baseURI) {}
 }

@@ -18,7 +18,6 @@ contract TraitsManager is Traits, Initializable {
             traits.push(_trait);
 
             uint total = 0;
-            require(_trait.keys.length == _trait.rarities.length, "keys and rarities length not equal");
             for (uint j = 0; j < _trait.rarities.length; j++) {
                 total += _trait.rarities[j];
             }

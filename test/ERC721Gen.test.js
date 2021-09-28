@@ -10,9 +10,9 @@ contract("ERC721Gen", accounts => {
   const baseURI = "https://ipfs.rarible.com/";
 
   beforeEach(async () => {
-    const trait1 = ["Test1", ["v1", "v2", "v3"], [1, 2, 9997]]
-    const trait2 = ["Test2", ["v1", "v2", "v3"], [3333, 3333, 3334]]
-    const trait3 = ["Test3", ["v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10"], [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]]
+    const trait1 = [[1, 2, 9997]]
+    const trait2 = [[3333, 3333, 3334]]
+    const trait3 = [[1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]]
 
     testing = await ERC721Gen.new();
 
@@ -110,9 +110,9 @@ contract("ERC721Gen", accounts => {
   })
 
   it("minted value should increment", async () => {
-    const trait1 = ["Test1", ["v1", "v2", "v3"], [1, 2, 9997]]
-    const trait2 = ["Test2", ["v1", "v2", "v3"], [3333, 3333, 3334]]
-    const trait3 = ["Test3", ["v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10"], [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]]
+    const trait1 = [[1, 2, 9997]]
+    const trait2 = [[3333, 3333, 3334]]
+    const trait3 = [[1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]]
 
     const erc721test = await ERC721GenTest.new();
 
