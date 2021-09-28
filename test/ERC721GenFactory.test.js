@@ -70,15 +70,15 @@ contract("ERC721GenFactoryTest", accounts => {
 
     const traitsFromEvent = TraitsSet[0].args.traits
     for (let i = 0; i < traitsFromEvent.length; i++) {
-      for (let j = 0; j < traitsFromEvent[i][2]; j++) {
-        assert.equal(traitsFromEvent[i][2][j], traits[i][1][j], "trait rarities event")
+      for (let j = 0; j < traitsFromEvent[i].rarities.length; j++) {
+        assert.equal(traitsFromEvent[i].rarities[j].toString(), traits[i][0][j].toString(), "trait rarities event")
       }
     }
 
     const traitsFromGet = await token.getPossibleTraits();
     for (let i = 0; i < traitsFromGet.length; i++) {
-      for (let j = 0; j < traitsFromGet[i][0]; j++) {
-        assert.equal(traitsFromGet[i][0][j].toString(), traits[i][0][j], "trait rarities get")
+      for (let j = 0; j < traitsFromGet[i].rarities.length; j++) {
+        assert.equal(traitsFromGet[i].rarities[j].toString(), traits[i][0][j].toString(), "trait rarities get")
       }
     }
     
