@@ -80,8 +80,7 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, RoyaltiesV2G
     function getTokenTraits(uint tokenId) public view returns (uint[] memory) {
         uint[] memory result = new uint[](traits.length);
         for (uint i = 0; i < traits.length; i++) {
-            uint256 rnd = uint(keccak256(abi.encodePacked(tokenId, i)));
-            result[i] = getTraitValue(traits[i], rnd % 10000);
+            result[i] = getTraitValue(traits[i], getRandom(tokenId, i));
         }
         return result;
     }

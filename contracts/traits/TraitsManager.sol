@@ -38,6 +38,10 @@ contract TraitsManager is Traits, Initializable {
         revert("never");
     }
 
+    function getRandom(uint tokenId, uint i) internal pure returns (uint) {
+        return uint(keccak256(abi.encodePacked(tokenId, i))) % 10000;
+    }
+
     function random(uint seed, uint supply, address to) internal view returns (uint) {
         return uint(keccak256(abi.encodePacked(seed, block.timestamp, block.number, block.difficulty, supply, to)));
     }

@@ -18,6 +18,11 @@ contract("Traits", accounts => {
 		assert.equal(await testing._testGetTraitValue(trait, 9999), 2);
 	})
 
+	it("getRandom works", async () => {
+		assert.equal((await testing._testGetRandom(10000, 0)).toString(), "7911");
+		assert.equal((await testing._testGetRandom(10000, 1)).toString(), "8781");
+	})
+
 	it("random gives diff numbers for diff seeds", async () => {
 		const trait = ["Test", ["v1", "v2", "v3"], [1, 2, 9997]]
 		const testing = await TraitsTest.new([trait]);
