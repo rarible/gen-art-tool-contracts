@@ -53,7 +53,23 @@ contract("ERC721Gen", accounts => {
             toBlock: tx.receipt.blockNumber
         });
 		const ev = GenArtMintEvent[0];
-		assert(ev.args.tokenId, "tokenId");
+		const tokenId = ev.args.tokenId;
+		assert(tokenId, "tokenId");
+
+		const Transfer = await testing.getPastEvents("Transfer", {
+            fromBlock: tx.receipt.blockNumber,
+            toBlock: tx.receipt.blockNumber
+        });
+
+		const transfer1 = Transfer[0].args;
+		assert.equal(transfer1.from, "0x0000000000000000000000000000000000000000", "from zero")
+		assert.equal(transfer1.to, accounts[0], "to artsit")
+		assert.equal(transfer1.tokenId.toString(), tokenId.toString(), "tokenId transfer 1")
+
+		const transfer2 = Transfer[1].args;
+		assert.equal(transfer2.from, accounts[0], "from artist")
+		assert.equal(transfer2.to, accounts[1], "to buyer")
+		assert.equal(transfer2.tokenId.toString(), tokenId.toString(), "tokenId transfer 1")
 	})
 
 	it("fails if more than total requested", async () => {
