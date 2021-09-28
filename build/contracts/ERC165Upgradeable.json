@@ -35,7 +35,7 @@
     "absolutePath": "@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol",
     "exportedSymbols": {
       "AddressUpgradeable": [
-        2047
+        1043
       ],
       "ERC165Upgradeable": [
         205
@@ -880,7 +880,7 @@
       "absolutePath": "@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol",
       "exportedSymbols": {
         "AddressUpgradeable": [
-          2047
+          1043
         ],
         "ERC165Upgradeable": [
           205
@@ -1837,7 +1837,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-21T14:11:52.352Z",
+  "updatedAt": "2021-09-28T10:45:40.115Z",
   "devdoc": {
     "details": "Implementation of the {IERC165} interface. Contracts may inherit from this and call {_registerInterface} to declare their support of an interface.",
     "kind": "dev",

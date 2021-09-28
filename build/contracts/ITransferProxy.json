@@ -63,18 +63,18 @@
     "absolutePath": "@rarible/exchange-interfaces/contracts/ITransferProxy.sol",
     "exportedSymbols": {
       "ITransferProxy": [
-        3855
+        1799
       ],
       "LibAsset": [
-        3952
+        1896
       ]
     },
-    "id": 3856,
+    "id": 1800,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3843,
+        "id": 1787,
         "literals": [
           "solidity",
           ">=",
@@ -85,25 +85,25 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:31:21"
+        "src": "33:31:17"
       },
       {
-        "id": 3844,
+        "id": 1788,
         "literals": [
           "abicoder",
           "v2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "65:19:21"
+        "src": "65:19:17"
       },
       {
         "absolutePath": "@rarible/lib-asset/contracts/LibAsset.sol",
         "file": "@rarible/lib-asset/contracts/LibAsset.sol",
-        "id": 3845,
+        "id": 1789,
         "nodeType": "ImportDirective",
-        "scope": 3856,
-        "sourceUnit": 3953,
-        "src": "86:51:21",
+        "scope": 1800,
+        "sourceUnit": 1897,
+        "src": "86:51:17",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -113,47 +113,47 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 3855,
+        "id": 1799,
         "linearizedBaseContracts": [
-          3855
+          1799
         ],
         "name": "ITransferProxy",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "functionSelector": "54bc0cf1",
-            "id": 3854,
+            "id": 1798,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "transfer",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3852,
+              "id": 1796,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3847,
+                  "id": 1791,
                   "mutability": "mutable",
                   "name": "asset",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3854,
-                  "src": "188:29:21",
+                  "scope": 1798,
+                  "src": "188:29:17",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Asset_$3909_calldata_ptr",
+                    "typeIdentifier": "t_struct$_Asset_$1853_calldata_ptr",
                     "typeString": "struct LibAsset.Asset"
                   },
                   "typeName": {
-                    "id": 3846,
+                    "id": 1790,
                     "name": "LibAsset.Asset",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3909,
-                    "src": "188:14:21",
+                    "referencedDeclaration": 1853,
+                    "src": "188:14:17",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Asset_$3909_storage_ptr",
+                      "typeIdentifier": "t_struct$_Asset_$1853_storage_ptr",
                       "typeString": "struct LibAsset.Asset"
                     }
                   },
@@ -161,12 +161,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 3849,
+                  "id": 1793,
                   "mutability": "mutable",
                   "name": "from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3854,
-                  "src": "219:12:21",
+                  "scope": 1798,
+                  "src": "219:12:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -174,10 +174,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3848,
+                    "id": 1792,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "219:7:21",
+                    "src": "219:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -188,12 +188,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 3851,
+                  "id": 1795,
                   "mutability": "mutable",
                   "name": "to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3854,
-                  "src": "233:10:21",
+                  "scope": 1798,
+                  "src": "233:10:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -201,10 +201,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3850,
+                    "id": 1794,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "233:7:21",
+                    "src": "233:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -214,36 +214,36 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "187:57:21"
+              "src": "187:57:17"
             },
             "returnParameters": {
-              "id": 3853,
+              "id": 1797,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "253:0:21"
+              "src": "253:0:17"
             },
-            "scope": 3855,
-            "src": "170:84:21",
+            "scope": 1799,
+            "src": "170:84:17",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 3856,
-        "src": "139:117:21"
+        "scope": 1800,
+        "src": "139:117:17"
       }
     ],
-    "src": "33:224:21"
+    "src": "33:224:17"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "@rarible/exchange-interfaces/contracts/ITransferProxy.sol",
       "exportedSymbols": {
         "ITransferProxy": [
-          3855
+          1799
         ],
         "LibAsset": [
-          3952
+          1896
         ]
       },
       "license": "MIT"
@@ -261,9 +261,9 @@
             ".0"
           ]
         },
-        "id": 3843,
+        "id": 1787,
         "name": "PragmaDirective",
-        "src": "33:31:21"
+        "src": "33:31:17"
       },
       {
         "attributes": {
@@ -272,24 +272,24 @@
             "v2"
           ]
         },
-        "id": 3844,
+        "id": 1788,
         "name": "PragmaDirective",
-        "src": "65:19:21"
+        "src": "65:19:17"
       },
       {
         "attributes": {
-          "SourceUnit": 3953,
+          "SourceUnit": 1897,
           "absolutePath": "@rarible/lib-asset/contracts/LibAsset.sol",
           "file": "@rarible/lib-asset/contracts/LibAsset.sol",
-          "scope": 3856,
+          "scope": 1800,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 3845,
+        "id": 1789,
         "name": "ImportDirective",
-        "src": "86:51:21"
+        "src": "86:51:17"
       },
       {
         "attributes": {
@@ -303,10 +303,10 @@
           "contractKind": "interface",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            3855
+            1799
           ],
           "name": "ITransferProxy",
-          "scope": 3856
+          "scope": 1800
         },
         "children": [
           {
@@ -319,7 +319,7 @@
                 null
               ],
               "name": "transfer",
-              "scope": 3855,
+              "scope": 1799,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -332,7 +332,7 @@
                       "constant": false,
                       "mutability": "mutable",
                       "name": "asset",
-                      "scope": 3854,
+                      "scope": 1798,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "struct LibAsset.Asset",
@@ -342,24 +342,24 @@
                       {
                         "attributes": {
                           "name": "LibAsset.Asset",
-                          "referencedDeclaration": 3909,
+                          "referencedDeclaration": 1853,
                           "type": "struct LibAsset.Asset"
                         },
-                        "id": 3846,
+                        "id": 1790,
                         "name": "UserDefinedTypeName",
-                        "src": "188:14:21"
+                        "src": "188:14:17"
                       }
                     ],
-                    "id": 3847,
+                    "id": 1791,
                     "name": "VariableDeclaration",
-                    "src": "188:29:21"
+                    "src": "188:29:17"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "mutability": "mutable",
                       "name": "from",
-                      "scope": 3854,
+                      "scope": 1798,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -372,21 +372,21 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 3848,
+                        "id": 1792,
                         "name": "ElementaryTypeName",
-                        "src": "219:7:21"
+                        "src": "219:7:17"
                       }
                     ],
-                    "id": 3849,
+                    "id": 1793,
                     "name": "VariableDeclaration",
-                    "src": "219:12:21"
+                    "src": "219:12:17"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "mutability": "mutable",
                       "name": "to",
-                      "scope": 3854,
+                      "scope": 1798,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -399,19 +399,19 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 3850,
+                        "id": 1794,
                         "name": "ElementaryTypeName",
-                        "src": "233:7:21"
+                        "src": "233:7:17"
                       }
                     ],
-                    "id": 3851,
+                    "id": 1795,
                     "name": "VariableDeclaration",
-                    "src": "233:10:21"
+                    "src": "233:10:17"
                   }
                 ],
-                "id": 3852,
+                "id": 1796,
                 "name": "ParameterList",
-                "src": "187:57:21"
+                "src": "187:57:17"
               },
               {
                 "attributes": {
@@ -420,24 +420,24 @@
                   ]
                 },
                 "children": [],
-                "id": 3853,
+                "id": 1797,
                 "name": "ParameterList",
-                "src": "253:0:21"
+                "src": "253:0:17"
               }
             ],
-            "id": 3854,
+            "id": 1798,
             "name": "FunctionDefinition",
-            "src": "170:84:21"
+            "src": "170:84:17"
           }
         ],
-        "id": 3855,
+        "id": 1799,
         "name": "ContractDefinition",
-        "src": "139:117:21"
+        "src": "139:117:17"
       }
     ],
-    "id": 3856,
+    "id": 1800,
     "name": "SourceUnit",
-    "src": "33:224:21"
+    "src": "33:224:17"
   },
   "compiler": {
     "name": "solc",
@@ -445,7 +445,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-21T14:11:52.400Z",
+  "updatedAt": "2021-09-28T10:45:40.157Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

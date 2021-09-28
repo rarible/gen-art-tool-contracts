@@ -15,7 +15,7 @@
     "absolutePath": "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol",
     "exportedSymbols": {
       "AddressUpgradeable": [
-        2047
+        1043
       ],
       "Initializable": [
         638
@@ -45,7 +45,7 @@
         "id": 575,
         "nodeType": "ImportDirective",
         "scope": 639,
-        "sourceUnit": 2048,
+        "sourceUnit": 1044,
         "src": "113:41:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -674,10 +674,10 @@
                           "name": "AddressUpgradeable",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2047,
+                          "referencedDeclaration": 1043,
                           "src": "2024:18:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_AddressUpgradeable_$2047_$",
+                            "typeIdentifier": "t_type$_t_contract$_AddressUpgradeable_$1043_$",
                             "typeString": "type(library AddressUpgradeable)"
                           }
                         },
@@ -688,7 +688,7 @@
                         "lValueRequested": false,
                         "memberName": "isContract",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1823,
+                        "referencedDeclaration": 819,
                         "src": "2024:29:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
@@ -791,7 +791,7 @@
       "absolutePath": "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol",
       "exportedSymbols": {
         "AddressUpgradeable": [
-          2047
+          1043
         ],
         "Initializable": [
           638
@@ -818,7 +818,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 2048,
+          "SourceUnit": 1044,
           "absolutePath": "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol",
           "file": "../utils/AddressUpgradeable.sol",
           "scope": 639,
@@ -1539,7 +1539,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "isContract",
-                                  "referencedDeclaration": 1823,
+                                  "referencedDeclaration": 819,
                                   "type": "function (address) view returns (bool)"
                                 },
                                 "children": [
@@ -1548,7 +1548,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 2047,
+                                      "referencedDeclaration": 1043,
                                       "type": "type(library AddressUpgradeable)",
                                       "value": "AddressUpgradeable"
                                     },
@@ -1663,7 +1663,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-21T14:11:52.357Z",
+  "updatedAt": "2021-09-28T10:45:40.123Z",
   "devdoc": {
     "details": "This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed behind a proxy. Since a proxied contract can't have a constructor, it's common to move constructor logic to an external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer function so it can only be called once. The {initializer} modifier provided by this contract will have this effect. TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as possible by providing the encoded function call as the `_data` argument to {UpgradeableProxy-constructor}. CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.",
     "kind": "dev",

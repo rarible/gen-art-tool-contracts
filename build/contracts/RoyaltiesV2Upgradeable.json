@@ -40,7 +40,7 @@
           "type": "uint256"
         }
       ],
-      "name": "getRoyalties",
+      "name": "getRaribleV2Royalties",
       "outputs": [
         {
           "components": [
@@ -83,7 +83,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address payable\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint96\",\"name\":\"value\",\"type\":\"uint96\"}],\"indexed\":false,\"internalType\":\"struct LibPart.Part[]\",\"name\":\"royalties\",\"type\":\"tuple[]\"}],\"name\":\"RoyaltiesSet\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"getRoyalties\",\"outputs\":[{\"components\":[{\"internalType\":\"address payable\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint96\",\"name\":\"value\",\"type\":\"uint96\"}],\"internalType\":\"struct LibPart.Part[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}. Time complexity O(1), guaranteed to always use less than 30 000 gas.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol\":\"RoyaltiesV2Upgradeable\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol\":{\"keccak256\":\"0xc6dbbc2f50a7c104377798a37b2acd1a41c1242544b0bb7a9a7c863f0520eb50\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ff3a66f685a49d3750c9b3588770d1ee43ce3cb718e1dc911ac65d8a6d1c1f0d\",\"dweb:/ipfs/QmVK2mdcbZTZ81YQ1rxWWNbYgy3Gpb3yz3L2qtDPTdx9hu\"]},\"@openzeppelin/contracts-upgradeable/introspection/IERC165Upgradeable.sol\":{\"keccak256\":\"0x4784c3f8a520a739dd25d76f514833a653990902d0e21601aed45bda44c87524\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://359411cc44a4499f37d46562ef3f348db443f9a699138c1797264d20b14697b7\",\"dweb:/ipfs/QmUmeQNUwve4MFCc1ace6zMnstqa8S9SZe1nXG9THcpQ5v\"]},\"@openzeppelin/contracts-upgradeable/proxy/Initializable.sol\":{\"keccak256\":\"0xd8e4eb08dcc1d1860fb347ba5ffd595242b9a1b66d49a47f2b4cb51c3f35017e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7dbc89479d30592e82442edc38053b380f611037a5e6ceafc7bf57a7aa1f0305\",\"dweb:/ipfs/QmcdYtt56WmjeYvsFjK69FnahnAriw88VzY3XRZwXkQKKN\"]},\"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"keccak256\":\"0xfc5ea91fa9ceb1961023b2a6c978b902888c52b90847ac7813fe3b79524165f6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6b81dcc816857a9d981386f6d8de49198420ee41cdc0ecade366ab412174d03\",\"dweb:/ipfs/QmV2vznMT6m9qo3pFMAWi3Nz3UDhwesgwFxeXe6Tod3v8A\"]},\"@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol\":{\"keccak256\":\"0x4f3d5737488618b3501156e39e3f8367da43e810dc8c942f3a3caf4f35f831f6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5096c7f9ffa052d046ca5de7403db55750d3a97e858e804ebf073d9e396ef35a\",\"dweb:/ipfs/QmTphTLVSfHZ6yuLRpvrdSQYKwNKQkEBUkUdXet78gfneT\"]},\"@rarible/royalties/contracts/LibPart.sol\":{\"keccak256\":\"0xd0123f7411573a6a7e1527e0d3901913d7642e504ff240d5b7c5b76a28587def\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://447b449f7f986ecfdea10cbc96ae276877102866353b4f8410fec0bdb357d5ae\",\"dweb:/ipfs/QmatbYwMc1UXCGGH1D9fvgLbLPNdgzBVafYW84B1nJJiRr\"]},\"@rarible/royalties/contracts/LibRoyaltiesV2.sol\":{\"keccak256\":\"0x17a995a9bf12117cf5073630bed52eb0a46c7f541bf5bd0803ebc48b8dd1c243\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://de5b93d5b8b1eb521273d439c8bad57c35894b92c7b5b05cfc00a084f4b55d81\",\"dweb:/ipfs/QmWoSe6ZztCSuqcy55EPjBzbsiBFSD2xwPPBDmcVmCNJXB\"]},\"@rarible/royalties/contracts/RoyaltiesV2.sol\":{\"keccak256\":\"0x09e8d688a5254b8732e217b1fc9107770202e53fa61cb9cc1839bbe40c8e439d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://43e73942e6e8dd81f7c0007b6b8dcab531d4f35acfad737bc42343eed46de615\",\"dweb:/ipfs/QmXTQrHjM5pwfHYTETYZTxuvL6mgdC88UD1MNaSVriGHVb\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address payable\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint96\",\"name\":\"value\",\"type\":\"uint96\"}],\"indexed\":false,\"internalType\":\"struct LibPart.Part[]\",\"name\":\"royalties\",\"type\":\"tuple[]\"}],\"name\":\"RoyaltiesSet\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"getRaribleV2Royalties\",\"outputs\":[{\"components\":[{\"internalType\":\"address payable\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint96\",\"name\":\"value\",\"type\":\"uint96\"}],\"internalType\":\"struct LibPart.Part[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}. Time complexity O(1), guaranteed to always use less than 30 000 gas.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol\":\"RoyaltiesV2Upgradeable\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol\":{\"keccak256\":\"0xc6dbbc2f50a7c104377798a37b2acd1a41c1242544b0bb7a9a7c863f0520eb50\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ff3a66f685a49d3750c9b3588770d1ee43ce3cb718e1dc911ac65d8a6d1c1f0d\",\"dweb:/ipfs/QmVK2mdcbZTZ81YQ1rxWWNbYgy3Gpb3yz3L2qtDPTdx9hu\"]},\"@openzeppelin/contracts-upgradeable/introspection/IERC165Upgradeable.sol\":{\"keccak256\":\"0x4784c3f8a520a739dd25d76f514833a653990902d0e21601aed45bda44c87524\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://359411cc44a4499f37d46562ef3f348db443f9a699138c1797264d20b14697b7\",\"dweb:/ipfs/QmUmeQNUwve4MFCc1ace6zMnstqa8S9SZe1nXG9THcpQ5v\"]},\"@openzeppelin/contracts-upgradeable/proxy/Initializable.sol\":{\"keccak256\":\"0xd8e4eb08dcc1d1860fb347ba5ffd595242b9a1b66d49a47f2b4cb51c3f35017e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7dbc89479d30592e82442edc38053b380f611037a5e6ceafc7bf57a7aa1f0305\",\"dweb:/ipfs/QmcdYtt56WmjeYvsFjK69FnahnAriw88VzY3XRZwXkQKKN\"]},\"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"keccak256\":\"0xfc5ea91fa9ceb1961023b2a6c978b902888c52b90847ac7813fe3b79524165f6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a6b81dcc816857a9d981386f6d8de49198420ee41cdc0ecade366ab412174d03\",\"dweb:/ipfs/QmV2vznMT6m9qo3pFMAWi3Nz3UDhwesgwFxeXe6Tod3v8A\"]},\"@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol\":{\"keccak256\":\"0x4f3d5737488618b3501156e39e3f8367da43e810dc8c942f3a3caf4f35f831f6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5096c7f9ffa052d046ca5de7403db55750d3a97e858e804ebf073d9e396ef35a\",\"dweb:/ipfs/QmTphTLVSfHZ6yuLRpvrdSQYKwNKQkEBUkUdXet78gfneT\"]},\"@rarible/royalties/contracts/LibPart.sol\":{\"keccak256\":\"0xd0123f7411573a6a7e1527e0d3901913d7642e504ff240d5b7c5b76a28587def\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://447b449f7f986ecfdea10cbc96ae276877102866353b4f8410fec0bdb357d5ae\",\"dweb:/ipfs/QmatbYwMc1UXCGGH1D9fvgLbLPNdgzBVafYW84B1nJJiRr\"]},\"@rarible/royalties/contracts/LibRoyaltiesV2.sol\":{\"keccak256\":\"0xf61719a8f17946a3e49cc9cba266e8e40df616166a5186acefaa09f570f2477b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c69e8d4549f5ae6e74206accf89dcd85c24fc043628bcb0bc2cc35e5a0a072e9\",\"dweb:/ipfs/Qmacor2RvcJKqfJG7ewvMcGkeyyhtJCkW8npDNdUE8hqwx\"]},\"@rarible/royalties/contracts/RoyaltiesV2.sol\":{\"keccak256\":\"0x163fec7b8e88a8ca7f6653064f9c3f2e6d429d3bf156ebce32e4c9be5a2900e8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0c4486b6c73eb951b7feeb83bfaa64f8387b92b1eac483f0ee4aacca7fb26b8\",\"dweb:/ipfs/Qmdh9c58do457AfdnwJgnqBU6vM8EGtnq38QZueTaSmfrY\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -97,7 +97,7 @@
     "absolutePath": "@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol",
     "exportedSymbols": {
       "AddressUpgradeable": [
-        2047
+        1043
       ],
       "ERC165Upgradeable": [
         205
@@ -109,24 +109,24 @@
         638
       ],
       "LibPart": [
-        4006
+        1950
       ],
       "LibRoyaltiesV2": [
-        4012
+        1956
       ],
       "RoyaltiesV2": [
-        4032
+        1976
       ],
       "RoyaltiesV2Upgradeable": [
-        3974
+        1918
       ]
     },
-    "id": 3975,
+    "id": 1919,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3954,
+        "id": 1898,
         "literals": [
           "solidity",
           ">=",
@@ -137,47 +137,47 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:31:23"
+        "src": "33:31:19"
       },
       {
-        "id": 3955,
+        "id": 1899,
         "literals": [
           "abicoder",
           "v2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "65:19:23"
+        "src": "65:19:19"
       },
       {
         "absolutePath": "@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol",
         "file": "@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol",
-        "id": 3956,
+        "id": 1900,
         "nodeType": "ImportDirective",
-        "scope": 3975,
+        "scope": 1919,
         "sourceUnit": 206,
-        "src": "86:81:23",
+        "src": "86:81:19",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "@rarible/royalties/contracts/LibRoyaltiesV2.sol",
         "file": "@rarible/royalties/contracts/LibRoyaltiesV2.sol",
-        "id": 3957,
+        "id": 1901,
         "nodeType": "ImportDirective",
-        "scope": 3975,
-        "sourceUnit": 4013,
-        "src": "168:57:23",
+        "scope": 1919,
+        "sourceUnit": 1957,
+        "src": "168:57:19",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "@rarible/royalties/contracts/RoyaltiesV2.sol",
         "file": "@rarible/royalties/contracts/RoyaltiesV2.sol",
-        "id": 3958,
+        "id": 1902,
         "nodeType": "ImportDirective",
-        "scope": 3975,
-        "sourceUnit": 4033,
-        "src": "226:54:23",
+        "scope": 1919,
+        "sourceUnit": 1977,
+        "src": "226:54:19",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -186,49 +186,49 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 3959,
+              "id": 1903,
               "name": "ERC165Upgradeable",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 205,
-              "src": "326:17:23",
+              "src": "326:17:19",
               "typeDescriptions": {
                 "typeIdentifier": "t_contract$_ERC165Upgradeable_$205",
                 "typeString": "contract ERC165Upgradeable"
               }
             },
-            "id": 3960,
+            "id": 1904,
             "nodeType": "InheritanceSpecifier",
-            "src": "326:17:23"
+            "src": "326:17:19"
           },
           {
             "baseName": {
-              "id": 3961,
+              "id": 1905,
               "name": "RoyaltiesV2",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4032,
-              "src": "345:11:23",
+              "referencedDeclaration": 1976,
+              "src": "345:11:19",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RoyaltiesV2_$4032",
+                "typeIdentifier": "t_contract$_RoyaltiesV2_$1976",
                 "typeString": "contract RoyaltiesV2"
               }
             },
-            "id": 3962,
+            "id": 1906,
             "nodeType": "InheritanceSpecifier",
-            "src": "345:11:23"
+            "src": "345:11:19"
           }
         ],
         "contractDependencies": [
           205,
           217,
           638,
-          4032
+          1976
         ],
         "contractKind": "contract",
         "fullyImplemented": false,
-        "id": 3974,
+        "id": 1918,
         "linearizedBaseContracts": [
-          3974,
-          4032,
+          1918,
+          1976,
           205,
           217,
           638
@@ -238,35 +238,35 @@
         "nodes": [
           {
             "body": {
-              "id": 3972,
+              "id": 1916,
               "nodeType": "Block",
-              "src": "435:75:23",
+              "src": "435:75:19",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 3968,
+                          "id": 1912,
                           "name": "LibRoyaltiesV2",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4012,
-                          "src": "464:14:23",
+                          "referencedDeclaration": 1956,
+                          "src": "464:14:19",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_LibRoyaltiesV2_$4012_$",
+                            "typeIdentifier": "t_type$_t_contract$_LibRoyaltiesV2_$1956_$",
                             "typeString": "type(library LibRoyaltiesV2)"
                           }
                         },
-                        "id": 3969,
+                        "id": 1913,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "_INTERFACE_ID_ROYALTIES",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 4011,
-                        "src": "464:38:23",
+                        "referencedDeclaration": 1955,
+                        "src": "464:38:19",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes4",
                           "typeString": "bytes4"
@@ -280,18 +280,18 @@
                           "typeString": "bytes4"
                         }
                       ],
-                      "id": 3967,
+                      "id": 1911,
                       "name": "_registerInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 200,
-                      "src": "445:18:23",
+                      "src": "445:18:19",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes4_$returns$__$",
                         "typeString": "function (bytes4)"
                       }
                     },
-                    "id": 3970,
+                    "id": 1914,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -299,74 +299,74 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "445:58:23",
+                    "src": "445:58:19",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3971,
+                  "id": 1915,
                   "nodeType": "ExpressionStatement",
-                  "src": "445:58:23"
+                  "src": "445:58:19"
                 }
               ]
             },
-            "id": 3973,
+            "id": 1917,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 3965,
+                "id": 1909,
                 "modifierName": {
-                  "id": 3964,
+                  "id": 1908,
                   "name": "initializer",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
                   "referencedDeclaration": 621,
-                  "src": "423:11:23",
+                  "src": "423:11:19",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "423:11:23"
+                "src": "423:11:19"
               }
             ],
             "name": "__RoyaltiesV2Upgradeable_init_unchained",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3963,
+              "id": 1907,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "411:2:23"
+              "src": "411:2:19"
             },
             "returnParameters": {
-              "id": 3966,
+              "id": 1910,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "435:0:23"
+              "src": "435:0:19"
             },
-            "scope": 3974,
-            "src": "363:147:23",
+            "scope": 1918,
+            "src": "363:147:19",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 3975,
-        "src": "282:230:23"
+        "scope": 1919,
+        "src": "282:230:19"
       }
     ],
-    "src": "33:480:23"
+    "src": "33:480:19"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "@rarible/royalties-upgradeable/contracts/RoyaltiesV2Upgradeable.sol",
       "exportedSymbols": {
         "AddressUpgradeable": [
-          2047
+          1043
         ],
         "ERC165Upgradeable": [
           205
@@ -378,16 +378,16 @@
           638
         ],
         "LibPart": [
-          4006
+          1950
         ],
         "LibRoyaltiesV2": [
-          4012
+          1956
         ],
         "RoyaltiesV2": [
-          4032
+          1976
         ],
         "RoyaltiesV2Upgradeable": [
-          3974
+          1918
         ]
       },
       "license": "MIT"
@@ -405,9 +405,9 @@
             ".0"
           ]
         },
-        "id": 3954,
+        "id": 1898,
         "name": "PragmaDirective",
-        "src": "33:31:23"
+        "src": "33:31:19"
       },
       {
         "attributes": {
@@ -416,54 +416,54 @@
             "v2"
           ]
         },
-        "id": 3955,
+        "id": 1899,
         "name": "PragmaDirective",
-        "src": "65:19:23"
+        "src": "65:19:19"
       },
       {
         "attributes": {
           "SourceUnit": 206,
           "absolutePath": "@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol",
           "file": "@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol",
-          "scope": 3975,
+          "scope": 1919,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 3956,
+        "id": 1900,
         "name": "ImportDirective",
-        "src": "86:81:23"
+        "src": "86:81:19"
       },
       {
         "attributes": {
-          "SourceUnit": 4013,
+          "SourceUnit": 1957,
           "absolutePath": "@rarible/royalties/contracts/LibRoyaltiesV2.sol",
           "file": "@rarible/royalties/contracts/LibRoyaltiesV2.sol",
-          "scope": 3975,
+          "scope": 1919,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 3957,
+        "id": 1901,
         "name": "ImportDirective",
-        "src": "168:57:23"
+        "src": "168:57:19"
       },
       {
         "attributes": {
-          "SourceUnit": 4033,
+          "SourceUnit": 1977,
           "absolutePath": "@rarible/royalties/contracts/RoyaltiesV2.sol",
           "file": "@rarible/royalties/contracts/RoyaltiesV2.sol",
-          "scope": 3975,
+          "scope": 1919,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 3958,
+        "id": 1902,
         "name": "ImportDirective",
-        "src": "226:54:23"
+        "src": "226:54:19"
       },
       {
         "attributes": {
@@ -472,19 +472,19 @@
             205,
             217,
             638,
-            4032
+            1976
           ],
           "contractKind": "contract",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            3974,
-            4032,
+            1918,
+            1976,
             205,
             217,
             638
           ],
           "name": "RoyaltiesV2Upgradeable",
-          "scope": 3975
+          "scope": 1919
         },
         "children": [
           {
@@ -496,14 +496,14 @@
                   "referencedDeclaration": 205,
                   "type": "contract ERC165Upgradeable"
                 },
-                "id": 3959,
+                "id": 1903,
                 "name": "UserDefinedTypeName",
-                "src": "326:17:23"
+                "src": "326:17:19"
               }
             ],
-            "id": 3960,
+            "id": 1904,
             "name": "InheritanceSpecifier",
-            "src": "326:17:23"
+            "src": "326:17:19"
           },
           {
             "attributes": {},
@@ -511,17 +511,17 @@
               {
                 "attributes": {
                   "name": "RoyaltiesV2",
-                  "referencedDeclaration": 4032,
+                  "referencedDeclaration": 1976,
                   "type": "contract RoyaltiesV2"
                 },
-                "id": 3961,
+                "id": 1905,
                 "name": "UserDefinedTypeName",
-                "src": "345:11:23"
+                "src": "345:11:19"
               }
             ],
-            "id": 3962,
+            "id": 1906,
             "name": "InheritanceSpecifier",
-            "src": "345:11:23"
+            "src": "345:11:19"
           },
           {
             "attributes": {
@@ -529,7 +529,7 @@
               "isConstructor": false,
               "kind": "function",
               "name": "__RoyaltiesV2Upgradeable_init_unchained",
-              "scope": 3974,
+              "scope": 1918,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "internal"
@@ -542,9 +542,9 @@
                   ]
                 },
                 "children": [],
-                "id": 3963,
+                "id": 1907,
                 "name": "ParameterList",
-                "src": "411:2:23"
+                "src": "411:2:19"
               },
               {
                 "attributes": {
@@ -553,9 +553,9 @@
                   ]
                 },
                 "children": [],
-                "id": 3966,
+                "id": 1910,
                 "name": "ParameterList",
-                "src": "435:0:23"
+                "src": "435:0:19"
               },
               {
                 "attributes": {},
@@ -569,14 +569,14 @@
                       "type": "modifier ()",
                       "value": "initializer"
                     },
-                    "id": 3964,
+                    "id": 1908,
                     "name": "Identifier",
-                    "src": "423:11:23"
+                    "src": "423:11:19"
                   }
                 ],
-                "id": 3965,
+                "id": 1909,
                 "name": "ModifierInvocation",
-                "src": "423:11:23"
+                "src": "423:11:19"
               },
               {
                 "children": [
@@ -612,9 +612,9 @@
                               "type": "function (bytes4)",
                               "value": "_registerInterface"
                             },
-                            "id": 3967,
+                            "id": 1911,
                             "name": "Identifier",
-                            "src": "445:18:23"
+                            "src": "445:18:19"
                           },
                           {
                             "attributes": {
@@ -623,7 +623,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "_INTERFACE_ID_ROYALTIES",
-                              "referencedDeclaration": 4011,
+                              "referencedDeclaration": 1955,
                               "type": "bytes4"
                             },
                             "children": [
@@ -632,48 +632,48 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 4012,
+                                  "referencedDeclaration": 1956,
                                   "type": "type(library LibRoyaltiesV2)",
                                   "value": "LibRoyaltiesV2"
                                 },
-                                "id": 3968,
+                                "id": 1912,
                                 "name": "Identifier",
-                                "src": "464:14:23"
+                                "src": "464:14:19"
                               }
                             ],
-                            "id": 3969,
+                            "id": 1913,
                             "name": "MemberAccess",
-                            "src": "464:38:23"
+                            "src": "464:38:19"
                           }
                         ],
-                        "id": 3970,
+                        "id": 1914,
                         "name": "FunctionCall",
-                        "src": "445:58:23"
+                        "src": "445:58:19"
                       }
                     ],
-                    "id": 3971,
+                    "id": 1915,
                     "name": "ExpressionStatement",
-                    "src": "445:58:23"
+                    "src": "445:58:19"
                   }
                 ],
-                "id": 3972,
+                "id": 1916,
                 "name": "Block",
-                "src": "435:75:23"
+                "src": "435:75:19"
               }
             ],
-            "id": 3973,
+            "id": 1917,
             "name": "FunctionDefinition",
-            "src": "363:147:23"
+            "src": "363:147:19"
           }
         ],
-        "id": 3974,
+        "id": 1918,
         "name": "ContractDefinition",
-        "src": "282:230:23"
+        "src": "282:230:19"
       }
     ],
-    "id": 3975,
+    "id": 1919,
     "name": "SourceUnit",
-    "src": "33:480:23"
+    "src": "33:480:19"
   },
   "compiler": {
     "name": "solc",
@@ -681,7 +681,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-21T14:11:52.402Z",
+  "updatedAt": "2021-09-28T10:45:40.160Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

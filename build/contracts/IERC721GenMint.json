@@ -39,15 +39,15 @@
     "absolutePath": "project:/contracts/interfaces/IERC721GenMint.sol",
     "exportedSymbols": {
       "IERC721GenMint": [
-        4558
+        2524
       ]
     },
-    "id": 4559,
+    "id": 2525,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4548,
+        "id": 2514,
         "literals": [
           "solidity",
           "^",
@@ -55,7 +55,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:31"
+        "src": "33:23:27"
       },
       {
         "abstract": false,
@@ -63,33 +63,33 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 4558,
+        "id": 2524,
         "linearizedBaseContracts": [
-          4558
+          2524
         ],
         "name": "IERC721GenMint",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "functionSelector": "c6c3bbe6",
-            "id": 4557,
+            "id": 2523,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "mint",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4555,
+              "id": 2521,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4550,
+                  "id": 2516,
                   "mutability": "mutable",
                   "name": "artist",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4557,
-                  "src": "103:14:31",
+                  "scope": 2523,
+                  "src": "103:14:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -97,10 +97,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4549,
+                    "id": 2515,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "103:7:31",
+                    "src": "103:7:27",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -111,12 +111,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 4552,
+                  "id": 2518,
                   "mutability": "mutable",
                   "name": "to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4557,
-                  "src": "119:10:31",
+                  "scope": 2523,
+                  "src": "119:10:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -124,10 +124,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4551,
+                    "id": 2517,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "119:7:31",
+                    "src": "119:7:27",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -138,12 +138,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 4554,
+                  "id": 2520,
                   "mutability": "mutable",
                   "name": "value",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4557,
-                  "src": "131:10:31",
+                  "scope": 2523,
+                  "src": "131:10:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -151,10 +151,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4553,
+                    "id": 2519,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "131:4:31",
+                    "src": "131:4:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -163,33 +163,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "102:40:31"
+              "src": "102:40:27"
             },
             "returnParameters": {
-              "id": 4556,
+              "id": 2522,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "151:0:31"
+              "src": "151:0:27"
             },
-            "scope": 4558,
-            "src": "89:63:31",
+            "scope": 2524,
+            "src": "89:63:27",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 4559,
-        "src": "58:96:31"
+        "scope": 2525,
+        "src": "58:96:27"
       }
     ],
-    "src": "33:122:31"
+    "src": "33:122:27"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/contracts/interfaces/IERC721GenMint.sol",
       "exportedSymbols": {
         "IERC721GenMint": [
-          4558
+          2524
         ]
       },
       "license": "MIT"
@@ -204,9 +204,9 @@
             ".0"
           ]
         },
-        "id": 4548,
+        "id": 2514,
         "name": "PragmaDirective",
-        "src": "33:23:31"
+        "src": "33:23:27"
       },
       {
         "attributes": {
@@ -220,10 +220,10 @@
           "contractKind": "interface",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            4558
+            2524
           ],
           "name": "IERC721GenMint",
-          "scope": 4559
+          "scope": 2525
         },
         "children": [
           {
@@ -236,7 +236,7 @@
                 null
               ],
               "name": "mint",
-              "scope": 4558,
+              "scope": 2524,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -249,7 +249,7 @@
                       "constant": false,
                       "mutability": "mutable",
                       "name": "artist",
-                      "scope": 4557,
+                      "scope": 2523,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -262,21 +262,21 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 4549,
+                        "id": 2515,
                         "name": "ElementaryTypeName",
-                        "src": "103:7:31"
+                        "src": "103:7:27"
                       }
                     ],
-                    "id": 4550,
+                    "id": 2516,
                     "name": "VariableDeclaration",
-                    "src": "103:14:31"
+                    "src": "103:14:27"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "mutability": "mutable",
                       "name": "to",
-                      "scope": 4557,
+                      "scope": 2523,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -289,21 +289,21 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 4551,
+                        "id": 2517,
                         "name": "ElementaryTypeName",
-                        "src": "119:7:31"
+                        "src": "119:7:27"
                       }
                     ],
-                    "id": 4552,
+                    "id": 2518,
                     "name": "VariableDeclaration",
-                    "src": "119:10:31"
+                    "src": "119:10:27"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "mutability": "mutable",
                       "name": "value",
-                      "scope": 4557,
+                      "scope": 2523,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -315,19 +315,19 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 4553,
+                        "id": 2519,
                         "name": "ElementaryTypeName",
-                        "src": "131:4:31"
+                        "src": "131:4:27"
                       }
                     ],
-                    "id": 4554,
+                    "id": 2520,
                     "name": "VariableDeclaration",
-                    "src": "131:10:31"
+                    "src": "131:10:27"
                   }
                 ],
-                "id": 4555,
+                "id": 2521,
                 "name": "ParameterList",
-                "src": "102:40:31"
+                "src": "102:40:27"
               },
               {
                 "attributes": {
@@ -336,24 +336,24 @@
                   ]
                 },
                 "children": [],
-                "id": 4556,
+                "id": 2522,
                 "name": "ParameterList",
-                "src": "151:0:31"
+                "src": "151:0:27"
               }
             ],
-            "id": 4557,
+            "id": 2523,
             "name": "FunctionDefinition",
-            "src": "89:63:31"
+            "src": "89:63:27"
           }
         ],
-        "id": 4558,
+        "id": 2524,
         "name": "ContractDefinition",
-        "src": "58:96:31"
+        "src": "58:96:27"
       }
     ],
-    "id": 4559,
+    "id": 2525,
     "name": "SourceUnit",
-    "src": "33:122:31"
+    "src": "33:122:27"
   },
   "compiler": {
     "name": "solc",
@@ -361,7 +361,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-21T14:11:52.432Z",
+  "updatedAt": "2021-09-28T10:45:40.188Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
