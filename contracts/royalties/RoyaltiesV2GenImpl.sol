@@ -13,7 +13,7 @@ contract RoyaltiesV2GenImpl is RoyaltiesV2Upgradeable {
         _saveRoyalties(_royalties);
     }
 
-    function getRoyalties(uint256) override external view returns (LibPart.Part[] memory) {
+    function getRaribleV2Royalties(uint256) override external view returns (LibPart.Part[] memory) {
         return collectionRoyalties;
     }
 

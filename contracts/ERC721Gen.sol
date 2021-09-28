@@ -10,10 +10,12 @@ import "./interfaces/IERC721GenMint.sol";
 import "./royalties/RoyaltiesV2GenImpl.sol";
 import "./tokens/ERC721GenDefaultApproval.sol";
 import "./tokens/ERC721GenOperatorRole.sol";
+import "./tokens/ERC721BaseURI.sol";
+
 import "./traits/TraitsManager.sol";
 import "./utils/AddAddrToURI.sol";
 
-contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, RoyaltiesV2GenImpl, TraitsManager, AddAddrToURI, ERC721GenOperatorRole, IERC721GenMint {
+contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseURI, RoyaltiesV2GenImpl, TraitsManager, AddAddrToURI, ERC721GenOperatorRole{
     using SafeMathUpgradeable for uint;
 
     event GenArtTotal(uint total);
@@ -24,6 +26,9 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, RoyaltiesV2G
 
     //max amount of tokens to be minted in one transaction
     uint public maxValue;
+
+    //amount of minted tokens
+    uint minted;
 
     function __ERC721Gen_init(
         string memory _name,
@@ -36,7 +41,7 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, RoyaltiesV2G
         uint _total,
         uint _maxValue
     ) external initializer {
-        _setBaseURI(addTokenAddrToBaseURI(_baseURI, address(this)));
+        __ERC721BaseURI_init_unchained(addTokenAddrToBaseURI(_baseURI, address(this)));
         __RoyaltiesV2Upgradeable_init_unchained();
         __RoyaltiesV2GenImpl_init_unchained(_royalties);
         __Context_init_unchained();
@@ -56,24 +61,27 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, RoyaltiesV2G
     }
 
     //mint "value" amount of tokens and transfer them to "to" address
-    function mint(address artist, address to, uint value) onlyOperator() override public {
+    function mint(address artist, address to, uint value) onlyOperator() public {
         require(value > 0 && value <= maxValue, "incorrect value of tokens to mint");
         require(artist == owner(), "artist is not an owner");
-        require(super.totalSupply().add(value) <= total, "all minted");
+
+        uint totalSupply = minted;
+        require(totalSupply.add(value) <= total, "all minted");
 
         for (uint i = 0; i < value; i ++) {
-            mintSingleToken(to, i);
+            mintSingleToken(i, totalSupply + i, to);
         }
+        minted = totalSupply.add(value);
     }
 
     //mint one token
-    function mintSingleToken(address to, uint seed) internal {
-        uint tokenId = random(seed, super.totalSupply(), to);
+    function mintSingleToken(uint seed, uint totalSupply, address to ) internal{
+        uint tokenId = random(seed, totalSupply, to);
         _mint(to, tokenId);
         emit GenArtMint(tokenId);
     }
 
-    function tokenURI(uint256) public view virtual override returns (string memory) {
+    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
         return string(abi.encodePacked(baseURI(), "{id}"));
     }
 
@@ -83,11 +91,6 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, RoyaltiesV2G
             result[i] = getTraitValue(traits[i], getRandom(tokenId, i));
         }
         return result;
-    }
-
-    //close totalSupply() to external user
-    function totalSupply() public pure override returns (uint256) {
-        return 0;
     }
 
     uint256[50] private __gap;

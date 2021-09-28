@@ -12,8 +12,8 @@
     "@openzeppelin/contracts": "3.4.0",
     "@openzeppelin/contracts-upgradeable": "3.4.0",
     "@rarible/exchange-interfaces": "0.2.0",
-    "@rarible/royalties": "0.7.0",
-    "@rarible/royalties-upgradeable": "0.7.0",
+    "@rarible/royalties": "0.7.2",
+    "@rarible/royalties-upgradeable": "0.7.2",
     "ethereumjs-util": "^6.1.0"
   },
   "devDependencies": {
