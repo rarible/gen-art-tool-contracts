@@ -15,7 +15,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  * The beacon should be initialized before call ERC721GenFactory constructor.
  */
 contract ERC721GenFactory is Ownable, Traits {
-    //transferProxy to call transferFrom
+    //implementation of token
     address public implementation;
 
     //transferProxy to call transferFrom
