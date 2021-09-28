@@ -15,7 +15,7 @@ import "./tokens/ERC721BaseURI.sol";
 import "./traits/TraitsManager.sol";
 import "./utils/AddAddrToURI.sol";
 
-contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseURI, RoyaltiesV2GenImpl, TraitsManager, AddAddrToURI, ERC721GenOperatorRole{
+contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseURI, RoyaltiesV2GenImpl, TraitsManager, AddAddrToURI, ERC721GenOperatorRole {
     using SafeMathUpgradeable for uint;
 
     event GenArtTotal(uint total);
@@ -75,10 +75,16 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseUR
     }
 
     //mint one token
-    function mintSingleToken(uint seed, uint totalSupply, address to ) internal{
+    function mintSingleToken(uint seed, uint totalSupply, address to) internal {
         uint tokenId = random(seed, totalSupply, to);
         _mint(to, tokenId);
         emit GenArtMint(tokenId);
+    }
+
+    function _emitMintEvent(address to, uint tokenId) internal virtual override {
+        address _owner = owner();
+        emit Transfer(address(0), _owner, tokenId);
+        emit Transfer(_owner, to, tokenId);
     }
 
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {

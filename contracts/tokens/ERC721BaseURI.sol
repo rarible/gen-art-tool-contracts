@@ -8,7 +8,7 @@ contract ERC721BaseURI is OwnableUpgradeable {
     // Base URI
     string private _baseURI;
 
-    function __ERC721BaseURI_init_unchained(string memory baseURI_) internal virtual {
+    function __ERC721BaseURI_init_unchained(string memory baseURI_) internal initializer {
         _baseURI = baseURI_;
     }
 

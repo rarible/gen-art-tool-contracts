@@ -312,6 +312,10 @@ contract ERC721Upgradeable is Initializable, ContextUpgradeable, ERC165Upgradeab
         _balances[to] += 1;
         _owners[tokenId] = to;
 
+        _emitMintEvent(to, tokenId);
+    }
+
+    function _emitMintEvent(address to, uint tokenId) internal virtual {
         emit Transfer(address(0), to, tokenId);
     }
 
