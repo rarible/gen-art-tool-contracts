@@ -21,9 +21,5 @@ contract AddAddrToURI {
         else return bytes1(uint8(b) + 0x57);
     }
 
-    function addTokenAddrToBaseURI(string memory _baseURI, address _token) internal pure returns(string memory) {
-        return string(abi.encodePacked(_baseURI, "0x", toAsciiString(_token), "/"));
-    }
-
     uint256[50] private __gap;
 }

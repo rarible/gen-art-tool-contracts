@@ -95,11 +95,7 @@ module.exports = async function (deployer, network, accounts) {
 	const impl = await ERC721Gen.deployed()
 	console.log("ERC721Gen impl at", impl.address)
 
-	//deploying UpgradeableBeacon
-	const beacon = await deployer.deploy(UpgradeableBeacon, impl.address, { gas: 1000000 , from: accounts[0]});
-	console.log("beacon at", beacon.address)
-
 	//deploying factory
-	const factory = await deployer.deploy(ERC721GenFactory, beacon.address, settings.transferProxy, operatorProxy.address, settings.baseURI, {gas: 2000000});
+	const factory = await deployer.deploy(ERC721GenFactory, impl.address, settings.transferProxy, operatorProxy.address, settings.baseURI, {gas: 2000000});
 	console.log(`factory deployed at ${factory.address}`)
 };

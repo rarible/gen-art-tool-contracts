@@ -10,12 +10,11 @@ import "./interfaces/IERC721GenMint.sol";
 import "./royalties/RoyaltiesV2GenImpl.sol";
 import "./tokens/ERC721GenDefaultApproval.sol";
 import "./tokens/ERC721GenOperatorRole.sol";
-import "./tokens/ERC721BaseURI.sol";
+import "./tokens/HasContractURI.sol";
 
 import "./traits/TraitsManager.sol";
-import "./utils/AddAddrToURI.sol";
 
-contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseURI, RoyaltiesV2GenImpl, TraitsManager, AddAddrToURI, ERC721GenOperatorRole {
+contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, HasContractURI, RoyaltiesV2GenImpl, TraitsManager, ERC721GenOperatorRole {
     using SafeMathUpgradeable for uint;
 
     event GenArtTotal(uint total);
@@ -41,7 +40,7 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseUR
         uint _total,
         uint _maxValue
     ) external initializer {
-        __ERC721BaseURI_init_unchained(addTokenAddrToBaseURI(_baseURI, address(this)));
+        __HasContractURI_init_unchained(_baseURI);
         __RoyaltiesV2Upgradeable_init_unchained();
         __RoyaltiesV2GenImpl_init_unchained(_royalties);
         __Context_init_unchained();
@@ -88,7 +87,7 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseUR
     }
 
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
-        return string(abi.encodePacked(baseURI(), "{id}"));
+        return string(abi.encodePacked(contractURI, "/", "{id}"));
     }
 
     function getTokenTraits(uint tokenId) public view returns (uint[] memory) {

@@ -1,6 +1,6 @@
 const ERC721Gen = artifacts.require("ERC721Gen.sol");
-const UpgradeableBeaconTest = artifacts.require("UpgradeableBeaconTest.sol");
 const ERC721GenFactoryTest = artifacts.require("ERC721GenFactoryTest.sol");
+const ProxyAdminTest = artifacts.require("ProxyAdminTest.sol");
 
 const truffleAssert = require('truffle-assertions');
 const events = require("../library/events");
@@ -10,25 +10,36 @@ contract("ERC721GenFactoryTest", accounts => {
   const transferProxy = accounts[8];
   const operatorProxy = accounts[7];
   const baseURI = "https://ipfs.rarible.com/"
-  let beacon;
   let factory;
+  let impl;
 
   beforeEach(async () => {
-    const token = await ERC721Gen.new();
-    beacon = await UpgradeableBeaconTest.new(token.address);
-    factory = await ERC721GenFactoryTest.new(beacon.address, transferProxy, operatorProxy, baseURI);
+    impl = await ERC721Gen.new();
+    factory = await ERC721GenFactoryTest.new(impl.address, transferProxy, operatorProxy, baseURI);
   });
 
   it("should correctly deploy factory", async () => {
-    assert.equal(await factory.beacon(), beacon.address, "beacon")
+    assert.equal(await factory.implementation(), impl.address, "impl")
     assert.equal(await factory.transferProxy(), transferProxy, "transferProxy")
     assert.equal(await factory.operatorProxy(), operatorProxy, "operatorProxy")
     assert.equal(await factory.baseURI(), baseURI, "baseURI")
   });
 
+  it("changeing implemntation should work correctly", async () => {
+    const newImpl = accounts[5]
+    await factory.changeImplementation(newImpl);
+    assert.equal(await factory.implementation(), newImpl, "newImpl")
+
+    await truffleAssert.fails(
+      factory.changeImplementation(newImpl, { from: accounts[2] }),
+      truffleAssert.ErrorType.REVERT,
+      "Ownable: caller is not the owner"
+    )
+  });
+
   it("should correctly create token from factory", async () => {
-    const trait1 = ["Test1", ["v1", "v2", "v3"], [1, 2, 9997]]
-    const trait2 = ["Test2", ["v1", "v2", "v3"], [3333, 3333, 3334]]
+    const trait1 = [[1, 2, 9997]]
+    const trait2 = [[3333, 3333, 3334]]
     const traits = [trait1, trait2]
     const total = 3;
     const collectionRoyalties = [[accounts[5], 700]]
@@ -40,9 +51,13 @@ contract("ERC721GenFactoryTest", accounts => {
     const artist = accounts[2]
 
     const tx = await factory.createCollection(...initData, { from: artist });
+    console.log(tx.receipt.gasUsed)
 
     const [CollectionCreatedEvent] = events(tx, "CollectionCreated");
     assert.equal(CollectionCreatedEvent.args.owner, artist, "CollectionCreatedEvent owner")
+
+    const proxyAdmin = await ProxyAdminTest.at(CollectionCreatedEvent.args.admin);
+    assert.equal(await proxyAdmin.owner(), artist, "artsit is the owner of proxyAdmin")
 
     const token = await ERC721Gen.at(CollectionCreatedEvent.args.collection)
 
@@ -58,6 +73,7 @@ contract("ERC721GenFactoryTest", accounts => {
     assert.equal(await token.maxValue(), maxValue, "maxValue")
     assert.equal(await token.name(), name, "name")
     assert.equal(await token.symbol(), symbol, "symbol")
+    assert.equal(await token.contractURI(), baseURI + token.address.toLowerCase(), "contractURI")
 
     //check traits
     const TraitsSet = await token.getPastEvents("TraitsSet", {
@@ -67,32 +83,18 @@ contract("ERC721GenFactoryTest", accounts => {
 
     const traitsFromEvent = TraitsSet[0].args.traits
     for (let i = 0; i < traitsFromEvent.length; i++) {
-      assert.equal(traitsFromEvent[i][0], traits[i][0], "trait name event")
-
-      for (let j = 0; j < traitsFromEvent[i][1]; j++) {
-        assert.equal(traitsFromEvent[i][1][j], traits[i][1][j], "trait keys names event")
+      for (let j = 0; j < traitsFromEvent[i].rarities.length; j++) {
+        assert.equal(traitsFromEvent[i].rarities[j].toString(), traits[i][0][j].toString(), "trait rarities event")
       }
-
-      for (let j = 0; j < traitsFromEvent[i][2]; j++) {
-        assert.equal(traitsFromEvent[i][2][j], traits[i][1][j], "trait rarities event")
-      }
-
     }
 
     const traitsFromGet = await token.getPossibleTraits();
     for (let i = 0; i < traitsFromGet.length; i++) {
-      assert.equal(traitsFromGet[i][0], traits[i][0], "trait name get")
-
-      for (let j = 0; j < traitsFromGet[i][1]; j++) {
-        assert.equal(traitsFromGet[i][1][j], traits[i][1][j], "trait keys names get")
+      for (let j = 0; j < traitsFromGet[i].rarities.length; j++) {
+        assert.equal(traitsFromGet[i].rarities[j].toString(), traits[i][0][j].toString(), "trait rarities get")
       }
-
-      for (let j = 0; j < traitsFromGet[i][2]; j++) {
-        assert.equal(traitsFromGet[i][2][j], traits[i][1][j], "trait rarities get")
-      }
-
     }
-
+    
     //check royalties
     const royalty = await token.getRaribleV2Royalties(0);
     assert.equal(royalty[0].account, collectionRoyalties[0][0], "get royalties account")
@@ -101,9 +103,9 @@ contract("ERC721GenFactoryTest", accounts => {
   });
 
   it("should be able to mint many tokens", async () => {
-    const trait1 = ["Test1", ["v1", "v2", "v3"], [1000, 2000, 7000]]
-    const trait2 = ["Test2", ["v1", "v2", "v3"], [3333, 3333, 3334]]
-    const trait3 = ["Test3", ["v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10"], [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]]
+    const trait1 = [[1000, 2000, 7000]]
+    const trait2 = [[3333, 3333, 3334]]
+    const trait3 = [[1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]]
     const total = 30;
     const collectionRoyalties = [[accounts[5], 700]]
     const name = "Tc"

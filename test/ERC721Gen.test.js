@@ -8,11 +8,10 @@ const ERC721GenTest = artifacts.require("ERC721GenTest.sol");
 contract("ERC721Gen", accounts => {
   let testing;
   const baseURI = "https://ipfs.rarible.com/";
-
   beforeEach(async () => {
-    const trait1 = ["Test1", ["v1", "v2", "v3"], [1, 2, 9997]]
-    const trait2 = ["Test2", ["v1", "v2", "v3"], [3333, 3333, 3334]]
-    const trait3 = ["Test3", ["v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10"], [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]]
+    const trait1 = [[1, 2, 9997]]
+    const trait2 = [[3333, 3333, 3334]]
+    const trait3 = [[1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]]
 
     testing = await ERC721Gen.new();
 
@@ -22,16 +21,24 @@ contract("ERC721Gen", accounts => {
     await testing.__ERC721Gen_init("T", "T", baseURI, transferProxy, operatorProxy, [[accounts[3], 100]], [trait1, trait2, trait3], 100, 10);
   });
 
-  it("should set base uri with toke addr", async () => {
-    const curBaseURI = await testing.baseURI();
-    assert.equal(curBaseURI, baseURI + testing.address.toLowerCase() + "/", "token base URI")
+  it("should set base uri with toke addr and contract uri", async () => {
+    assert.equal(await testing.contractURI(), baseURI + testing.address.toLowerCase(), "contract URI")
+  })
+
+  it("should support contract uri interface", async () => {
+    const _INTERFACE_ID_CONTRACT_URI = "0xe8a3d485"
+    assert.equal(await testing.supportsInterface(_INTERFACE_ID_CONTRACT_URI), true, "interface contract uri")
   })
 
   it("should return correct tokenURI", async () => {
     const tokenURI0 = await testing.tokenURI(0);
     const tokenURI1 = await testing.tokenURI(1);
 
-    const shouldBeURI = baseURI + testing.address.toLowerCase() + "/" + "{id}"
+    const contractURI = await testing.contractURI()
+    const shouldBeContractURI = baseURI + testing.address.toLowerCase();
+    assert.equal(contractURI, shouldBeContractURI, "contractURI")
+
+    const shouldBeURI = contractURI + "/" + "{id}"
 
     assert.equal(tokenURI0, shouldBeURI, "token URI")
     assert.equal(tokenURI1, shouldBeURI, "token URI")
@@ -110,9 +117,9 @@ contract("ERC721Gen", accounts => {
   })
 
   it("minted value should increment", async () => {
-    const trait1 = ["Test1", ["v1", "v2", "v3"], [1, 2, 9997]]
-    const trait2 = ["Test2", ["v1", "v2", "v3"], [3333, 3333, 3334]]
-    const trait3 = ["Test3", ["v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10"], [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]]
+    const trait1 = [[1, 2, 9997]]
+    const trait2 = [[3333, 3333, 3334]]
+    const trait3 = [[1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]]
 
     const erc721test = await ERC721GenTest.new();
 
