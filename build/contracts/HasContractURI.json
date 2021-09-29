@@ -100,7 +100,7 @@
     "absolutePath": "project:/contracts/tokens/HasContractURI.sol",
     "exportedSymbols": {
       "AddAddrToURI": [
-        4455
+        4472
       ],
       "AddressUpgradeable": [
         1043
@@ -112,7 +112,7 @@
         205
       ],
       "HasContractURI": [
-        4095
+        4112
       ],
       "IERC165Upgradeable": [
         217
@@ -124,12 +124,12 @@
         130
       ]
     },
-    "id": 4096,
+    "id": 4113,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4047,
+        "id": 4064,
         "literals": [
           "solidity",
           ">=",
@@ -145,9 +145,9 @@
       {
         "absolutePath": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
         "file": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
-        "id": 4048,
+        "id": 4065,
         "nodeType": "ImportDirective",
-        "scope": 4096,
+        "scope": 4113,
         "sourceUnit": 131,
         "src": "66:75:35",
         "symbolAliases": [],
@@ -156,9 +156,9 @@
       {
         "absolutePath": "@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol",
         "file": "@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol",
-        "id": 4049,
+        "id": 4066,
         "nodeType": "ImportDirective",
-        "scope": 4096,
+        "scope": 4113,
         "sourceUnit": 206,
         "src": "142:81:35",
         "symbolAliases": [],
@@ -167,10 +167,10 @@
       {
         "absolutePath": "project:/contracts/utils/AddAddrToURI.sol",
         "file": "../utils/AddAddrToURI.sol",
-        "id": 4050,
+        "id": 4067,
         "nodeType": "ImportDirective",
-        "scope": 4096,
-        "sourceUnit": 4456,
+        "scope": 4113,
+        "sourceUnit": 4473,
         "src": "225:35:35",
         "symbolAliases": [],
         "unitAlias": ""
@@ -180,7 +180,7 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 4051,
+              "id": 4068,
               "name": "OwnableUpgradeable",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 130,
@@ -190,13 +190,13 @@
                 "typeString": "contract OwnableUpgradeable"
               }
             },
-            "id": 4052,
+            "id": 4069,
             "nodeType": "InheritanceSpecifier",
             "src": "289:18:35"
           },
           {
             "baseName": {
-              "id": 4053,
+              "id": 4070,
               "name": "ERC165Upgradeable",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 205,
@@ -206,23 +206,23 @@
                 "typeString": "contract ERC165Upgradeable"
               }
             },
-            "id": 4054,
+            "id": 4071,
             "nodeType": "InheritanceSpecifier",
             "src": "309:17:35"
           },
           {
             "baseName": {
-              "id": 4055,
+              "id": 4072,
               "name": "AddAddrToURI",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4455,
+              "referencedDeclaration": 4472,
               "src": "328:12:35",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_AddAddrToURI_$4455",
+                "typeIdentifier": "t_contract$_AddAddrToURI_$4472",
                 "typeString": "contract AddAddrToURI"
               }
             },
-            "id": 4056,
+            "id": 4073,
             "nodeType": "InheritanceSpecifier",
             "src": "328:12:35"
           }
@@ -233,14 +233,14 @@
           217,
           638,
           1088,
-          4455
+          4472
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 4095,
+        "id": 4112,
         "linearizedBaseContracts": [
-          4095,
-          4455,
+          4112,
+          4472,
           205,
           217,
           130,
@@ -253,11 +253,11 @@
           {
             "constant": false,
             "functionSelector": "e8a3d485",
-            "id": 4058,
+            "id": 4075,
             "mutability": "mutable",
             "name": "contractURI",
             "nodeType": "VariableDeclaration",
-            "scope": 4095,
+            "scope": 4112,
             "src": "347:25:35",
             "stateVariable": true,
             "storageLocation": "default",
@@ -266,7 +266,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 4057,
+              "id": 4074,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "347:6:35",
@@ -279,11 +279,11 @@
           },
           {
             "constant": true,
-            "id": 4061,
+            "id": 4078,
             "mutability": "constant",
             "name": "_INTERFACE_ID_CONTRACT_URI",
             "nodeType": "VariableDeclaration",
-            "scope": 4095,
+            "scope": 4112,
             "src": "450:63:35",
             "stateVariable": true,
             "storageLocation": "default",
@@ -292,7 +292,7 @@
               "typeString": "bytes4"
             },
             "typeName": {
-              "id": 4059,
+              "id": 4076,
               "name": "bytes4",
               "nodeType": "ElementaryTypeName",
               "src": "450:6:35",
@@ -303,7 +303,7 @@
             },
             "value": {
               "hexValue": "30786538613364343835",
-              "id": 4060,
+              "id": 4077,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -321,23 +321,23 @@
           },
           {
             "body": {
-              "id": 4089,
+              "id": 4106,
               "nodeType": "Block",
               "src": "606:157:35",
               "statements": [
                 {
                   "expression": {
-                    "id": 4083,
+                    "id": 4100,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 4068,
+                      "id": 4085,
                       "name": "contractURI",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4058,
+                      "referencedDeclaration": 4075,
                       "src": "616:11:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -351,11 +351,11 @@
                         {
                           "arguments": [
                             {
-                              "id": 4073,
+                              "id": 4090,
                               "name": "baseURI_",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4063,
+                              "referencedDeclaration": 4080,
                               "src": "654:8:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -364,7 +364,7 @@
                             },
                             {
                               "hexValue": "3078",
-                              "id": 4074,
+                              "id": 4091,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -383,14 +383,14 @@
                                 {
                                   "arguments": [
                                     {
-                                      "id": 4078,
+                                      "id": 4095,
                                       "name": "this",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
                                       "referencedDeclaration": 4294967268,
                                       "src": "692:4:35",
                                       "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_HasContractURI_$4095",
+                                        "typeIdentifier": "t_contract$_HasContractURI_$4112",
                                         "typeString": "contract HasContractURI"
                                       }
                                     }
@@ -398,11 +398,11 @@
                                   "expression": {
                                     "argumentTypes": [
                                       {
-                                        "typeIdentifier": "t_contract$_HasContractURI_$4095",
+                                        "typeIdentifier": "t_contract$_HasContractURI_$4112",
                                         "typeString": "contract HasContractURI"
                                       }
                                     ],
-                                    "id": 4077,
+                                    "id": 4094,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -414,14 +414,14 @@
                                       "typeString": "type(address)"
                                     },
                                     "typeName": {
-                                      "id": 4076,
+                                      "id": 4093,
                                       "name": "address",
                                       "nodeType": "ElementaryTypeName",
                                       "src": "684:7:35",
                                       "typeDescriptions": {}
                                     }
                                   },
-                                  "id": 4079,
+                                  "id": 4096,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -444,18 +444,18 @@
                                     "typeString": "address"
                                   }
                                 ],
-                                "id": 4075,
+                                "id": 4092,
                                 "name": "toAsciiString",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 4415,
+                                "referencedDeclaration": 4432,
                                 "src": "670:13:35",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$_t_address_$returns$_t_string_memory_ptr_$",
                                   "typeString": "function (address) pure returns (string memory)"
                                 }
                               },
-                              "id": 4080,
+                              "id": 4097,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -487,7 +487,7 @@
                               }
                             ],
                             "expression": {
-                              "id": 4071,
+                              "id": 4088,
                               "name": "abi",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
@@ -498,7 +498,7 @@
                                 "typeString": "abi"
                               }
                             },
-                            "id": 4072,
+                            "id": 4089,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -511,7 +511,7 @@
                               "typeString": "function () pure returns (bytes memory)"
                             }
                           },
-                          "id": 4081,
+                          "id": 4098,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -534,7 +534,7 @@
                             "typeString": "bytes memory"
                           }
                         ],
-                        "id": 4070,
+                        "id": 4087,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -546,14 +546,14 @@
                           "typeString": "type(string storage pointer)"
                         },
                         "typeName": {
-                          "id": 4069,
+                          "id": 4086,
                           "name": "string",
                           "nodeType": "ElementaryTypeName",
                           "src": "630:6:35",
                           "typeDescriptions": {}
                         }
                       },
-                      "id": 4082,
+                      "id": 4099,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -574,7 +574,7 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 4084,
+                  "id": 4101,
                   "nodeType": "ExpressionStatement",
                   "src": "616:84:35"
                 },
@@ -582,11 +582,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 4086,
+                        "id": 4103,
                         "name": "_INTERFACE_ID_CONTRACT_URI",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4061,
+                        "referencedDeclaration": 4078,
                         "src": "729:26:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes4",
@@ -601,7 +601,7 @@
                           "typeString": "bytes4"
                         }
                       ],
-                      "id": 4085,
+                      "id": 4102,
                       "name": "_registerInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
@@ -612,7 +612,7 @@
                         "typeString": "function (bytes4)"
                       }
                     },
-                    "id": 4087,
+                    "id": 4104,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -627,20 +627,20 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4088,
+                  "id": 4105,
                   "nodeType": "ExpressionStatement",
                   "src": "710:46:35"
                 }
               ]
             },
-            "id": 4090,
+            "id": 4107,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 4066,
+                "id": 4083,
                 "modifierName": {
-                  "id": 4065,
+                  "id": 4082,
                   "name": "initializer",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
@@ -658,16 +658,16 @@
             "name": "__HasContractURI_init_unchained",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4064,
+              "id": 4081,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4063,
+                  "id": 4080,
                   "mutability": "mutable",
                   "name": "baseURI_",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4090,
+                  "scope": 4107,
                   "src": "561:22:35",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -676,7 +676,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 4062,
+                    "id": 4079,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "561:6:35",
@@ -691,12 +691,12 @@
               "src": "560:24:35"
             },
             "returnParameters": {
-              "id": 4067,
+              "id": 4084,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "606:0:35"
             },
-            "scope": 4095,
+            "scope": 4112,
             "src": "520:243:35",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -704,11 +704,11 @@
           },
           {
             "constant": false,
-            "id": 4094,
+            "id": 4111,
             "mutability": "mutable",
             "name": "__gap",
             "nodeType": "VariableDeclaration",
-            "scope": 4095,
+            "scope": 4112,
             "src": "769:25:35",
             "stateVariable": true,
             "storageLocation": "default",
@@ -718,7 +718,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 4091,
+                "id": 4108,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "769:7:35",
@@ -727,10 +727,10 @@
                   "typeString": "uint256"
                 }
               },
-              "id": 4093,
+              "id": 4110,
               "length": {
                 "hexValue": "3530",
-                "id": 4092,
+                "id": 4109,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
@@ -754,7 +754,7 @@
             "visibility": "private"
           }
         ],
-        "scope": 4096,
+        "scope": 4113,
         "src": "262:535:35"
       }
     ],
@@ -765,7 +765,7 @@
       "absolutePath": "project:/contracts/tokens/HasContractURI.sol",
       "exportedSymbols": {
         "AddAddrToURI": [
-          4455
+          4472
         ],
         "AddressUpgradeable": [
           1043
@@ -777,7 +777,7 @@
           205
         ],
         "HasContractURI": [
-          4095
+          4112
         ],
         "IERC165Upgradeable": [
           217
@@ -804,7 +804,7 @@
             ".0"
           ]
         },
-        "id": 4047,
+        "id": 4064,
         "name": "PragmaDirective",
         "src": "33:31:35"
       },
@@ -813,13 +813,13 @@
           "SourceUnit": 131,
           "absolutePath": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
           "file": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
-          "scope": 4096,
+          "scope": 4113,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 4048,
+        "id": 4065,
         "name": "ImportDirective",
         "src": "66:75:35"
       },
@@ -828,28 +828,28 @@
           "SourceUnit": 206,
           "absolutePath": "@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol",
           "file": "@openzeppelin/contracts-upgradeable/introspection/ERC165Upgradeable.sol",
-          "scope": 4096,
+          "scope": 4113,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 4049,
+        "id": 4066,
         "name": "ImportDirective",
         "src": "142:81:35"
       },
       {
         "attributes": {
-          "SourceUnit": 4456,
+          "SourceUnit": 4473,
           "absolutePath": "project:/contracts/utils/AddAddrToURI.sol",
           "file": "../utils/AddAddrToURI.sol",
-          "scope": 4096,
+          "scope": 4113,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 4050,
+        "id": 4067,
         "name": "ImportDirective",
         "src": "225:35:35"
       },
@@ -862,13 +862,13 @@
             217,
             638,
             1088,
-            4455
+            4472
           ],
           "contractKind": "contract",
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            4095,
-            4455,
+            4112,
+            4472,
             205,
             217,
             130,
@@ -876,7 +876,7 @@
             638
           ],
           "name": "HasContractURI",
-          "scope": 4096
+          "scope": 4113
         },
         "children": [
           {
@@ -888,12 +888,12 @@
                   "referencedDeclaration": 130,
                   "type": "contract OwnableUpgradeable"
                 },
-                "id": 4051,
+                "id": 4068,
                 "name": "UserDefinedTypeName",
                 "src": "289:18:35"
               }
             ],
-            "id": 4052,
+            "id": 4069,
             "name": "InheritanceSpecifier",
             "src": "289:18:35"
           },
@@ -906,12 +906,12 @@
                   "referencedDeclaration": 205,
                   "type": "contract ERC165Upgradeable"
                 },
-                "id": 4053,
+                "id": 4070,
                 "name": "UserDefinedTypeName",
                 "src": "309:17:35"
               }
             ],
-            "id": 4054,
+            "id": 4071,
             "name": "InheritanceSpecifier",
             "src": "309:17:35"
           },
@@ -921,15 +921,15 @@
               {
                 "attributes": {
                   "name": "AddAddrToURI",
-                  "referencedDeclaration": 4455,
+                  "referencedDeclaration": 4472,
                   "type": "contract AddAddrToURI"
                 },
-                "id": 4055,
+                "id": 4072,
                 "name": "UserDefinedTypeName",
                 "src": "328:12:35"
               }
             ],
-            "id": 4056,
+            "id": 4073,
             "name": "InheritanceSpecifier",
             "src": "328:12:35"
           },
@@ -939,7 +939,7 @@
               "functionSelector": "e8a3d485",
               "mutability": "mutable",
               "name": "contractURI",
-              "scope": 4095,
+              "scope": 4112,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "string",
@@ -951,12 +951,12 @@
                   "name": "string",
                   "type": "string"
                 },
-                "id": 4057,
+                "id": 4074,
                 "name": "ElementaryTypeName",
                 "src": "347:6:35"
               }
             ],
-            "id": 4058,
+            "id": 4075,
             "name": "VariableDeclaration",
             "src": "347:25:35"
           },
@@ -965,7 +965,7 @@
               "constant": true,
               "mutability": "constant",
               "name": "_INTERFACE_ID_CONTRACT_URI",
-              "scope": 4095,
+              "scope": 4112,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "bytes4",
@@ -977,7 +977,7 @@
                   "name": "bytes4",
                   "type": "bytes4"
                 },
-                "id": 4059,
+                "id": 4076,
                 "name": "ElementaryTypeName",
                 "src": "450:6:35"
               },
@@ -992,12 +992,12 @@
                   "type": "int_const 3903050885",
                   "value": "0xe8a3d485"
                 },
-                "id": 4060,
+                "id": 4077,
                 "name": "Literal",
                 "src": "503:10:35"
               }
             ],
-            "id": 4061,
+            "id": 4078,
             "name": "VariableDeclaration",
             "src": "450:63:35"
           },
@@ -1007,7 +1007,7 @@
               "isConstructor": false,
               "kind": "function",
               "name": "__HasContractURI_init_unchained",
-              "scope": 4095,
+              "scope": 4112,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "internal"
@@ -1020,7 +1020,7 @@
                       "constant": false,
                       "mutability": "mutable",
                       "name": "baseURI_",
-                      "scope": 4090,
+                      "scope": 4107,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "string",
@@ -1032,17 +1032,17 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 4062,
+                        "id": 4079,
                         "name": "ElementaryTypeName",
                         "src": "561:6:35"
                       }
                     ],
-                    "id": 4063,
+                    "id": 4080,
                     "name": "VariableDeclaration",
                     "src": "561:22:35"
                   }
                 ],
-                "id": 4064,
+                "id": 4081,
                 "name": "ParameterList",
                 "src": "560:24:35"
               },
@@ -1053,7 +1053,7 @@
                   ]
                 },
                 "children": [],
-                "id": 4067,
+                "id": 4084,
                 "name": "ParameterList",
                 "src": "606:0:35"
               },
@@ -1069,12 +1069,12 @@
                       "type": "modifier ()",
                       "value": "initializer"
                     },
-                    "id": 4065,
+                    "id": 4082,
                     "name": "Identifier",
                     "src": "594:11:35"
                   }
                 ],
-                "id": 4066,
+                "id": 4083,
                 "name": "ModifierInvocation",
                 "src": "594:11:35"
               },
@@ -1097,11 +1097,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 4058,
+                              "referencedDeclaration": 4075,
                               "type": "string storage ref",
                               "value": "contractURI"
                             },
-                            "id": 4068,
+                            "id": 4085,
                             "name": "Identifier",
                             "src": "616:11:35"
                           },
@@ -1139,12 +1139,12 @@
                                     "attributes": {
                                       "name": "string"
                                     },
-                                    "id": 4069,
+                                    "id": 4086,
                                     "name": "ElementaryTypeName",
                                     "src": "630:6:35"
                                   }
                                 ],
-                                "id": 4070,
+                                "id": 4087,
                                 "name": "ElementaryTypeNameExpression",
                                 "src": "630:6:35"
                               },
@@ -1196,12 +1196,12 @@
                                           "type": "abi",
                                           "value": "abi"
                                         },
-                                        "id": 4071,
+                                        "id": 4088,
                                         "name": "Identifier",
                                         "src": "637:3:35"
                                       }
                                     ],
-                                    "id": 4072,
+                                    "id": 4089,
                                     "name": "MemberAccess",
                                     "src": "637:16:35"
                                   },
@@ -1210,11 +1210,11 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 4063,
+                                      "referencedDeclaration": 4080,
                                       "type": "string memory",
                                       "value": "baseURI_"
                                     },
-                                    "id": 4073,
+                                    "id": 4090,
                                     "name": "Identifier",
                                     "src": "654:8:35"
                                   },
@@ -1229,7 +1229,7 @@
                                       "type": "literal_string \"0x\"",
                                       "value": "0x"
                                     },
-                                    "id": 4074,
+                                    "id": 4091,
                                     "name": "Literal",
                                     "src": "664:4:35"
                                   },
@@ -1259,11 +1259,11 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 4415,
+                                          "referencedDeclaration": 4432,
                                           "type": "function (address) pure returns (string memory)",
                                           "value": "toAsciiString"
                                         },
-                                        "id": 4075,
+                                        "id": 4092,
                                         "name": "Identifier",
                                         "src": "670:13:35"
                                       },
@@ -1286,7 +1286,7 @@
                                             "attributes": {
                                               "argumentTypes": [
                                                 {
-                                                  "typeIdentifier": "t_contract$_HasContractURI_$4095",
+                                                  "typeIdentifier": "t_contract$_HasContractURI_$4112",
                                                   "typeString": "contract HasContractURI"
                                                 }
                                               ],
@@ -1301,12 +1301,12 @@
                                                 "attributes": {
                                                   "name": "address"
                                                 },
-                                                "id": 4076,
+                                                "id": 4093,
                                                 "name": "ElementaryTypeName",
                                                 "src": "684:7:35"
                                               }
                                             ],
-                                            "id": 4077,
+                                            "id": 4094,
                                             "name": "ElementaryTypeNameExpression",
                                             "src": "684:7:35"
                                           },
@@ -1319,37 +1319,37 @@
                                               "type": "contract HasContractURI",
                                               "value": "this"
                                             },
-                                            "id": 4078,
+                                            "id": 4095,
                                             "name": "Identifier",
                                             "src": "692:4:35"
                                           }
                                         ],
-                                        "id": 4079,
+                                        "id": 4096,
                                         "name": "FunctionCall",
                                         "src": "684:13:35"
                                       }
                                     ],
-                                    "id": 4080,
+                                    "id": 4097,
                                     "name": "FunctionCall",
                                     "src": "670:28:35"
                                   }
                                 ],
-                                "id": 4081,
+                                "id": 4098,
                                 "name": "FunctionCall",
                                 "src": "637:62:35"
                               }
                             ],
-                            "id": 4082,
+                            "id": 4099,
                             "name": "FunctionCall",
                             "src": "630:70:35"
                           }
                         ],
-                        "id": 4083,
+                        "id": 4100,
                         "name": "Assignment",
                         "src": "616:84:35"
                       }
                     ],
-                    "id": 4084,
+                    "id": 4101,
                     "name": "ExpressionStatement",
                     "src": "616:84:35"
                   },
@@ -1385,7 +1385,7 @@
                               "type": "function (bytes4)",
                               "value": "_registerInterface"
                             },
-                            "id": 4085,
+                            "id": 4102,
                             "name": "Identifier",
                             "src": "710:18:35"
                           },
@@ -1394,31 +1394,31 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 4061,
+                              "referencedDeclaration": 4078,
                               "type": "bytes4",
                               "value": "_INTERFACE_ID_CONTRACT_URI"
                             },
-                            "id": 4086,
+                            "id": 4103,
                             "name": "Identifier",
                             "src": "729:26:35"
                           }
                         ],
-                        "id": 4087,
+                        "id": 4104,
                         "name": "FunctionCall",
                         "src": "710:46:35"
                       }
                     ],
-                    "id": 4088,
+                    "id": 4105,
                     "name": "ExpressionStatement",
                     "src": "710:46:35"
                   }
                 ],
-                "id": 4089,
+                "id": 4106,
                 "name": "Block",
                 "src": "606:157:35"
               }
             ],
-            "id": 4090,
+            "id": 4107,
             "name": "FunctionDefinition",
             "src": "520:243:35"
           },
@@ -1427,7 +1427,7 @@
               "constant": false,
               "mutability": "mutable",
               "name": "__gap",
-              "scope": 4095,
+              "scope": 4112,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256[50]",
@@ -1444,7 +1444,7 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 4091,
+                    "id": 4108,
                     "name": "ElementaryTypeName",
                     "src": "769:7:35"
                   },
@@ -1459,27 +1459,27 @@
                       "type": "int_const 50",
                       "value": "50"
                     },
-                    "id": 4092,
+                    "id": 4109,
                     "name": "Literal",
                     "src": "777:2:35"
                   }
                 ],
-                "id": 4093,
+                "id": 4110,
                 "name": "ArrayTypeName",
                 "src": "769:11:35"
               }
             ],
-            "id": 4094,
+            "id": 4111,
             "name": "VariableDeclaration",
             "src": "769:25:35"
           }
         ],
-        "id": 4095,
+        "id": 4112,
         "name": "ContractDefinition",
         "src": "262:535:35"
       }
     ],
-    "id": 4096,
+    "id": 4113,
     "name": "SourceUnit",
     "src": "33:765:35"
   },
@@ -1489,7 +1489,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-29T11:34:20.278Z",
+  "updatedAt": "2021-09-29T12:00:12.132Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

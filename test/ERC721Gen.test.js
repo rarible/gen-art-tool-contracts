@@ -38,10 +38,10 @@ contract("ERC721Gen", accounts => {
     const shouldBeContractURI = baseURI + testing.address.toLowerCase();
     assert.equal(contractURI, shouldBeContractURI, "contractURI")
 
-    const shouldBeURI = contractURI + "/" + "{id}"
+    const shouldBeURI = contractURI + "/"
 
-    assert.equal(tokenURI0, shouldBeURI, "token URI")
-    assert.equal(tokenURI1, shouldBeURI, "token URI")
+    assert.equal(tokenURI0, shouldBeURI + "0", "token URI")
+    assert.equal(tokenURI1, shouldBeURI + "1", "token URI")
   })
 
   it("fails if artist is incorrect", async () => {

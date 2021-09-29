@@ -16,6 +16,7 @@ import "./traits/TraitsManager.sol";
 
 contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, HasContractURI, RoyaltiesV2GenImpl, TraitsManager, ERC721GenOperatorRole {
     using SafeMathUpgradeable for uint;
+    using StringsUpgradeable for uint;
 
     event GenArtTotal(uint total);
     event GenArtMint(uint tokenId);
@@ -87,7 +88,7 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, HasContractU
     }
 
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
-        return string(abi.encodePacked(contractURI, "/", "{id}"));
+        return string(abi.encodePacked(contractURI, "/", tokenId.toString()));
     }
 
     function getTokenTraits(uint tokenId) public view returns (uint[] memory) {

@@ -15,15 +15,15 @@
     "absolutePath": "project:/contracts/traits/Traits.sol",
     "exportedSymbols": {
       "Traits": [
-        4103
+        4120
       ]
     },
-    "id": 4104,
+    "id": 4121,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4097,
+        "id": 4114,
         "literals": [
           "solidity",
           "^",
@@ -34,7 +34,7 @@
         "src": "33:23:36"
       },
       {
-        "id": 4098,
+        "id": 4115,
         "literals": [
           "abicoder",
           "v2"
@@ -48,24 +48,24 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 4103,
+        "id": 4120,
         "linearizedBaseContracts": [
-          4103
+          4120
         ],
         "name": "Traits",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "Traits.Trait",
-            "id": 4102,
+            "id": 4119,
             "members": [
               {
                 "constant": false,
-                "id": 4101,
+                "id": 4118,
                 "mutability": "mutable",
                 "name": "rarities",
                 "nodeType": "VariableDeclaration",
-                "scope": 4102,
+                "scope": 4119,
                 "src": "123:15:36",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -75,7 +75,7 @@
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 4099,
+                    "id": 4116,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "123:4:36",
@@ -84,7 +84,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 4100,
+                  "id": 4117,
                   "nodeType": "ArrayTypeName",
                   "src": "123:6:36",
                   "typeDescriptions": {
@@ -97,12 +97,12 @@
             ],
             "name": "Trait",
             "nodeType": "StructDefinition",
-            "scope": 4103,
+            "scope": 4120,
             "src": "100:45:36",
             "visibility": "public"
           }
         ],
-        "scope": 4104,
+        "scope": 4121,
         "src": "78:69:36"
       }
     ],
@@ -113,7 +113,7 @@
       "absolutePath": "project:/contracts/traits/Traits.sol",
       "exportedSymbols": {
         "Traits": [
-          4103
+          4120
         ]
       },
       "license": "MIT"
@@ -128,7 +128,7 @@
             ".0"
           ]
         },
-        "id": 4097,
+        "id": 4114,
         "name": "PragmaDirective",
         "src": "33:23:36"
       },
@@ -139,7 +139,7 @@
             "v2"
           ]
         },
-        "id": 4098,
+        "id": 4115,
         "name": "PragmaDirective",
         "src": "57:19:36"
       },
@@ -155,17 +155,17 @@
           "contractKind": "contract",
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            4103
+            4120
           ],
           "name": "Traits",
-          "scope": 4104
+          "scope": 4121
         },
         "children": [
           {
             "attributes": {
               "canonicalName": "Traits.Trait",
               "name": "Trait",
-              "scope": 4103,
+              "scope": 4120,
               "visibility": "public"
             },
             "children": [
@@ -174,7 +174,7 @@
                   "constant": false,
                   "mutability": "mutable",
                   "name": "rarities",
-                  "scope": 4102,
+                  "scope": 4119,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256[]",
@@ -191,32 +191,32 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 4099,
+                        "id": 4116,
                         "name": "ElementaryTypeName",
                         "src": "123:4:36"
                       }
                     ],
-                    "id": 4100,
+                    "id": 4117,
                     "name": "ArrayTypeName",
                     "src": "123:6:36"
                   }
                 ],
-                "id": 4101,
+                "id": 4118,
                 "name": "VariableDeclaration",
                 "src": "123:15:36"
               }
             ],
-            "id": 4102,
+            "id": 4119,
             "name": "StructDefinition",
             "src": "100:45:36"
           }
         ],
-        "id": 4103,
+        "id": 4120,
         "name": "ContractDefinition",
         "src": "78:69:36"
       }
     ],
-    "id": 4104,
+    "id": 4121,
     "name": "SourceUnit",
     "src": "33:115:36"
   },
@@ -226,7 +226,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-29T11:34:20.279Z",
+  "updatedAt": "2021-09-29T12:00:12.133Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

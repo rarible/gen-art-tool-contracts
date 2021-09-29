@@ -74,4 +74,8 @@ contract ERC721GenFactory is Ownable, Traits {
     function changeImplementation(address _implementation) external onlyOwner() {
       implementation = _implementation;
     }
+
+    function changeBaseURI(string memory _baseURI) external onlyOwner() {
+        baseURI = _baseURI;
+    }
 }
