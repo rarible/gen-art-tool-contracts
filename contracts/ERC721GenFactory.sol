@@ -44,6 +44,7 @@ contract ERC721GenFactory is Ownable, Traits {
     function createCollection(
         string memory _name,
         string memory _symbol,
+        string memory _contractURI,
         LibPart.Part[] memory _royalties,
         Trait[] memory _traits,
         uint256 _total,
@@ -54,6 +55,7 @@ contract ERC721GenFactory is Ownable, Traits {
             _name,
             _symbol,
             baseURI,
+            _contractURI,
             transferProxy,
             operatorProxy,
             _royalties,
@@ -69,5 +71,9 @@ contract ERC721GenFactory is Ownable, Traits {
         token.transferOwnership(_msgSender());
 
         emit CollectionCreated(_msgSender(), address(token), address(admin));
+    }
+
+    function changeImplementation(address _implementation) external onlyOwner() {
+      implementation = _implementation;
     }
 }

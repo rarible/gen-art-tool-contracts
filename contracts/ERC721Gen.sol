@@ -6,6 +6,8 @@ pragma abicoder v2;
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/math/SafeMathUpgradeable.sol";
 
+import "./tokens/HasContractURI.sol";
+
 import "./interfaces/IERC721GenMint.sol";
 import "./royalties/RoyaltiesV2GenImpl.sol";
 import "./tokens/ERC721GenDefaultApproval.sol";
@@ -15,7 +17,7 @@ import "./tokens/ERC721BaseURI.sol";
 import "./traits/TraitsManager.sol";
 import "./utils/AddAddrToURI.sol";
 
-contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseURI, RoyaltiesV2GenImpl, TraitsManager, AddAddrToURI, ERC721GenOperatorRole {
+contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseURI, RoyaltiesV2GenImpl, TraitsManager, AddAddrToURI, ERC721GenOperatorRole, HasContractURI {
     using SafeMathUpgradeable for uint;
 
     event GenArtTotal(uint total);
@@ -34,6 +36,7 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseUR
         string memory _name,
         string memory _symbol,
         string memory _baseURI,
+        string memory _contractURI,
         address _transferProxy,
         address _operatorProxy,
         LibPart.Part[] memory _royalties,
@@ -52,6 +55,7 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseUR
         __ERC721GenDefaultApproval_init_unchained(_transferProxy);
         __ERC721GenOperatorRole_init_unchained(_operatorProxy);
         __ERC721Gen_init_unchained(_total, _maxValue);
+        __HasContractURI_init_unchained(_contractURI);
     }
 
     function __ERC721Gen_init_unchained(uint _total, uint _maxValue) internal initializer {

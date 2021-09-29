@@ -25,6 +25,18 @@ contract("ERC721GenFactoryTest", accounts => {
     assert.equal(await factory.baseURI(), baseURI, "baseURI")
   });
 
+  it("changeing implemntation should work correctly", async () => {
+    const newImpl = accounts[5]
+    await factory.changeImplementation(newImpl);
+    assert.equal(await factory.implementation(), newImpl, "newImpl")
+
+    await truffleAssert.fails(
+      factory.changeImplementation(newImpl, { from: accounts[2] }),
+      truffleAssert.ErrorType.REVERT,
+      "Ownable: caller is not the owner"
+    )
+  });
+
   it("should correctly create token from factory", async () => {
     const trait1 = [[1, 2, 9997]]
     const trait2 = [[3333, 3333, 3334]]
@@ -34,7 +46,8 @@ contract("ERC721GenFactoryTest", accounts => {
     const name = "Tc"
     const symbol = "T"
     const maxValue = 10;
-    const initData = [name, symbol, collectionRoyalties, [trait1, trait2], total, maxValue];
+    const contractURI = "contractURI"
+    const initData = [name, symbol, contractURI, collectionRoyalties, [trait1, trait2], total, maxValue];
 
     const artist = accounts[2]
 
@@ -61,6 +74,7 @@ contract("ERC721GenFactoryTest", accounts => {
     assert.equal(await token.maxValue(), maxValue, "maxValue")
     assert.equal(await token.name(), name, "name")
     assert.equal(await token.symbol(), symbol, "symbol")
+    assert.equal(await token.contractURI(), contractURI, "contractURI")
 
     //check traits
     const TraitsSet = await token.getPastEvents("TraitsSet", {
@@ -98,7 +112,8 @@ contract("ERC721GenFactoryTest", accounts => {
     const name = "Tc"
     const symbol = "T"
     const maxValue = 10;
-    const initData = [name, symbol, collectionRoyalties, [trait1, trait2, trait3], total, maxValue];
+    const contractURI = "contractURI"
+    const initData = [name, symbol, contractURI, collectionRoyalties, [trait1, trait2, trait3], total, maxValue];
 
     const artist = accounts[2]
     const buyer = accounts[3];

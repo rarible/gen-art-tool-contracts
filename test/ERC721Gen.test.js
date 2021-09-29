@@ -8,7 +8,7 @@ const ERC721GenTest = artifacts.require("ERC721GenTest.sol");
 contract("ERC721Gen", accounts => {
   let testing;
   const baseURI = "https://ipfs.rarible.com/";
-
+  const contractURI = "contractURI"
   beforeEach(async () => {
     const trait1 = [[1, 2, 9997]]
     const trait2 = [[3333, 3333, 3334]]
@@ -19,12 +19,14 @@ contract("ERC721Gen", accounts => {
     let transferProxy = accounts[8];
     let operatorProxy = accounts[0];
 
-    await testing.__ERC721Gen_init("T", "T", baseURI, transferProxy, operatorProxy, [[accounts[3], 100]], [trait1, trait2, trait3], 100, 10);
+    await testing.__ERC721Gen_init("T", "T", baseURI, contractURI, transferProxy, operatorProxy, [[accounts[3], 100]], [trait1, trait2, trait3], 100, 10);
   });
 
-  it("should set base uri with toke addr", async () => {
+  it("should set base uri with toke addr and contract uri", async () => {
     const curBaseURI = await testing.baseURI();
     assert.equal(curBaseURI, baseURI + testing.address.toLowerCase() + "/", "token base URI")
+
+    assert.equal(await testing.contractURI(), contractURI, "contractURI")
   })
 
   it("should return correct tokenURI", async () => {
@@ -119,7 +121,7 @@ contract("ERC721Gen", accounts => {
     let transferProxy = accounts[8];
     let operatorProxy = accounts[0];
 
-    await erc721test.__ERC721Gen_init("T", "T", baseURI, transferProxy, operatorProxy, [[accounts[3], 100]], [trait1, trait2, trait3], 100, 10);
+    await erc721test.__ERC721Gen_init("T", "T", baseURI, contractURI, transferProxy, operatorProxy, [[accounts[3], 100]], [trait1, trait2, trait3], 100, 10);
 
     assert.equal(await erc721test.getMinted(), 0, "minted")
 
