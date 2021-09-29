@@ -1,29 +1,29 @@
 {
   "contractName": "Traits",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/traits/Traits.sol\":\"Traits\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/traits/Traits.sol\":{\"keccak256\":\"0x04ede6db741cef106f4c218cde2eb24481bc106451ee53656a13cf32930bf631\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0930ce8ac96f5fc62e922160244a3aa6579b5075c1360f2208aa3009194f491\",\"dweb:/ipfs/QmaRqUXKoXp5RvaQHqdC8WGuhVpX9KzUvdiTt2ssM5KGQL\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212208aa0a03be00f025ea1106ee4c3b3c1cef1a12832a6886d2e7e28125791b4264d64736f6c63430007060033",
-  "deployedBytecode": "0x6080604052600080fdfea26469706673582212208aa0a03be00f025ea1106ee4c3b3c1cef1a12832a6886d2e7e28125791b4264d64736f6c63430007060033",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/traits/Traits.sol\":\"Traits\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/traits/Traits.sol\":{\"keccak256\":\"0xbf2ca4f4af6c89c5198180899b3e707831d3fd8637e10051f75f792b4c1583b6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d43afe01165b483fcd541dfdfd84b4fc2c6789b0f52a166becd0d25a21b64051\",\"dweb:/ipfs/QmbjhunVtLq5UrtF8J5bXfUizTs5114MRJz99aaFUbmEwp\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220c78c21e579266c6d2eecb8f6a43a831b43dea277cbebfb42086d8f93f244384064736f6c63430007060033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220c78c21e579266c6d2eecb8f6a43a831b43dea277cbebfb42086d8f93f244384064736f6c63430007060033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-  "sourceMap": "78:113:35:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "78:113:35:-:0;;;;;",
-  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.7.0;\npragma abicoder v2;\n\ncontract Traits {\n    struct Trait {\n        string name;\n        string[] keys;\n        uint[] rarities;\n    }\n}\n",
+  "sourceMap": "78:69:36:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "78:69:36:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.7.0;\npragma abicoder v2;\n\ncontract Traits {\n    struct Trait {\n        uint[] rarities;\n    }\n}\n",
   "sourcePath": "/home/quadro/Projects/rarible/generative-art/contracts/traits/Traits.sol",
   "ast": {
     "absolutePath": "project:/contracts/traits/Traits.sol",
     "exportedSymbols": {
       "Traits": [
-        3754
+        4103
       ]
     },
-    "id": 3755,
+    "id": 4104,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3743,
+        "id": 4097,
         "literals": [
           "solidity",
           "^",
@@ -31,16 +31,16 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:35"
+        "src": "33:23:36"
       },
       {
-        "id": 3744,
+        "id": 4098,
         "literals": [
           "abicoder",
           "v2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "57:19:35"
+        "src": "57:19:36"
       },
       {
         "abstract": false,
@@ -48,86 +48,25 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 3754,
+        "id": 4103,
         "linearizedBaseContracts": [
-          3754
+          4103
         ],
         "name": "Traits",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "Traits.Trait",
-            "id": 3753,
+            "id": 4102,
             "members": [
               {
                 "constant": false,
-                "id": 3746,
-                "mutability": "mutable",
-                "name": "name",
-                "nodeType": "VariableDeclaration",
-                "scope": 3753,
-                "src": "123:11:35",
-                "stateVariable": false,
-                "storageLocation": "default",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_string_storage_ptr",
-                  "typeString": "string"
-                },
-                "typeName": {
-                  "id": 3745,
-                  "name": "string",
-                  "nodeType": "ElementaryTypeName",
-                  "src": "123:6:35",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_storage_ptr",
-                    "typeString": "string"
-                  }
-                },
-                "visibility": "internal"
-              },
-              {
-                "constant": false,
-                "id": 3749,
-                "mutability": "mutable",
-                "name": "keys",
-                "nodeType": "VariableDeclaration",
-                "scope": 3753,
-                "src": "144:13:35",
-                "stateVariable": false,
-                "storageLocation": "default",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
-                  "typeString": "string[]"
-                },
-                "typeName": {
-                  "baseType": {
-                    "id": 3747,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "144:6:35",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "id": 3748,
-                  "nodeType": "ArrayTypeName",
-                  "src": "144:8:35",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
-                    "typeString": "string[]"
-                  }
-                },
-                "visibility": "internal"
-              },
-              {
-                "constant": false,
-                "id": 3752,
+                "id": 4101,
                 "mutability": "mutable",
                 "name": "rarities",
                 "nodeType": "VariableDeclaration",
-                "scope": 3753,
-                "src": "167:15:35",
+                "scope": 4102,
+                "src": "123:15:36",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -136,18 +75,18 @@
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 3750,
+                    "id": 4099,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "167:4:35",
+                    "src": "123:4:36",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 3751,
+                  "id": 4100,
                   "nodeType": "ArrayTypeName",
-                  "src": "167:6:35",
+                  "src": "123:6:36",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                     "typeString": "uint256[]"
@@ -158,23 +97,23 @@
             ],
             "name": "Trait",
             "nodeType": "StructDefinition",
-            "scope": 3754,
-            "src": "100:89:35",
+            "scope": 4103,
+            "src": "100:45:36",
             "visibility": "public"
           }
         ],
-        "scope": 3755,
-        "src": "78:113:35"
+        "scope": 4104,
+        "src": "78:69:36"
       }
     ],
-    "src": "33:159:35"
+    "src": "33:115:36"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/contracts/traits/Traits.sol",
       "exportedSymbols": {
         "Traits": [
-          3754
+          4103
         ]
       },
       "license": "MIT"
@@ -189,9 +128,9 @@
             ".0"
           ]
         },
-        "id": 3743,
+        "id": 4097,
         "name": "PragmaDirective",
-        "src": "33:23:35"
+        "src": "33:23:36"
       },
       {
         "attributes": {
@@ -200,9 +139,9 @@
             "v2"
           ]
         },
-        "id": 3744,
+        "id": 4098,
         "name": "PragmaDirective",
-        "src": "57:19:35"
+        "src": "57:19:36"
       },
       {
         "attributes": {
@@ -216,17 +155,17 @@
           "contractKind": "contract",
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            3754
+            4103
           ],
           "name": "Traits",
-          "scope": 3755
+          "scope": 4104
         },
         "children": [
           {
             "attributes": {
               "canonicalName": "Traits.Trait",
               "name": "Trait",
-              "scope": 3754,
+              "scope": 4103,
               "visibility": "public"
             },
             "children": [
@@ -234,70 +173,8 @@
                 "attributes": {
                   "constant": false,
                   "mutability": "mutable",
-                  "name": "name",
-                  "scope": 3753,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "string",
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "string",
-                      "type": "string"
-                    },
-                    "id": 3745,
-                    "name": "ElementaryTypeName",
-                    "src": "123:6:35"
-                  }
-                ],
-                "id": 3746,
-                "name": "VariableDeclaration",
-                "src": "123:11:35"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "mutability": "mutable",
-                  "name": "keys",
-                  "scope": 3753,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "string[]",
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "type": "string[]"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string"
-                        },
-                        "id": 3747,
-                        "name": "ElementaryTypeName",
-                        "src": "144:6:35"
-                      }
-                    ],
-                    "id": 3748,
-                    "name": "ArrayTypeName",
-                    "src": "144:8:35"
-                  }
-                ],
-                "id": 3749,
-                "name": "VariableDeclaration",
-                "src": "144:13:35"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "mutability": "mutable",
                   "name": "rarities",
-                  "scope": 3753,
+                  "scope": 4102,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256[]",
@@ -314,34 +191,34 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 3750,
+                        "id": 4099,
                         "name": "ElementaryTypeName",
-                        "src": "167:4:35"
+                        "src": "123:4:36"
                       }
                     ],
-                    "id": 3751,
+                    "id": 4100,
                     "name": "ArrayTypeName",
-                    "src": "167:6:35"
+                    "src": "123:6:36"
                   }
                 ],
-                "id": 3752,
+                "id": 4101,
                 "name": "VariableDeclaration",
-                "src": "167:15:35"
+                "src": "123:15:36"
               }
             ],
-            "id": 3753,
+            "id": 4102,
             "name": "StructDefinition",
-            "src": "100:89:35"
+            "src": "100:45:36"
           }
         ],
-        "id": 3754,
+        "id": 4103,
         "name": "ContractDefinition",
-        "src": "78:113:35"
+        "src": "78:69:36"
       }
     ],
-    "id": 3755,
+    "id": 4104,
     "name": "SourceUnit",
-    "src": "33:159:35"
+    "src": "33:115:36"
   },
   "compiler": {
     "name": "solc",
@@ -349,7 +226,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-28T10:45:40.226Z",
+  "updatedAt": "2021-09-29T11:34:20.279Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

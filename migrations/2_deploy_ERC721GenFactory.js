@@ -17,12 +17,12 @@ const ExchangeSetTransferProxy = artifacts.require('ExchangeSetTransferProxy');
 const zero = "0x0000000000000000000000000000000000000000"
 
 const rinkeby = {
-	baseURI: "https://gen-art-tool.ngrok.io/meta/", //base uri for all collections created in the factory
+	baseURI: "https://rinkeby.traitsy.com/meta/", //base uri for all collections created in the factory
 	transferProxy: "0x7d47126a2600E22eab9eD6CF0e515678727779A6", // transferProxyAddress to set as default approver (to call transfer from on trades)
 	exchangeV2: "0xd4a57a3bD3657D0d46B4C5bAC12b3F156B9B886b" // exchangev2 address to set operatorProxy in, operator proxy is goint to mint tokens
 }
 const mainnet = {
-	baseURI: "",
+	baseURI: "https://traitsy.com/meta/",
 	transferProxy: "0x4fee7b061c97c9c496b01dbce9cdb10c02f0a0be",
 	exchangeV2: "0x9757F2d2b135150BBeb65308D4a91804107cd8D6"
 }
@@ -96,6 +96,6 @@ module.exports = async function (deployer, network, accounts) {
 	console.log("ERC721Gen impl at", impl.address)
 
 	//deploying factory
-	const factory = await deployer.deploy(ERC721GenFactory, impl.address, settings.transferProxy, operatorProxy.address, settings.baseURI, {gas: 2000000});
+	const factory = await deployer.deploy(ERC721GenFactory, impl.address, settings.transferProxy, operatorProxy.address, settings.baseURI, {gas: 3000000});
 	console.log(`factory deployed at ${factory.address}`)
 };
