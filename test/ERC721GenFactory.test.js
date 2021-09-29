@@ -46,8 +46,7 @@ contract("ERC721GenFactoryTest", accounts => {
     const name = "Tc"
     const symbol = "T"
     const maxValue = 10;
-    const contractURI = "contractURI"
-    const initData = [name, symbol, contractURI, collectionRoyalties, [trait1, trait2], total, maxValue];
+    const initData = [name, symbol, collectionRoyalties, [trait1, trait2], total, maxValue];
 
     const artist = accounts[2]
 
@@ -74,7 +73,7 @@ contract("ERC721GenFactoryTest", accounts => {
     assert.equal(await token.maxValue(), maxValue, "maxValue")
     assert.equal(await token.name(), name, "name")
     assert.equal(await token.symbol(), symbol, "symbol")
-    assert.equal(await token.contractURI(), contractURI, "contractURI")
+    assert.equal(await token.contractURI(), baseURI + "meta/" + token.address.toLowerCase(), "contractURI")
 
     //check traits
     const TraitsSet = await token.getPastEvents("TraitsSet", {
@@ -112,8 +111,7 @@ contract("ERC721GenFactoryTest", accounts => {
     const name = "Tc"
     const symbol = "T"
     const maxValue = 10;
-    const contractURI = "contractURI"
-    const initData = [name, symbol, contractURI, collectionRoyalties, [trait1, trait2, trait3], total, maxValue];
+    const initData = [name, symbol, collectionRoyalties, [trait1, trait2, trait3], total, maxValue];
 
     const artist = accounts[2]
     const buyer = accounts[3];

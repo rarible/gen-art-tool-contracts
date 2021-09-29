@@ -6,18 +6,15 @@ pragma abicoder v2;
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/math/SafeMathUpgradeable.sol";
 
-import "./tokens/HasContractURI.sol";
-
 import "./interfaces/IERC721GenMint.sol";
 import "./royalties/RoyaltiesV2GenImpl.sol";
 import "./tokens/ERC721GenDefaultApproval.sol";
 import "./tokens/ERC721GenOperatorRole.sol";
-import "./tokens/ERC721BaseURI.sol";
+import "./tokens/ERC721URI.sol";
 
 import "./traits/TraitsManager.sol";
-import "./utils/AddAddrToURI.sol";
 
-contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseURI, RoyaltiesV2GenImpl, TraitsManager, AddAddrToURI, ERC721GenOperatorRole, HasContractURI {
+contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721URI, RoyaltiesV2GenImpl, TraitsManager, ERC721GenOperatorRole {
     using SafeMathUpgradeable for uint;
 
     event GenArtTotal(uint total);
@@ -36,7 +33,6 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseUR
         string memory _name,
         string memory _symbol,
         string memory _baseURI,
-        string memory _contractURI,
         address _transferProxy,
         address _operatorProxy,
         LibPart.Part[] memory _royalties,
@@ -44,7 +40,7 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseUR
         uint _total,
         uint _maxValue
     ) external initializer {
-        __ERC721BaseURI_init_unchained(addTokenAddrToBaseURI(_baseURI, address(this)));
+        __ERC721URI_init_unchained(_baseURI);
         __RoyaltiesV2Upgradeable_init_unchained();
         __RoyaltiesV2GenImpl_init_unchained(_royalties);
         __Context_init_unchained();
@@ -55,7 +51,6 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, ERC721BaseUR
         __ERC721GenDefaultApproval_init_unchained(_transferProxy);
         __ERC721GenOperatorRole_init_unchained(_operatorProxy);
         __ERC721Gen_init_unchained(_total, _maxValue);
-        __HasContractURI_init_unchained(_contractURI);
     }
 
     function __ERC721Gen_init_unchained(uint _total, uint _maxValue) internal initializer {

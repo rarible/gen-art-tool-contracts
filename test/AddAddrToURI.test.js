@@ -15,13 +15,4 @@ contract("AddAddrToURI", accounts => {
     assert.equal(web3.utils.toChecksumAddress(result), web3.utils.toChecksumAddress(addrToConvert), "toAsciiStringTest")
   })
 
-  it("should correctly concatenate address to uri", async () => {
-    const addrToConvert = accounts[5]
-    const uri = "https://ipfs.rarible.com/";
-
-    const result = await addAddrToURITest.addTokenAddrToBaseURITest(uri, addrToConvert)
-
-    assert.equal(result, uri + addrToConvert.toLowerCase() + "/", "addTokenAddrToBaseURITest")
-  })
-
 })
