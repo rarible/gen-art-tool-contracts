@@ -73,7 +73,7 @@ contract("ERC721GenFactoryTest", accounts => {
     assert.equal(await token.maxValue(), maxValue, "maxValue")
     assert.equal(await token.name(), name, "name")
     assert.equal(await token.symbol(), symbol, "symbol")
-    assert.equal(await token.contractURI(), baseURI + "meta/" + token.address.toLowerCase(), "contractURI")
+    assert.equal(await token.contractURI(), baseURI + token.address.toLowerCase(), "contractURI")
 
     //check traits
     const TraitsSet = await token.getPastEvents("TraitsSet", {

@@ -22,11 +22,7 @@ contract("ERC721Gen", accounts => {
   });
 
   it("should set base uri with toke addr and contract uri", async () => {
-    const curBaseURI = await testing.baseURI();
-    assert.equal(curBaseURI, baseURI + testing.address.toLowerCase() + "/", "token base URI")
-
-    const contractURI = await testing.contractURI();
-    assert.equal(contractURI, baseURI + "meta/" + testing.address.toLowerCase(), "contractURI")
+    assert.equal(await testing.contractURI(), baseURI + testing.address.toLowerCase(), "contract URI")
   })
 
   it("should support contract uri interface", async () => {
@@ -38,7 +34,11 @@ contract("ERC721Gen", accounts => {
     const tokenURI0 = await testing.tokenURI(0);
     const tokenURI1 = await testing.tokenURI(1);
 
-    const shouldBeURI = baseURI + testing.address.toLowerCase() + "/" + "{id}"
+    const contractURI = await testing.contractURI()
+    const shouldBeContractURI = baseURI + testing.address.toLowerCase();
+    assert.equal(contractURI, shouldBeContractURI, "contractURI")
+
+    const shouldBeURI = contractURI + "/" + "{id}"
 
     assert.equal(tokenURI0, shouldBeURI, "token URI")
     assert.equal(tokenURI1, shouldBeURI, "token URI")
