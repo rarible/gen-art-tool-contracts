@@ -62,6 +62,7 @@ contract("ERC721Gen", accounts => {
     const ev = GenArtMintEvent[0];
     const tokenId = ev.args.tokenId;
     assert(tokenId, "tokenId");
+    assert.equal(ev.args.total, 1);
 
     const Transfer = await testing.getPastEvents("Transfer", {
       fromBlock: tx.receipt.blockNumber,

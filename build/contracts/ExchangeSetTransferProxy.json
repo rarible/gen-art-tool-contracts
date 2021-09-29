@@ -53,15 +53,15 @@
     "absolutePath": "project:/contracts/interfaces/ExchangeSetTransferProxy.sol",
     "exportedSymbols": {
       "ExchangeSetTransferProxy": [
-        2866
+        2871
       ]
     },
-    "id": 2867,
+    "id": 2872,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2835,
+        "id": 2840,
         "literals": [
           "solidity",
           "0.7",
@@ -71,7 +71,7 @@
         "src": "33:22:27"
       },
       {
-        "id": 2836,
+        "id": 2841,
         "literals": [
           "abicoder",
           "v2"
@@ -85,20 +85,20 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 2866,
+        "id": 2871,
         "linearizedBaseContracts": [
-          2866
+          2871
         ],
         "name": "ExchangeSetTransferProxy",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 2840,
+            "id": 2845,
             "mutability": "mutable",
             "name": "proxies",
             "nodeType": "VariableDeclaration",
-            "scope": 2866,
+            "scope": 2871,
             "src": "203:35:27",
             "stateVariable": true,
             "storageLocation": "default",
@@ -107,9 +107,9 @@
               "typeString": "mapping(bytes4 => address)"
             },
             "typeName": {
-              "id": 2839,
+              "id": 2844,
               "keyType": {
-                "id": 2837,
+                "id": 2842,
                 "name": "bytes4",
                 "nodeType": "ElementaryTypeName",
                 "src": "212:6:27",
@@ -125,7 +125,7 @@
                 "typeString": "mapping(bytes4 => address)"
               },
               "valueType": {
-                "id": 2838,
+                "id": 2843,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "222:7:27",
@@ -140,21 +140,21 @@
           },
           {
             "anonymous": false,
-            "id": 2846,
+            "id": 2851,
             "name": "ProxyChange",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2845,
+              "id": 2850,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2842,
+                  "id": 2847,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "assetType",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2846,
+                  "scope": 2851,
                   "src": "263:24:27",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -163,7 +163,7 @@
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 2841,
+                    "id": 2846,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
                     "src": "263:6:27",
@@ -176,12 +176,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 2844,
+                  "id": 2849,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "proxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2846,
+                  "scope": 2851,
                   "src": "289:13:27",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -190,7 +190,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2843,
+                    "id": 2848,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "289:7:27",
@@ -209,37 +209,37 @@
           },
           {
             "body": {
-              "id": 2864,
+              "id": 2869,
               "nodeType": "Block",
               "src": "378:87:27",
               "statements": [
                 {
                   "expression": {
-                    "id": 2857,
+                    "id": 2862,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 2853,
+                        "id": 2858,
                         "name": "proxies",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2840,
+                        "referencedDeclaration": 2845,
                         "src": "388:7:27",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_bytes4_$_t_address_$",
                           "typeString": "mapping(bytes4 => address)"
                         }
                       },
-                      "id": 2855,
+                      "id": 2860,
                       "indexExpression": {
-                        "id": 2854,
+                        "id": 2859,
                         "name": "assetType",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2848,
+                        "referencedDeclaration": 2853,
                         "src": "396:9:27",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes4",
@@ -260,11 +260,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 2856,
+                      "id": 2861,
                       "name": "proxy",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2850,
+                      "referencedDeclaration": 2855,
                       "src": "409:5:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -277,7 +277,7 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 2858,
+                  "id": 2863,
                   "nodeType": "ExpressionStatement",
                   "src": "388:26:27"
                 },
@@ -285,11 +285,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 2860,
+                        "id": 2865,
                         "name": "assetType",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2848,
+                        "referencedDeclaration": 2853,
                         "src": "441:9:27",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes4",
@@ -297,11 +297,11 @@
                         }
                       },
                       {
-                        "id": 2861,
+                        "id": 2866,
                         "name": "proxy",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2850,
+                        "referencedDeclaration": 2855,
                         "src": "452:5:27",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -320,18 +320,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 2859,
+                      "id": 2864,
                       "name": "ProxyChange",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2846,
+                      "referencedDeclaration": 2851,
                       "src": "429:11:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_bytes4_$_t_address_$returns$__$",
                         "typeString": "function (bytes4,address)"
                       }
                     },
-                    "id": 2862,
+                    "id": 2867,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -346,30 +346,30 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2863,
+                  "id": 2868,
                   "nodeType": "EmitStatement",
                   "src": "424:34:27"
                 }
               ]
             },
             "functionSelector": "30c642f1",
-            "id": 2865,
+            "id": 2870,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "setTransferProxy",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2851,
+              "id": 2856,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2848,
+                  "id": 2853,
                   "mutability": "mutable",
                   "name": "assetType",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2865,
+                  "scope": 2870,
                   "src": "336:16:27",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -378,7 +378,7 @@
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 2847,
+                    "id": 2852,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
                     "src": "336:6:27",
@@ -391,11 +391,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2850,
+                  "id": 2855,
                   "mutability": "mutable",
                   "name": "proxy",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2865,
+                  "scope": 2870,
                   "src": "354:13:27",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -404,7 +404,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2849,
+                    "id": 2854,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "354:7:27",
@@ -420,19 +420,19 @@
               "src": "335:33:27"
             },
             "returnParameters": {
-              "id": 2852,
+              "id": 2857,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "378:0:27"
             },
-            "scope": 2866,
+            "scope": 2871,
             "src": "310:155:27",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 2867,
+        "scope": 2872,
         "src": "155:313:27"
       }
     ],
@@ -443,7 +443,7 @@
       "absolutePath": "project:/contracts/interfaces/ExchangeSetTransferProxy.sol",
       "exportedSymbols": {
         "ExchangeSetTransferProxy": [
-          2866
+          2871
         ]
       },
       "license": "MIT"
@@ -457,7 +457,7 @@
             ".6"
           ]
         },
-        "id": 2835,
+        "id": 2840,
         "name": "PragmaDirective",
         "src": "33:22:27"
       },
@@ -468,7 +468,7 @@
             "v2"
           ]
         },
-        "id": 2836,
+        "id": 2841,
         "name": "PragmaDirective",
         "src": "56:19:27"
       },
@@ -484,10 +484,10 @@
           "contractKind": "contract",
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            2866
+            2871
           ],
           "name": "ExchangeSetTransferProxy",
-          "scope": 2867
+          "scope": 2872
         },
         "children": [
           {
@@ -495,7 +495,7 @@
               "constant": false,
               "mutability": "mutable",
               "name": "proxies",
-              "scope": 2866,
+              "scope": 2871,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(bytes4 => address)",
@@ -512,7 +512,7 @@
                       "name": "bytes4",
                       "type": "bytes4"
                     },
-                    "id": 2837,
+                    "id": 2842,
                     "name": "ElementaryTypeName",
                     "src": "212:6:27"
                   },
@@ -522,17 +522,17 @@
                       "stateMutability": "nonpayable",
                       "type": "address"
                     },
-                    "id": 2838,
+                    "id": 2843,
                     "name": "ElementaryTypeName",
                     "src": "222:7:27"
                   }
                 ],
-                "id": 2839,
+                "id": 2844,
                 "name": "Mapping",
                 "src": "203:27:27"
               }
             ],
-            "id": 2840,
+            "id": 2845,
             "name": "VariableDeclaration",
             "src": "203:35:27"
           },
@@ -550,7 +550,7 @@
                       "indexed": true,
                       "mutability": "mutable",
                       "name": "assetType",
-                      "scope": 2846,
+                      "scope": 2851,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bytes4",
@@ -562,12 +562,12 @@
                           "name": "bytes4",
                           "type": "bytes4"
                         },
-                        "id": 2841,
+                        "id": 2846,
                         "name": "ElementaryTypeName",
                         "src": "263:6:27"
                       }
                     ],
-                    "id": 2842,
+                    "id": 2847,
                     "name": "VariableDeclaration",
                     "src": "263:24:27"
                   },
@@ -577,7 +577,7 @@
                       "indexed": false,
                       "mutability": "mutable",
                       "name": "proxy",
-                      "scope": 2846,
+                      "scope": 2851,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -590,22 +590,22 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 2843,
+                        "id": 2848,
                         "name": "ElementaryTypeName",
                         "src": "289:7:27"
                       }
                     ],
-                    "id": 2844,
+                    "id": 2849,
                     "name": "VariableDeclaration",
                     "src": "289:13:27"
                   }
                 ],
-                "id": 2845,
+                "id": 2850,
                 "name": "ParameterList",
                 "src": "262:41:27"
               }
             ],
-            "id": 2846,
+            "id": 2851,
             "name": "EventDefinition",
             "src": "245:59:27"
           },
@@ -619,7 +619,7 @@
                 null
               ],
               "name": "setTransferProxy",
-              "scope": 2866,
+              "scope": 2871,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -632,7 +632,7 @@
                       "constant": false,
                       "mutability": "mutable",
                       "name": "assetType",
-                      "scope": 2865,
+                      "scope": 2870,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bytes4",
@@ -644,12 +644,12 @@
                           "name": "bytes4",
                           "type": "bytes4"
                         },
-                        "id": 2847,
+                        "id": 2852,
                         "name": "ElementaryTypeName",
                         "src": "336:6:27"
                       }
                     ],
-                    "id": 2848,
+                    "id": 2853,
                     "name": "VariableDeclaration",
                     "src": "336:16:27"
                   },
@@ -658,7 +658,7 @@
                       "constant": false,
                       "mutability": "mutable",
                       "name": "proxy",
-                      "scope": 2865,
+                      "scope": 2870,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -671,17 +671,17 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 2849,
+                        "id": 2854,
                         "name": "ElementaryTypeName",
                         "src": "354:7:27"
                       }
                     ],
-                    "id": 2850,
+                    "id": 2855,
                     "name": "VariableDeclaration",
                     "src": "354:13:27"
                   }
                 ],
-                "id": 2851,
+                "id": 2856,
                 "name": "ParameterList",
                 "src": "335:33:27"
               },
@@ -692,7 +692,7 @@
                   ]
                 },
                 "children": [],
-                "id": 2852,
+                "id": 2857,
                 "name": "ParameterList",
                 "src": "378:0:27"
               },
@@ -724,11 +724,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 2840,
+                                  "referencedDeclaration": 2845,
                                   "type": "mapping(bytes4 => address)",
                                   "value": "proxies"
                                 },
-                                "id": 2853,
+                                "id": 2858,
                                 "name": "Identifier",
                                 "src": "388:7:27"
                               },
@@ -737,16 +737,16 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 2848,
+                                  "referencedDeclaration": 2853,
                                   "type": "bytes4",
                                   "value": "assetType"
                                 },
-                                "id": 2854,
+                                "id": 2859,
                                 "name": "Identifier",
                                 "src": "396:9:27"
                               }
                             ],
-                            "id": 2855,
+                            "id": 2860,
                             "name": "IndexAccess",
                             "src": "388:18:27"
                           },
@@ -755,21 +755,21 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 2850,
+                              "referencedDeclaration": 2855,
                               "type": "address",
                               "value": "proxy"
                             },
-                            "id": 2856,
+                            "id": 2861,
                             "name": "Identifier",
                             "src": "409:5:27"
                           }
                         ],
-                        "id": 2857,
+                        "id": 2862,
                         "name": "Assignment",
                         "src": "388:26:27"
                       }
                     ],
-                    "id": 2858,
+                    "id": 2863,
                     "name": "ExpressionStatement",
                     "src": "388:26:27"
                   },
@@ -805,11 +805,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 2846,
+                              "referencedDeclaration": 2851,
                               "type": "function (bytes4,address)",
                               "value": "ProxyChange"
                             },
-                            "id": 2859,
+                            "id": 2864,
                             "name": "Identifier",
                             "src": "429:11:27"
                           },
@@ -818,11 +818,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 2848,
+                              "referencedDeclaration": 2853,
                               "type": "bytes4",
                               "value": "assetType"
                             },
-                            "id": 2860,
+                            "id": 2865,
                             "name": "Identifier",
                             "src": "441:9:27"
                           },
@@ -831,41 +831,41 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 2850,
+                              "referencedDeclaration": 2855,
                               "type": "address",
                               "value": "proxy"
                             },
-                            "id": 2861,
+                            "id": 2866,
                             "name": "Identifier",
                             "src": "452:5:27"
                           }
                         ],
-                        "id": 2862,
+                        "id": 2867,
                         "name": "FunctionCall",
                         "src": "429:29:27"
                       }
                     ],
-                    "id": 2863,
+                    "id": 2868,
                     "name": "EmitStatement",
                     "src": "424:34:27"
                   }
                 ],
-                "id": 2864,
+                "id": 2869,
                 "name": "Block",
                 "src": "378:87:27"
               }
             ],
-            "id": 2865,
+            "id": 2870,
             "name": "FunctionDefinition",
             "src": "310:155:27"
           }
         ],
-        "id": 2866,
+        "id": 2871,
         "name": "ContractDefinition",
         "src": "155:313:27"
       }
     ],
-    "id": 2867,
+    "id": 2872,
     "name": "SourceUnit",
     "src": "33:436:27"
   },
@@ -875,8 +875,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-29T12:02:11.372Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-09-29T19:43:58.315Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

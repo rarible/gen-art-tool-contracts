@@ -19,7 +19,7 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, HasContractU
     using StringsUpgradeable for uint;
 
     event GenArtTotal(uint total);
-    event GenArtMint(uint tokenId);
+    event GenArtMint(uint tokenId, uint total);
 
     //max amount of tokens in existance
     uint public total;
@@ -78,7 +78,7 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, HasContractU
     function mintSingleToken(uint seed, uint totalSupply, address to) internal {
         uint tokenId = random(seed, totalSupply, to);
         _mint(to, tokenId);
-        emit GenArtMint(tokenId);
+        emit GenArtMint(tokenId, totalSupply + 1);
     }
 
     function _emitMintEvent(address to, uint tokenId) internal virtual override {

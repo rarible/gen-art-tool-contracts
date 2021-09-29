@@ -39,15 +39,15 @@
     "absolutePath": "project:/contracts/interfaces/IERC721GenMint.sol",
     "exportedSymbols": {
       "IERC721GenMint": [
-        2878
+        2883
       ]
     },
-    "id": 2879,
+    "id": 2884,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2868,
+        "id": 2873,
         "literals": [
           "solidity",
           "^",
@@ -63,32 +63,32 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 2878,
+        "id": 2883,
         "linearizedBaseContracts": [
-          2878
+          2883
         ],
         "name": "IERC721GenMint",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "functionSelector": "c6c3bbe6",
-            "id": 2877,
+            "id": 2882,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "mint",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2875,
+              "id": 2880,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2870,
+                  "id": 2875,
                   "mutability": "mutable",
                   "name": "artist",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2877,
+                  "scope": 2882,
                   "src": "103:14:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -97,7 +97,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2869,
+                    "id": 2874,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "103:7:28",
@@ -111,11 +111,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2872,
+                  "id": 2877,
                   "mutability": "mutable",
                   "name": "to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2877,
+                  "scope": 2882,
                   "src": "119:10:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -124,7 +124,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2871,
+                    "id": 2876,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "119:7:28",
@@ -138,11 +138,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2874,
+                  "id": 2879,
                   "mutability": "mutable",
                   "name": "value",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2877,
+                  "scope": 2882,
                   "src": "131:10:28",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -151,7 +151,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2873,
+                    "id": 2878,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "131:4:28",
@@ -166,19 +166,19 @@
               "src": "102:40:28"
             },
             "returnParameters": {
-              "id": 2876,
+              "id": 2881,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "151:0:28"
             },
-            "scope": 2878,
+            "scope": 2883,
             "src": "89:63:28",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 2879,
+        "scope": 2884,
         "src": "58:96:28"
       }
     ],
@@ -189,7 +189,7 @@
       "absolutePath": "project:/contracts/interfaces/IERC721GenMint.sol",
       "exportedSymbols": {
         "IERC721GenMint": [
-          2878
+          2883
         ]
       },
       "license": "MIT"
@@ -204,7 +204,7 @@
             ".0"
           ]
         },
-        "id": 2868,
+        "id": 2873,
         "name": "PragmaDirective",
         "src": "33:23:28"
       },
@@ -220,10 +220,10 @@
           "contractKind": "interface",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            2878
+            2883
           ],
           "name": "IERC721GenMint",
-          "scope": 2879
+          "scope": 2884
         },
         "children": [
           {
@@ -236,7 +236,7 @@
                 null
               ],
               "name": "mint",
-              "scope": 2878,
+              "scope": 2883,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -249,7 +249,7 @@
                       "constant": false,
                       "mutability": "mutable",
                       "name": "artist",
-                      "scope": 2877,
+                      "scope": 2882,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -262,12 +262,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 2869,
+                        "id": 2874,
                         "name": "ElementaryTypeName",
                         "src": "103:7:28"
                       }
                     ],
-                    "id": 2870,
+                    "id": 2875,
                     "name": "VariableDeclaration",
                     "src": "103:14:28"
                   },
@@ -276,7 +276,7 @@
                       "constant": false,
                       "mutability": "mutable",
                       "name": "to",
-                      "scope": 2877,
+                      "scope": 2882,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -289,12 +289,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 2871,
+                        "id": 2876,
                         "name": "ElementaryTypeName",
                         "src": "119:7:28"
                       }
                     ],
-                    "id": 2872,
+                    "id": 2877,
                     "name": "VariableDeclaration",
                     "src": "119:10:28"
                   },
@@ -303,7 +303,7 @@
                       "constant": false,
                       "mutability": "mutable",
                       "name": "value",
-                      "scope": 2877,
+                      "scope": 2882,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -315,17 +315,17 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 2873,
+                        "id": 2878,
                         "name": "ElementaryTypeName",
                         "src": "131:4:28"
                       }
                     ],
-                    "id": 2874,
+                    "id": 2879,
                     "name": "VariableDeclaration",
                     "src": "131:10:28"
                   }
                 ],
-                "id": 2875,
+                "id": 2880,
                 "name": "ParameterList",
                 "src": "102:40:28"
               },
@@ -336,22 +336,22 @@
                   ]
                 },
                 "children": [],
-                "id": 2876,
+                "id": 2881,
                 "name": "ParameterList",
                 "src": "151:0:28"
               }
             ],
-            "id": 2877,
+            "id": 2882,
             "name": "FunctionDefinition",
             "src": "89:63:28"
           }
         ],
-        "id": 2878,
+        "id": 2883,
         "name": "ContractDefinition",
         "src": "58:96:28"
       }
     ],
-    "id": 2879,
+    "id": 2884,
     "name": "SourceUnit",
     "src": "33:122:28"
   },
@@ -361,7 +361,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-29T12:00:12.101Z",
+  "updatedAt": "2021-09-29T19:43:58.316Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
