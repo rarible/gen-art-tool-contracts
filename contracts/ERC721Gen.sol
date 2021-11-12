@@ -19,7 +19,7 @@ contract ERC721Gen is OwnableUpgradeable, ERC721GenDefaultApproval, HasContractU
     using StringsUpgradeable for uint;
 
     event GenArtTotal(uint total);
-    event GenArtMint(uint tokenId, uint total);
+    event GenArtMint(uint indexed tokenId, uint number);
 
     //max amount of tokens in existance
     uint public total;
