@@ -15911,14 +15911,59 @@
       "transactionHash": "0x55e49b26693753d461cde9db815e1f73cd04b365511bc309b2f419a0a10e184d"
     },
     "4": {
-      "events": {},
+      "events": {
+        "0x2d8719c61fe70e858668369ad9f3e733112b477977e6a7ee0b503be7e1afda76": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "collection",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "admin",
+              "type": "address"
+            }
+          ],
+          "name": "CollectionCreated",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0xE329e56CF497b6B3e4Ec0c1FC1d56DD69b8899D6",
-      "transactionHash": "0x0d79036d532610f0ef8b0adb0c13539534cd62558c06f26ec8cf84bea4acef12"
+      "address": "0xb1a411A33960A3EB806efBAd7a66D4cCc7529188",
+      "transactionHash": "0xeb4f350ec923dd68f8522290bbe869f8414c49d10eb5a1e3974295fbf6403a70"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-12T09:54:13.691Z",
+  "updatedAt": "2021-11-19T07:35:50.614Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "This contract is for creating proxy to access ERC721Gen token. The beacon should be initialized before call ERC721GenFactory constructor.",
