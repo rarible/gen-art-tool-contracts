@@ -8,10 +8,10 @@ module.exports = async function (deployer, network, accounts) {
 		return;
 	}
 
-	await deployer.deploy(ERC721Gen, { gas: 5500000 });
+	await deployer.deploy(ERC721Gen, { gas: 3500000 });
 	const impl = await ERC721Gen.deployed()
 	console.log("Deployed new impl at", impl.address);
 
 	const factory = await ERC721GenFactory.deployed()
-	await factory.changeImplementation(impl.address)
+	await factory.changeImplementation(impl.address, { gas: 100000 })
 };
